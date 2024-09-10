@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage By Luna - Your Travel Companion</title>
+    <meta name="description" content="Discover amazing travel destinations with Voyage By Luna. Find travel deals, packages, and career opportunities. Join our team and embark on an exciting career as a travel agent.">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="styles.css">  
+
+</head>
+<body>
+   <!-- Header -->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainHeader">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="Logo Voyage By Luna">
+            Voyage By Luna
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#top-destinations">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#packages">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#career">Career</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+        
+<!-- Banner Section with Video Background and Booking Form -->
+
+    <!-- Hero Banner -->
+    <section id="banner">
+        <div class="video-container">
+            <video autoplay muted loop poster="images/banner-1.jpg" id="banner-video" style="opacity: 1;">
+                <source src="videos/banner-1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="image-container">
+            <img src="images/banner-2.jpeg" alt="Banner Image" id="banner-image">
+        </div>
+        <div class="overlay"></div>
+        <div class="banner-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="banner-content-center" id="text1">
+                            <!-- New container for centering -->
+                            <div class="center-content">
+                                <h2>Explore the World</h2>
+                                
+                                <a href="#top-destinations" class="btn btn-primary">Explore Destinations</a>
+                            </div>
+                        </div>
+                        
+                        <div class="banner-content-center" id="text2" style="opacity: 0; position: absolute; top: 0;">
+                            <!-- New container for centering -->
+                            <div class="center-content">
+                                <h2>Discover New Horizons</h2>
+                                
+                                <a href="#top-destinations" class="btn btn-primary">Explore Destinations</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-container">
+                            <div class="form-title">
+                                <h3>Book Your Adventure</h3>
+                            </div>
+                            <form id="travelForm">
+                                <!-- Your form content goes here -->
+                                <div class="form-group">
+                                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="departureDate">Departure Date</label>
+                                        <input type="date" id="departureDate" class="form-control" placeholder="Departure Date" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="returnDate">Return Date</label>
+                                        <input type="date" id="returnDate" class="form-control" placeholder="Return Date" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="destination" class="form-control" placeholder="Destination" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Your Form</button>
+                            </form>
+                            <div id="thankYouMessage" style="display: none;">
+                                <p>Thank you, <span id="submittedName"></span>! Your form has been submitted. We will get in touch with you shortly.</p>
+                            </div>
+                            <script>
+                                document.getElementById('travelForm').addEventListener('submit', function (e) {
+                                    e.preventDefault();
+
+                                    // Get form values
+                                    var name = document.getElementById('name').value;
+                                    var email = document.getElementById('email').value;
+                                    var phone = document.getElementById('phone').value;
+                                    var departureDate = document.getElementById('departureDate').value;
+                                    var returnDate = document.getElementById('returnDate').value;
+                                    var destination = document.getElementById('destination').value;
+
+                                    // You can send the form data to your backend or Google Sheets using AJAX or another method here
+
+                                    // Display the thank you message
+                                    document.getElementById('travelForm').style.display = 'none';
+                                    document.getElementById('thankYouMessage').style.display = 'block';
+                                    document.getElementById('submittedName').textContent = name;
+                                });
+
+                                
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-uppercase font-weight-bold">SPECIALIZED SERVICES</h2>
+                <p class="text-muted">We plan it; you enjoy it!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-column">
+                        <img src="images/service-1.png" alt="Service 1" class="img-fluid">
+                        <h3 class="mt-3">DISNEY VACATION</h3>
+                        <p>Make dreams come true in four uniquely themed parks, each with its own special version of Disney…</p>
+                        <a href="https://www.disneytravelcenter.com/msf73396aa/" target="_blank" class="btn btn-primary">BOOK NOW</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-column">
+                        <img src="images/service-2.png" alt="Service 2" class="img-fluid">
+                        <h3 class="mt-3">ADULT-ONLY CRUISE</h3>
+                        <p>Explore over 100 dreamy destinations. Featuring 20+ eateries with Michelin star chef-curated menus.</p>
+                        <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?USD%60%7B%60%E2%80%A6%60%7D%60lors=2&agencyId=550&agentId=98870&cabins=1&currencyCode=USD&fromDate=2023-11-27&priceType=perCabin&sailors=2&sortType=date&toDate=2024-01-31"  target="_blank" class="btn btn-primary">BOOK NOW</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-column">
+                        <img src="images/service-3.png" alt="Service 3" class="img-fluid">
+                        <h3 class="mt-3">ALL-INCLUSIVE RESORTS</h3>
+                        <p>Indulge in the ultimate getaway with our all-inclusive resorts, from unlimited dining and drinks to endless activities.</p>
+                        <a href="https://www.sandals.com/?referral=110957SOTR6104"  target="_blank" class="btn btn-primary">BOOK NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="top-destinations" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-uppercase font-weight-bold">2024 TOP DESTINATIONS NOW ON SALE</h2>
+            </div>
+            <div class="row">
+                <!-- Destination Cells -->
+                <div class="col-md-4 mb-4 d-flex">
+                    <div class="destination-cell h-100" data-toggle="modal" data-target="#destinationModal" data-img="images/destination-01.jpeg" data-title="City 1" data-info="Some information about City 1.">
+                        <img src="images/destination-01.jpeg" alt="Exploring beautiful travel destinations with Voyage By Luna" class="img-fluid">
+                        <div class="destination-info">
+                            <h4 class="text-center">City 1</h4>
+                            <a href="#" class="btn btn-outline-light btn-sm d-block mx-auto mt-2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Destination Cells -->
+                <div class="col-md-4 mb-4 d-flex">
+                    <div class="destination-cell h-100" data-toggle="modal" data-target="#destinationModal" data-img="images/destination-02.jpeg" data-title="City 2" data-info="Some information about City 2.">
+                        <img src="images/destination-02.jpeg" alt="Exploring beautiful travel destinations with Voyage By Luna" class="img-fluid">
+                        <div class="destination-info">
+                            <h4 class="text-center">City 2</h4>
+                            <a href="#" class="btn btn-outline-light btn-sm d-block mx-auto mt-2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Destination Cells -->
+                <div class="col-md-4 mb-4 d-flex">
+                    <div class="destination-cell h-100" data-toggle="modal" data-target="#destinationModal" data-img="images/destination-03.jpeg" data-title="City 3" data-info="Some information about City 3.">
+                        <img src="images/destination-03.jpeg" alt="Exploring beautiful travel destinations with Voyage By Luna" class="img-fluid">
+                        <div class="destination-info">
+                            <h4 class="text-center">City 3</h4>
+                            <a href="#" class="btn btn-outline-light btn-sm d-block mx-auto mt-2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for other destination cells -->
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="packages" class="py-5">
+        <div class="container-fluid">
+            <!-- First Row -->
+            <div class="row mb-5">
+                <!-- Left Column with Text -->
+                <div class="col-md-6">
+                    <div class="package-cotent-text">
+                        <h2 class="text-uppercase font-weight-bold mb-4">Weddings and Honeymoons</h2>
+                    <p class="lead">Your wedding day is one of life’s most memorable and unique days. Our travel agency offers a wide range of wedding packages to fit every style and budget, whether you’re looking for a beachfront ceremony, a mountaintop celebration, or an intimate garden affair. Once the ceremony is over, it’s time to relax and enjoy your honeymoon. Our honeymoon packages include flights and accommodations to romantic dinners and couples massages. Contact us to start planning your dream wedding and honeymoon today.</p>
+                        <a href="https://www.sandals.com/?referral=110957SOTR6104" target="_blank" class="btn btn-primary">BOOK NOW</a>
+                    </div>
+                </div>
+                <!-- Right Column with Image -->
+                <div class="col-md-6">
+                    <img src="images/package-01.jpeg" alt="Package Image 1" class="img-fluid">
+                </div>
+            </div>
+    
+            <!-- Second Row (Reversed) -->
+            <div class="row">
+                <!-- Left Column with Image -->
+                <div class="col-md-6 order-md-2">
+                    <img src="images/package-02.jpeg" alt="Package Image 2" class="img-fluid">
+                </div>
+                <!-- Right Column with Text -->
+                <div class="col-md-6 order-md-1">
+                    <div class="package-cotent-text">
+                        <h2 class="text-uppercase font-weight-bold mb-4">YOUR DREAM CRUISE VACATION</h2>
+                        <p class="lead">Explore stunning coastlines, soak up the sun, and discover exotic beauty with our luxury cruise packages. From spacious cabins to world-class dining, we go above and beyond to ensure your spectacular cruise experience. Our expertly crafted itineraries offer something for everyone, and our experienced staff is on hand to meet your every need. Set sail on your dream cruise vacation today with our travel agency. Contact us to learn more and start planning.</p>
+                        <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&USD`{`%E2%80%A6`}`lors=2&toDate=2022-10-04&agentId=98870&agencyId=550" target="_blank" class="btn btn-primary">BOOK NOW</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+            <div class="contact-info">
+                <h4>For faster response, contact me at 424-279-0200 / soukeyna@voyagebyluna.org</h4>
+            </div> 
+
+
+<!-- About Us Section -->
+<section id="about" class="py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about-content-text">
+                    <h3 class="text-uppercase font-weight-bold mb-4">About Us</h3>
+                    <p class="lead">Welcome to Travel Explore, your gateway to extraordinary journeys where adventure seamlessly meets comfort. At Travel Explore, we're not just a travel agency; we're your trusted companion in creating unforgettable experiences that last a lifetime.</p>
+                    <p class="lead">Our mission is to provide unparalleled travel adventures with a commitment to exceptional service. We understand that every journey is unique, and we take pride in curating personalized trips tailored to your desires. Whether you seek thrilling escapades or serene getaways, we are here to turn your travel dreams into reality.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="https://picsum.photos/800/400?image=6" alt="Travel Team" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Instagram Feed Section -->
+<section id="instafeed" class="bg-light py-5">
+    <div class="container-fluid">
+        <h2 class="text-center mb-4"><i class="fab fa-instagram"></i> Vacation Promos</h2>
+        <div class="row">
+<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="http://lightwidget.com/widgets/bce8ec42b3775029a2bee98c290a93c2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>            <div class="col-12">
+                <div class="lightwidget-widget" data-widget-id="bce8ec42b3775029a2bee98c290a93c2" style="width: 100%; overflow: hidden;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Career Section -->
+<section id="career" class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="career-content text-center">
+                    <h3 class="text-center mb-4">Join Our Team</h3>
+                    <p>Embark on a thrilling career as a travel agent! We're seeking passionate individuals who share our enthusiasm for travel and adventure. Submit the form below to apply:</p>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fileInput" class="form-control-file-label">
+                                        <input type="file" id="fileInput" class="form-control-file" accept=".pdf,.doc,.docx" required onchange="updateFileName()">
+                                        Attach Resume (PDF/DOC/DOCX)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="bg-light text-light py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Logo Section -->
+            <div class="col-md-4 text-center mb-4">
+                <img src="images/logo.png" alt="Logo Voyage By Luna" class="img-fluid" style="max-width: 150px;">
+            </div>
+
+            <!-- Contact and Social Media Section -->
+            <div class="col-md-4 text-center">
+                
+                        <h5 class="text-uppercase">Contact Us</h5>
+                        <p>Email: soukeyna@voyagebyluna.org <br/> Phone: +1 (424) 279 0200</p>
+                        <p>&copy; 2023 Voyage By Luna. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/VoyageByLuna" target="_blank"><i class="fab fa-facebook fa-2x"></i></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/voyagebyluna" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.instagram.com/voyagebyluna/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/company/voyage-by-luna/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.pinterest.com/VoyageByLuna/" target="_blank"><i class="fab fa-pinterest fa-2x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- Modal HTML -->
+<!-- promo modal -->
+<div id="myModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <img src="images/banner-2.jpeg" alt="Promotion Image">
+        <h2>Special Promotion Deal</h2>
+        <p>Don't miss our exclusive offer. Grab it now!</p>
+        <a href="#" class="btn btn-primary">Claim Now</a>
+    </div>
+</div>
+<!-- end promo modal -->
+
+
+
+
+<!-- Include jQuery first -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Include Bootstrap JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- Include Bootstrap Bundle -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Your custom JavaScript (if any) -->
+<script src="script.js"></script>
+
+<!-- Form Submission Script -->
+<script>
+    document.getElementById('travelForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Get form values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var departureDate = document.getElementById('departureDate').value;
+        var returnDate = document.getElementById('returnDate').value;
+        var destination = document.getElementById('destination').value;
+
+        // Create a FormData object to send the data
+        var formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('departureDate', departureDate);
+        formData.append('returnDate', returnDate);
+        formData.append('destination', destination);
+
+        // Send the data to the Google Apps Script
+        fetch('https://script.google.com/macros/s/AKfycbyN5mAYI1pYXHVBTxP90JrZPlgLCUjqA1BJPg3Ul5VPCb60jMi7GK4JdGom4GFJ0g2TQA/exec', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors', // need to be detail after the hosting.
+        })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            // Display a success message or handle the response as needed
+            console.log(data);
+        });
+    });
+</script>
+
+<!-- Initialize the carousel -->
+<script>
+    $(document).ready(function () {
+        $('#myCarousel').carousel({
+            interval: 3000, // Set the interval between slides (3 seconds in this example)
+            ride: 'carousel', // Enable automatic cycling
+        });
+    });
+</script>
+
+<!-- jQuery script for the transition -->
+<script>
+    // JavaScript/jQuery
+    $(document).ready(function () {
+        // Set a timeout to make the video and the first text visible after 5000 milliseconds (5 seconds)
+        setTimeout(function () {
+            $('#banner-video, #text1').fadeTo(1000, 1);
+
+            // Set an interval to rotate elements every 7000 milliseconds (7 seconds)
+            setInterval(function () {
+                $('#banner-video, #text1').fadeTo(1000, 0);
+                $('#banner-image, #text2').fadeTo(1000, 1);
+            }, 5000);
+        }, 3000); // Adjust the delay in milliseconds
+    });
+</script>
+
+<!-- Display Modal on Scroll -->
+<script>
+    $(document).ready(function () {
+        // Function to display the modal when the user scrolls to the destination section
+        function displayModalOnScroll() {
+            var destinationSection = $('#top-destinations');
+            var modalDisplayed = false;
+
+            // Function to display the modal
+            function displayModal() {
+                if (!modalDisplayed) {
+                    $('#myModal').fadeIn();
+                    modalDisplayed = true;
+
+                    // Automatically close the modal after 10 seconds
+                    setTimeout(closeModal, 10000);
+                }
+            }
+
+            // Function to close the modal
+            function closeModal() {
+                $('#myModal').fadeOut();
+            }
+
+            // Add scroll event listener to check if the user has scrolled to the destination section
+            $(window).scroll(function () {
+                var isInViewport = (
+                    destinationSection.offset().top <= $(window).scrollTop() + $(window).height() / 2 &&
+                    destinationSection.offset().top + destinationSection.height() >= $(window).scrollTop() + $(window).height() / 2
+                );
+
+                if (isInViewport) {
+                    displayModal();
+                }
+            });
+
+            // Add click event listener to close button
+            $('#closeModalBtn').click(closeModal);
+        }
+
+        // Call the displayModalOnScroll function when the DOM content is fully loaded
+        displayModalOnScroll();
+    });
+</script>
+
+<!-- Add this script to the end of your HTML file, after including jQuery -->
+<!-- Display Modal on Cell Click -->
+<!-- Display Modal on Cell Click -->
+<script>
+    $(document).ready(function () {
+        // Click event for destination cells
+        $('.destination-cell').click(function (e) {
+            e.preventDefault(); // Prevent the default behavior
+
+            // Get data attributes
+            var imgSrc = $(this).data('img');
+            var title = $(this).data('title');
+            var info = $(this).data('info');
+
+            // Set modal content
+            $('#destinationModal img').attr('src', imgSrc);
+            $('#destinationModal .modal-title-overlay').text(title);
+            $('#destinationModal .modal-info').text(info);
+
+            // Show the modal
+            $('#destinationModal').modal('show');
+        });
+    });
+</script>
+
+<script>
+    function updateFileName() {
+        const fileInput = document.getElementById('fileInput');
+        const fileNameDisplay = document.querySelector('.form-control-file-label');
+
+        if (fileInput.files.length > 0) {
+            fileNameDisplay.textContent = `Resume: ${fileInput.files[0].name}`;
+        } else {
+            fileNameDisplay.textContent = 'Attach Resume (PDF/DOC/DOCX)';
+        }
+    }
+</script>
+
+<!-- Enhanced Destination Modal -->
+<div class="modal fade" id="destinationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <img src="" alt="Destination Image" class="img-fluid w-100 fixed-height-modal-image">
+                <div class="overlay">
+                    <div class="modal-content-data">
+                        <h3 class="modal-title-overlay text-light"></h3>
+                        <p class="modal-info text-light"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        var header = $("#mainHeader");
+        var sticky = header.offset().top;
+
+        $(window).scroll(function () {
+            if (window.pageYOffset > sticky) {
+                header.addClass("fixed-top");
+            } else {
+                header.removeClass("fixed-top");
+            }
+        });
+    });
+</script>
+<!-- Scroll-up Button -->
+<div class="scroll-up-btn">
+    <i class="fa fa-arrow-up fa-2x"></i>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var scrollButton = document.querySelector('.scroll-up-btn');
+
+        window.addEventListener('scroll', function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+
+        scrollButton.addEventListener('click', function () {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        var header = $('#mainHeader');
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 20) {
+                header.addClass('navbar-no-opacity');
+            } else {
+                header.removeClass('navbar-no-opacity');
+            }
+        });
+    });
+</script>
+
+
+<script type="application/ld+json">
+    {
+       "@context": "https://schema.org",
+       "@type": "Organization",
+       "url": "https://www.voyagebyluna.com",
+       "name": "Voyage By Luna",
+       "description": "Your travel companion for exploring the world",
+       "logo": "https://www.voyagebyluna.com/images/logo.png",
+       "sameAs": [
+          "https://www.facebook.com/VoyageByLuna",
+          "https://twitter.com/voyagebyluna",
+          "https://www.instagram.com/voyagebyluna/"
+       ]
+    }
+ </script>
+ 
+
+
+</body>
+</html>

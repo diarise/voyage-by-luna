@@ -1,0 +1,1064 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    background: none;
+    padding: 10px;
+    box-shadow: none;
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #0051b3;
+}
+
+/* Hero Banner Styles */
+/* Style for the banner section */
+#banner {
+    width: 100%;
+    height: 100vh;
+    position: relative; /* Add position relative to the banner */
+}
+
+.video-container,
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#banner-video,
+#banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Set initial opacity to 0 */
+    transition: opacity 1s ease-in-out; /* Add transition effect */
+}
+
+/* Other styles remain unchanged */
+/* CSS */
+.banner-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.center-content {
+    max-width: 600px; /* Adjust as needed */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+
+.banner-content h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: #FF6C00;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #FF922B;
+}
+
+/* Other Styles */
+.form-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 767px) {
+    .navbar-brand img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 15px;
+    }
+
+    .banner-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+}
+
+/* Make the carousel full-width */
+.carousel {
+    width: 100%;
+}
+
+/* Adjust the number of cards displayed per slide */
+.carousel-inner .carousel-item {
+    display: flex;
+}
+
+/* Customize the card appearance */
+.carousel-card {
+    flex: 0 0 25%;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Center the card content */
+.carousel-card .card-body {
+    text-align: center;
+}
+
+/* Remove outline and adjust arrow styling */
+.carousel-control-prev,
+.carousel-control-next {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Style the arrows on hover */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: #FF6C00;
+}
+
+/* Custom CSS with a style similar to Booking.com */
+/* Style for the header */
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* Style for navigation links */
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+}
+
+/* Add hover effect to the navigation links */
+.navbar-nav .nav-link:hover {
+    background-color: #0051b3;
+}
+
+/* Style for the banner section */
+#banner {
+    width: 100%;
+    height: 100vh;
+}
+
+.video-container {
+    
+}
+
+#banner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.banner-content h2 {
+    color: #ffffff;
+    font-size: 70px;
+    line-height: 70px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+    margin: 20px 0;
+}
+
+.banner-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Style for the booking form */
+.form-container {
+    background-color: rgba(0, 114, 227, 0.7);
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(0, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1;
+    max-width: 60%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-title {
+    font-size: 24px;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+.form-control {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #FF6C00;
+}
+
+.btn-primary {
+    background-color: #FF6C00;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #FF922B;
+}
+
+.banner-content-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.banner-content-center h2, .banner-content-center p, .banner-content-center a {
+    text-align: center;
+}
+
+/* Style for date input fields */
+.form-group input[type="date"] {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+}
+
+.form-group input[type="date"]::placeholder {
+    text-align: left;
+}
+
+/* Add some padding to the input fields for better visibility */
+.form-group input[type="date"] {
+    padding: 10px;
+}
+
+/* Style for Destinations Section */
+#destinations {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+.destination-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.destination-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.destination-card h4 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.destination-card p {
+    color: #333;
+    font-size: 16px;
+}
+
+.destination-card .btn {
+    background-color: #FF6C00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+/* Style for destination and package cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    max-height: 200px;
+}
+
+.card-title {
+    font-size: 24px;
+}
+
+.card-text {
+    color: #333;
+}
+
+.price {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #FF6C00;
+}
+
+/* Style for the About Us section */
+#about {
+    background-color: #f5f5f5;
+}
+
+/* Style for the Career section form */
+#career form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-control-file {
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #FF6C00;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #FF922B;
+}
+
+/* Style for the footer */
+footer {
+    background-color: #003580;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+/* Style for Destination Carousel */
+.destination-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.destination-card {
+    width: 280px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.destination-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.destination-card h4 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.destination-card p {
+    color: #333;
+    font-size: 14px;
+}
+
+.destination-card .btn {
+    background-color: #FF6C00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Styles for the modal */
+#myModal {
+    display: none;
+    position: fixed;
+    top: 60%;
+    left: 60%;
+    transform: translate(-60%, -60%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 35%; /* Adjust the width as needed */
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 70px auto;    
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #555;
+    font-size: 24px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    border-radius: unset;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+/* Styles for the services section */
+#services {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+/* .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.service-column {
+    text-align: center;
+    /* padding: 20px; */
+    padding-bottom: 20px;
+    background-color: #fff;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 0 1 calc(30% - 40px); /* Adjust the width and margin as needed */
+    margin-bottom: 20px;
+}
+
+.service-column img {
+    max-width: 100%;
+    /* border-radius: 10px; */
+}
+
+.service-column h3 {
+    color: #303030;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.9px;
+    text-transform: uppercase;
+}
+
+.service-column p {
+    color: #222222;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 300;
+    PADDING: 0 13px;
+}
+
+.btn-primary {
+    color: #ffffff;
+    border-color: #a99e03;
+    font-style: normal;
+    font-weight: normal;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    background-color: #a99e03;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+
+#top-destinations {
+    background-color: #f9f9f9;
+}
+
+.destination-cell {
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.destination-cell:hover img {
+    opacity: 0.7;
+}
+
+.destination-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.destination-cell:hover .destination-info {
+    opacity: 1;
+}
+
+.destination-info h4 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #333;
+}
+/* Additional CSS for Modal Styling */
+/* Styles for the destination modal */
+#destinationModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+#destinationModal .modal-content {
+    background-color: transparent;
+    border: none;
+}
+
+#destinationModal .modal-body {
+    position: relative;
+    padding: 0;
+}
+
+#destinationModal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+#destinationModal .modal-content {
+    width: 80%;
+}
+
+#destinationModal .modal-content img {
+    width: 150vw!important; /* Adjust the width as needed */
+    height: 80vh; /* Adjust the height as needed */
+    object-fit: cover;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 0;
+}
+
+#destinationModal .overlay {
+    color: #fff;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.modal-content-data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+    padding: 10px; /* Add padding to enhance readability */
+    border-radius: 5px; /* Optional: Add border-radius for a softer look */
+}
+
+#destinationModal .modal-title-overlay {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#destinationModal .modal-info {
+    font-size: 1.25rem;
+}
+
+    /* Package CSS */
+    #packages {
+        padding: 0!important;
+    }
+    #packages .container-fluid{
+        padding: 0;
+    }
+    #packages .container {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #packages .row {
+        margin: 0!important;
+    }
+
+    #packages img {
+        width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    }
+
+    #packages .row>[class^="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+.package-cotent-text{
+    padding: 100px;
+    /* padding-bottom: unset; */
+}
+#packages p.lead,
+#about p.lead, p{
+    color: #222222;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 27px;
+    font-style: normal;
+    font-weight: 300;
+}
+    @media (min-width: 768px) {
+        #packages .order-md-2 {
+            order: 1;
+        }
+
+        #packages .order-md-1 {
+            order: 2;
+        }
+    }
+
+
+
+
+/* About Us Section */
+#about {
+    padding: 0 !important;
+}
+
+#about .container-fluid {
+    padding: 0;
+}
+
+#about .row {
+    margin: 0 !important;
+}
+
+#about img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about .row>[class^="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+}
+.about-content-text{
+    padding: 100px;
+}
+
+/*  */
+/* Contact Information Styles */
+.contact-info {
+    padding-top: 2.7% !important;
+    padding-bottom: 3.1% !important;
+    background-color: rgba(0, 123, 255, 0.8); /* Adjust the color as needed */
+    text-align: center;
+    color: #fff;
+}
+
+
+.contact-info h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-info h4 {
+        font-size: 1rem;
+    }
+}
+
+/*  */
+/* Career Section */
+#career {
+    padding: 50px 0;
+    background-image: url(images/form.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#career .row{
+    padding: 0 15px;
+}
+#career .col-md-6{
+    padding: 0;
+}
+.career-content {
+    background-color: rgba(0, 114, 227, 0.7);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.career-content h3,
+.career-content p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.career-content .form-group {
+    margin: 5px;
+}
+
+#career form {
+    padding: 0;
+    max-width: unset;
+}
+
+#career input,
+#career textarea,
+.form-control-file-label {
+    background-color: #f9f9f9;
+    color: #303030;
+    display: block;
+    margin: 5px 0 0;
+    padding: 15px;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    resize: none;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 400;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+}
+
+input[type="text" i],
+input[type="email" i],
+input[type="tel" i],
+input[type="file" i],
+textarea {
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+#fileInput {
+    height: 38px;
+}
+
+.form-control-file-label {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 8px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.form-control-file-label input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.9);
+}
+
+
+
+
+
+
+#mainHeader {
+    background-color: rgba(0, 114, 227, 0.7);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#mainHeader .navbar-brand img,
+#mainHeader .navbar-brand {
+    filter: brightness(0) invert(1);
+}
+
+#mainHeader .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.scroll-up-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #a99e03;
+    font-size: 20px;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar-no-opacity {
+    background-color: rgba(0, 114, 227, 1)!important;
+}
+/* Example CSS for styling */
+
+#instafeed {
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+#instafeed .container-fluid{
+    padding: 0;
+}
+#instafeed h2 {
+    font-family: 'YourChosenFont', sans-serif;
+    font-size: 2em;
+    color: #405DE6; /* Instagram blue */
+    background-color: rgba(64, 93, 230, 0.1); /* Slight background color */
+    padding: 20px 0!important; /* Add padding for better visual appeal */
+    margin: 0!important;
+    width: 100%;
+}
+
+footer h5{
+    color: #333;
+}
