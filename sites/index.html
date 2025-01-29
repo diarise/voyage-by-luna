@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Lifestyle Hub | Voyage By Luna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6F61;    /* Coral (vibrant and travel-inspired) */
+            --secondary: #4A90E2;  /* Ocean Blue */
+            --accent: #FFD166;     /* Sunny Yellow */
+            --background: #F4F1DE; /* Soft Sand Beige */
+            --text: #3D405B;       /* Dark Navy for text */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .link-section {
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-card {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255, 111, 97, 0.2);
+        }
+
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--background);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary); /* Default icon color */
+        }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .link-description {
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-icon {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            transition: color 0.2s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--primary);
+        }
+
+        /* Platform Colors */
+        .fa-facebook { color: #1877F2; }
+        .fa-instagram { 
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .fa-pinterest { color: #BD081C; }
+        .fa-amazon { color: #FF9900; }
+        .fa-hotel { color: var(--primary); }
+        .fa-ship { color: var(--secondary); }
+        .fa-plane { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="profile-header">
+            <img src="voyage-by-luna-logo-tree.jpeg" class="profile-img" alt="Voyage By Luna Logo">
+            <h1>Voyage By Luna</h1>
+            <p class="bio">Travel Expert | Lifestyle Curator | Affiliate Partner</p>
+        </header>
+
+
+
+
+
+        <!-- Travel Affiliates -->
+        <div class="link-section">
+            <h2 class="section-title">
+                <i class="fas fa-hotel"></i>
+                Hotel & Vacation Deals
+            </h2>
+            <div class="links-grid">
+                <a href="https://www.viator.com/?pid=P00006875&uid=U00232218&mcid=58086&currency=USD" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Viator</div>
+                        <div class="link-description">Book tours, excursions, and transfers</div>
+                    </div>
+                </a>
+                <a href="https://www.sandals.com/?referral=110957&agentid=SOTR6104" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Sandals Resorts</div>
+                        <div class="link-description">Luxury couples getaways</div>
+                    </div>
+                </a>
+                <a href="https://www.beaches.com/?referral=110957&agentid=SOTR6104" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Beaches Resorts</div>
+                        <div class="link-description">Family-friendly vacations</div>
+                    </div>
+                </a>
+                <a href="https://voyagebyluna.goldentickets.com/" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Golden Tickets</div>
+                        <div class="link-description">Sports, concerts, and theater events</div>
+                    </div>
+                </a>
+                <a href="https://voyagebyluna.holidays9.com/" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-suitcase-rolling"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Culture Holidays</div>
+                        <div class="link-description">Custom vacation packages</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Cruise Packages -->
+        <div class="link-section">
+            <h2 class="section-title">
+                <i class="fas fa-ship"></i>
+                Cruise Packages
+            </h2>
+            <div class="links-grid">
+                <a href="https://www.virginvoyages.com/book/voyage-planner/find-a-voyage?cabins=1&USD[%E2%80%A6]lors=2&toDate=2022-10-04&agentId=159376&agencyId=550" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Virgin Voyages</div>
+                        <div class="link-description">Luxury adult-only cruises</div>
+                    </div>
+                </a>
+                <a href="http://www.vikingcruises.com/oceans/myagent/voyagebyluna/" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Viking Ocean Cruises</div>
+                        <div class="link-description">Explore the world in style</div>
+                    </div>
+                </a>
+                <a href="http://www.vikingrivercruises.com/myagent/voyagebyluna" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Viking River Cruises</div>
+                        <div class="link-description">Scenic river journeys</div>
+                    </div>
+                </a>
+                <a href="https://www.vikingcruises.com/expeditions/myagent/voyagebyluna" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Viking Expeditions</div>
+                        <div class="link-description">Adventure to remote destinations</div>
+                    </div>
+                </a>
+                <a href="https://www.amawaterways.com/agent-login" class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">AmaWaterways</div>
+                        <div class="link-description">Luxury river cruises</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+                <!-- Amazon Affiliates -->
+                <div class="link-section">
+                    <h2 class="section-title">
+                        <i class="fab fa-amazon"></i>
+                        Amazon Favorites
+                    </h2>
+                    <div class="links-grid">
+                        <a href="https://www.amazon.com/shop/voyagebyluna" class="link-card">
+                            <div class="link-icon">
+                                <i class="fas fa-luggage-cart"></i>
+                            </div>
+                            <div class="link-content">
+                                <div class="link-title">Travel Essentials</div>
+                                <div class="link-description">Must-have gear for every traveler</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                        <!-- Social Connections -->
+        <div class="link-section">
+            <h2 class="section-title">
+                <i class="fas fa-share-alt"></i>
+                Connect With Me
+            </h2>
+            <div class="links-grid">
+                <a href="https://www.facebook.com/VoyageByLuna" class="link-card">
+                    <div class="link-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Facebook</div>
+                        <div class="link-description">Join our vibrant travel community</div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/voyagebyluna/" class="link-card">
+                    <div class="link-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Instagram</div>
+                        <div class="link-description">Daily travel inspiration and tips</div>
+                    </div>
+                </a>
+                <a href="https://www.pinterest.com/VoyageByLuna/" class="link-card">
+                    <div class="link-icon">
+                        <i class="fab fa-pinterest"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">Pinterest</div>
+                        <div class="link-description">Explore curated travel ideas</div>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/company/voyage-by-luna/" class="link-card">
+                    <div class="link-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="link-content">
+                        <div class="link-title">LinkedIn</div>
+                        <div class="link-description">Professional travel insights</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Social Footer -->
+        <!-- <div class="social-bar">
+            <a href="https://www.facebook.com/VoyageByLuna" class="social-icon" title="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/voyagebyluna/" class="social-icon" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.pinterest.com/VoyageByLuna/" class="social-icon" title="Pinterest">
+                <i class="fab fa-pinterest"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/voyage-by-luna/" class="social-icon" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.amazon.com/shop/voyagebyluna" class="social-icon" title="Amazon">
+                <i class="fab fa-amazon"></i>
+            </a>
+        </div> -->
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 3rem; color: var(--secondary); font-size: 0.9rem;">
+            &copy; 2025 Voyage By Luna. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
