@@ -1062,3 +1062,22 @@ textarea {
 footer h5{
     color: #333;
 }
+.consultation-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.consultation-fixed:hover {
+    background-color: #0056b3;
+}
