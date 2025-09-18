@@ -1,0 +1,11 @@
+# basic site settings
+title: "My Site"
+description: "My site with a blog"
+theme: minima
+
+# Make all posts appear under /blog/<slug>/
+permalink: /blog/:title/
+
+# If this is a project page (username.github.io/REPO), uncomment and set baseurl:
+# baseurl: "/REPO"   # e.g. "/my-repo"  → used in links: {{ site.baseurl }}/blog/
+# If this is a user site or custom domain, leave baseurl: "" or omit it.
