@@ -1,6 +1,11 @@
+# NOTE: git-gateway only works on Netlify. This site is on GitHub Pages,
+# so the CMS must authenticate against GitHub directly via an OAuth client.
+# See README section "Making the CMS work on GitHub Pages".
 backend:
-  name: git-gateway
+  name: github
+  repo: diarise/voyage-by-luna
   branch: main
+  base_url: REPLACE_WITH_OAUTH_PROXY_URL
 
 # Where uploaded photos go, and the URL prefix used to reference them
 media_folder: "images/uploads"
@@ -20,12 +25,12 @@ collections:
         file: "src/_data/site.json"
         fields:
           - { label: "Business Name", name: "business_name", widget: "string" }
+          - { label: "Advisor Name", name: "advisor_name", widget: "string" }
+          - { label: "Advisor Role/Title", name: "advisor_role", widget: "string" }
           - { label: "Tagline", name: "tagline", widget: "string" }
           - { label: "Phone (displayed)", name: "phone", widget: "string" }
           - { label: "Phone Link (tel:+1XXXXXXXXXX)", name: "phone_link", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
-          - { label: "WhatsApp Link (optional)", name: "whatsapp_link", widget: "string", required: false }
-          - { label: "Calendly / Booking Link", name: "calendly_link", widget: "string" }
           - { label: "Address / Service Note", name: "address_note", widget: "string" }
           - { label: "Affiliations", name: "affiliations", widget: "list", field: { label: "Name", name: "item", widget: "string" } }
           - label: "Social Links"
@@ -38,6 +43,7 @@ collections:
               - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
               - { label: "Pinterest", name: "pinterest", widget: "string", required: false }
           - { label: "Blog URL", name: "blog_url", widget: "string" }
+          - { label: "Contact form endpoint (ask Daouda before changing)", name: "form_endpoint", widget: "string" }
           - label: "Top Navigation Menu"
             name: "nav"
             widget: "list"
@@ -63,8 +69,24 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "body", widget: "text" }
+          - label: "Hero Trust Strip (short labels under the hero)"
+            name: "hero_strip"
+            widget: "list"
+            field: { label: "Label", name: "item", widget: "string" }
           - { label: "Services Section Heading", name: "services_heading", widget: "string" }
           - { label: "Services Section Subheading", name: "services_subheading", widget: "string" }
+          - { label: '"How it works" Heading', name: "process_heading", widget: "string" }
+          - { label: '"How it works" Intro', name: "process_body", widget: "text" }
+          - label: "How It Works Steps"
+            name: "process_steps"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Step Title", name: "title", widget: "string" }
+              - { label: "Step Description", name: "body", widget: "text" }
+          - { label: '"How it works" Button Text', name: "process_cta_label", widget: "string" }
+          - { label: '"Who you will work with" Heading', name: "advisor_heading", widget: "string" }
+          - { label: '"Who you will work with" Paragraph', name: "advisor_body", widget: "text" }
           - { label: "Destinations Section Heading", name: "destinations_heading", widget: "string" }
           - { label: "Destinations Section Subheading", name: "destinations_subheading", widget: "string" }
           - { label: "Bottom Call-To-Action Heading", name: "final_cta_heading", widget: "string" }
@@ -78,7 +100,21 @@ collections:
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Intro Sentence", name: "intro", widget: "text" }
           - { label: "Main Paragraph", name: "body", widget: "text" }
+          - { label: "Second Paragraph", name: "body_two", widget: "text" }
           - { label: "Photo", name: "image", widget: "image" }
+          - { label: '"What to expect" Heading', name: "expect_heading", widget: "string" }
+          - label: "What To Expect Points"
+            name: "expect_points"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "body", widget: "text" }
+          - { label: "Certifications Heading", name: "specialties_heading", widget: "string" }
+          - label: "Certifications & Affiliations (only add REAL ones)"
+            name: "specialties"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
 
       - name: "services"
         label: "Services Page"
@@ -97,6 +133,7 @@ collections:
                 name: "icon"
                 widget: "select"
                 options: ["castle", "ship", "palm", "heart"]
+              - { label: "Who it's for (one line)", name: "who", widget: "string" }
               - { label: "Description", name: "body", widget: "text" }
               - { label: "Button Text", name: "cta_label", widget: "string" }
 
@@ -127,7 +164,9 @@ collections:
     summary: "{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Region / Kicker (e.g. French Polynesia)", name: "kicker", widget: "string", required: false }
+      - { label: "Photo (leave empty to show the branded pattern)", name: "image", widget: "image", required: false }
+      - { label: "Link (a blog post URL, or leave blank to link to the contact form)", name: "link", widget: "string", required: false }
       - { label: "Display Order (lower numbers show first)", name: "order", widget: "number", default: 10 }
       - { label: "Short Description", name: "body", widget: "markdown" }
 

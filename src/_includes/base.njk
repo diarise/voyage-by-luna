@@ -5,22 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | {{ site.business_name }}</title>
   <meta name="description" content="{{ description }}">
-  <link rel="canonical" href="https://www.voyagebyluna.com{{ page.url }}">
 
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/images/logo.png">
+  {# Canonical host must match the host the site is actually served from. #}
+  <link rel="canonical" href="https://voyagebyluna.com{{ page.url }}">
 
-  <!-- Open Graph / social sharing -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="theme-color" content="#012F6D">
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.business_name }}">
   <meta property="og:title" content="{{ title }} | {{ site.business_name }}">
   <meta property="og:description" content="{{ description }}">
-  <meta property="og:image" content="https://www.voyagebyluna.com{{ og_image or '/images/hero-bungalow.jpg' }}">
-  <meta property="og:url" content="https://www.voyagebyluna.com{{ page.url }}">
+  <meta property="og:image" content="https://voyagebyluna.com{{ og_image or '/images/hero-bungalow.jpg' }}">
+  <meta property="og:url" content="https://voyagebyluna.com{{ page.url }}">
   <meta name="twitter:card" content="summary_large_image">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
   {% include "partials/header.njk" %}
 
   <main id="main">
@@ -28,29 +36,23 @@
   </main>
 
   {% include "partials/footer.njk" %}
+  {% include "partials/mobile-cta.njk" %}
 
-  <a href="{{ site.calendly_link }}" target="_blank" rel="noopener" class="consultation-fab">
-    Free 20-Minute Consultation
-  </a>
-
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js" defer></script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     "name": "{{ site.business_name }}",
-    "url": "https://www.voyagebyluna.com",
-    "logo": "https://www.voyagebyluna.com/images/logo.png",
+    "url": "https://voyagebyluna.com",
+    "logo": "https://voyagebyluna.com/images/logo-full.png",
+    "description": "{{ description }}",
     "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
-    "sameAs": [
-      "{{ site.social.facebook }}",
-      "{{ site.social.instagram }}",
-      "{{ site.social.twitter }}",
-      "{{ site.social.linkedin }}",
-      "{{ site.social.pinterest }}"
-    ]
+    "areaServed": "US",
+    "founder": { "@type": "Person", "name": "{{ site.advisor_name }}" },
+    "sameAs": [{% for l in site.social_list %}"{{ l }}"{{ "," if not loop.last }}{% endfor %}]
   }
   </script>
 </body>

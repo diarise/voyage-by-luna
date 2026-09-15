@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.voyagebyluna.com/sitemap.xml
+Sitemap: https://voyagebyluna.com/sitemap.xml

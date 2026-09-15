@@ -1,22 +1,55 @@
 ---
 layout: base.njk
-title: "About"
-description: "Meet Voyage By Luna, a personal remote travel advisor helping clients plan cruises, resorts, Disney trips, and weddings."
+title: "About Soukeyna"
+description: "Meet Soukeyna Traoré-Dia, the travel advisor behind Voyage By Luna — planning cruises, resorts, Disney trips and destination weddings."
 permalink: "/about/"
 ---
-<section class="page-hero">
+<section class="page-hero page-hero-compact">
   <div class="wrap">
+    <p class="eyebrow">About</p>
     <h1>{{ about.heading }}</h1>
     <p class="lead">{{ about.intro }}</p>
   </div>
 </section>
 
-<section class="section about-body">
+<section class="section">
   <div class="wrap about-grid">
-    <img src="{{ about.image }}" alt="{{ site.business_name }} workspace" loading="lazy">
-    <div>
+    <div class="about-media">
+      <img src="{{ about.image }}" alt="" loading="lazy">
+    </div>
+    <div class="about-copy">
       <p class="lead">{{ about.body }}</p>
-      <a href="/contact/" class="btn btn-primary">Start Planning Your Trip</a>
+      <p class="lead">{{ about.body_two }}</p>
+
+      {% if about.specialties.length %}
+      <h2 class="about-sub">{{ about.specialties_heading }}</h2>
+      <ul class="credential-list">
+        {% for s in about.specialties %}
+        <li>{{ s }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <div class="about-actions">
+        <a href="/contact/" class="btn btn-primary">Plan My Trip</a>
+        <a href="{{ site.blog_url }}" class="btn btn-outline">Read the blog</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section expect-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{{ about.expect_heading }}</h2>
+    </div>
+    <div class="grid-3">
+      {% for point in about.expect_points %}
+      <div class="point-card">
+        <h3>{{ point.title }}</h3>
+        <p>{{ point.body }}</p>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -24,8 +57,16 @@ permalink: "/about/"
 <section class="section join-team-note">
   <div class="wrap">
     <div class="note-card">
-      <h3>Interested in becoming a travel agent?</h3>
-      <p>I'm sometimes looking for passionate people to join the team. <a href="/join-our-team/">See details and apply &rarr;</a></p>
+      <h2>Interested in becoming a travel agent?</h2>
+      <p>I'm sometimes looking for people to join the team. <a href="/join-our-team/">See details and apply</a>.</p>
     </div>
+  </div>
+</section>
+
+<section class="section final-cta">
+  <div class="wrap final-cta-inner">
+    <h2>Let's talk about your trip.</h2>
+    <p class="lead">No obligation — just tell me what you're picturing.</p>
+    <a href="/contact/" class="btn btn-primary btn-lg">Plan My Trip</a>
   </div>
 </section>

@@ -1,22 +1,39 @@
 {
   "hero_eyebrow": "Personal travel advisor",
   "hero_heading": "Your vacation starts here.",
-  "hero_subheading": "Cruises, all-inclusive resorts, Disney vacations, and honeymoons \u2014 planned around you, booked with confidence.",
+  "hero_subheading": "I'm Soukeyna — I plan cruises, all-inclusive resorts, Disney trips and honeymoons for people who'd rather enjoy the trip than research it. One person, start to finish.",
   "hero_image": "/images/hero-bungalow.jpg",
-  "hero_cta_label": "Start Planning My Trip",
-  "hero_secondary_cta_label": "See What I Can Book For You",
-  "why_advisor_heading": "Why book with a travel advisor instead of a website?",
-  "why_advisor_body": "Anyone can search flights online. What you can't get from a search engine is someone in your corner \u2014 an advisor who knows the fine print, watches for price drops, handles it when a flight gets cancelled, and is reachable when you actually need help. That's the job.",
-  "why_advisor_points": [
-    { "title": "One point of contact", "body": "You tell me what you want once. I handle the flights, hotels, transfers, and details that have to line up." },
-    { "title": "No extra cost to you", "body": "Travel advisors are typically paid by the travel suppliers, not by you \u2014 so personalized planning usually costs the same as booking it yourself." },
-    { "title": "Help when plans change", "body": "Delays, cancellations, and changes happen. You have a real person to call, not a hold queue." }
+  "hero_cta_label": "Plan My Trip",
+  "hero_secondary_cta_label": "See What I Plan",
+  "hero_strip": [
+    "Cruises",
+    "All-inclusive resorts",
+    "Disney & theme parks",
+    "Weddings & honeymoons"
   ],
-  "services_heading": "What I Help With",
-  "services_subheading": "A few of the trip types clients come to me for most.",
-  "destinations_heading": "Trip Inspiration",
-  "destinations_subheading": "A few places worth considering for your next trip.",
+  "why_advisor_heading": "Why book with an advisor instead of a booking site?",
+  "why_advisor_body": "Anyone can search flights online. What a search engine can't do is know your family, read the fine print for you, or pick up the phone when a flight gets cancelled at 11pm. That's the job.",
+  "why_advisor_points": [
+    { "title": "One point of contact", "body": "You tell me what you want once. I line up the flights, hotels, transfers and details so they actually fit together." },
+    { "title": "No extra cost to you", "body": "Travel advisors are typically paid by the travel suppliers, not by you — so personalized planning usually costs the same as booking it yourself." },
+    { "title": "A real person when plans change", "body": "Delays, cancellations and changes happen. You call me, not an airline hold queue." }
+  ],
+  "services_heading": "What I help with",
+  "services_subheading": "Four kinds of trips I plan most often — though if yours isn't listed, just ask.",
+  "process_heading": "Planning a trip with me takes four steps",
+  "process_body": "No long forms, no obligation, and nothing to pay to start the conversation.",
+  "process_steps": [
+    { "title": "Tell me what you're picturing", "body": "A place, a date, a vibe, a budget — even just \"somewhere warm in March.\" Rough is fine. That's the whole first step." },
+    { "title": "I come back with options", "body": "I research and send you a short list that actually fits what you told me, with the real costs and the trade-offs spelled out." },
+    { "title": "We refine it together", "body": "Swap the resort, move the dates, add a night. We go back and forth until it's the trip you actually want." },
+    { "title": "You travel, I stay reachable", "body": "I handle the booking and stay available before and during the trip if anything needs sorting out." }
+  ],
+  "process_cta_label": "Start With Step One",
+  "destinations_heading": "Places worth considering",
+  "destinations_subheading": "A few destinations I know well and get asked about often.",
+  "advisor_heading": "There's one person behind Voyage By Luna — and it's me.",
+  "advisor_body": "Not a call center, not a booking portal. When you send an enquiry through this site, I'm the one who reads it and the one who replies. I write the travel blog too, so you can get a sense of how I think about a destination before you ever contact me.",
   "final_cta_heading": "Tell me about the trip you're picturing.",
-  "final_cta_body": "Share a few details and I'll follow up personally \u2014 no obligation, no pressure.",
+  "final_cta_body": "Share a few details and I'll follow up personally — no obligation, no pressure.",
   "final_cta_label": "Plan My Trip"
 }

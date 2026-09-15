@@ -4,10 +4,8 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- set pages = ["/", "/about/", "/services/", "/contact/", "/join-our-team/"] -%}
+{%- set pages = ["/", "/about/", "/services/", "/destinations/", "/contact/", "/join-our-team/"] -%}
 {%- for p in pages %}
-  <url>
-    <loc>https://www.voyagebyluna.com{{ p }}</loc>
-  </url>
+  <url><loc>https://voyagebyluna.com{{ p }}</loc></url>
 {%- endfor %}
 </urlset>

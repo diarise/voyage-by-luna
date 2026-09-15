@@ -13,9 +13,8 @@ permalink: "/join-our-team/"
 
 <section class="section">
   <div class="wrap">
-    <form name="join-team" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="trip-form narrow">
-      <input type="hidden" name="form-name" value="join-team">
-      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <form data-lead-form action="{{ site.form_endpoint }}" method="POST" enctype="multipart/form-data" class="trip-form narrow" novalidate>
+      <input type="hidden" name="_subject" value="Voyage By Luna — travel agent application">
 
       <div class="form-row">
         <div class="form-group">
@@ -44,6 +43,11 @@ permalink: "/join-our-team/"
       </div>
 
       <button type="submit" class="btn btn-primary btn-lg">Submit Application</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
     </form>
+    <div class="form-success" role="status">
+      <h2>Application received</h2>
+      <p>Thanks — I'll review it and get back to you.</p>
+    </div>
   </div>
 </section>

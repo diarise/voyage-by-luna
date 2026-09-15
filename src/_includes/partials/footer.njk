@@ -1,37 +1,41 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <img src="/images/logo.png" alt="{{ site.business_name }} logo" width="72" height="72">
-      <p>{{ site.tagline }}</p>
-      <p class="footer-affiliations">Affiliated with {{ site.affiliations | join(" & ") }}</p>
+      <img src="/images/logo-full.png" alt="{{ site.business_name }}" width="260" height="182" loading="lazy">
+      <p class="footer-role">{{ site.advisor_name }} — {{ site.advisor_role }}</p>
+      <p class="footer-tagline">{{ site.tagline }}</p>
+      {% if site.affiliations.length %}
+      <p class="footer-affiliations">Affiliated with {{ site.affiliations | join(" &amp; ") | safe }}</p>
+      {% endif %}
     </div>
 
     <div class="footer-col">
-      <h5>Contact</h5>
+      <h2 class="footer-head">Contact</h2>
       <p><a href="{{ site.phone_link }}">{{ site.phone }}</a></p>
       <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
       <p class="muted">{{ site.address_note }}</p>
     </div>
 
     <div class="footer-col">
-      <h5>Explore</h5>
+      <h2 class="footer-head">Explore</h2>
       <ul class="footer-links">
-        <li><a href="/about/">About</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="{{ site.blog_url }}">Blog</a></li>
+        <li><a href="/about/">About Soukeyna</a></li>
+        <li><a href="/services/">Travel Services</a></li>
+        <li><a href="/destinations/">Destinations</a></li>
+        <li><a href="{{ site.blog_url }}">Travel Blog</a></li>
+        <li><a href="/contact/">Plan Your Trip</a></li>
         <li><a href="/join-our-team/">Join Our Team</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h5>Follow</h5>
+      <h2 class="footer-head">Follow</h2>
       <ul class="social-links">
-        <li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">FB</a></li>
-        <li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">IG</a></li>
-        <li><a href="{{ site.social.twitter }}" target="_blank" rel="noopener" aria-label="Twitter/X">X</a></li>
-        <li><a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a></li>
-        <li><a href="{{ site.social.pinterest }}" target="_blank" rel="noopener" aria-label="Pinterest">PIN</a></li>
+        {% if site.social.instagram %}<li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener"><span class="sr-only">Instagram</span><span aria-hidden="true">IG</span></a></li>{% endif %}
+        {% if site.social.facebook %}<li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener"><span class="sr-only">Facebook</span><span aria-hidden="true">FB</span></a></li>{% endif %}
+        {% if site.social.pinterest %}<li><a href="{{ site.social.pinterest }}" target="_blank" rel="noopener"><span class="sr-only">Pinterest</span><span aria-hidden="true">PIN</span></a></li>{% endif %}
+        {% if site.social.linkedin %}<li><a href="{{ site.social.linkedin }}" target="_blank" rel="noopener"><span class="sr-only">LinkedIn</span><span aria-hidden="true">IN</span></a></li>{% endif %}
+        {% if site.social.twitter %}<li><a href="{{ site.social.twitter }}" target="_blank" rel="noopener"><span class="sr-only">Twitter</span><span aria-hidden="true">X</span></a></li>{% endif %}
       </ul>
     </div>
   </div>

@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: "Destinations"
+description: "Destinations Voyage By Luna plans and knows well — from Bora Bora and Seychelles to Japan, Korea, Bali and the Caribbean."
+permalink: "/destinations/"
+---
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <p class="eyebrow">Inspiration</p>
+    <h1>Destinations</h1>
+    <p class="lead">Places I know well and get asked about often. Each one links through to a full guide I've written — read first, then tell me which one you're picturing.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="destination-grid">
+      {% for dest in collections.destinations %}
+      <a class="destination-card" href="{{ dest.data.link or '/contact/?trip=other' }}">
+        <div class="destination-media{% if not dest.data.image %} destination-media-empty{% endif %}">
+          {% if dest.data.image %}<img src="{{ dest.data.image }}" alt="{{ dest.data.title }}" loading="lazy">{% endif %}
+        </div>
+        <div class="destination-card-body">
+          {% if dest.data.kicker %}<span class="destination-kicker">{{ dest.data.kicker }}</span>{% endif %}
+          <h2>{{ dest.data.title }}</h2>
+          <div class="destination-desc">{{ dest.templateContent | safe }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="destinations-note">Don't see where you're thinking of? I plan trips well beyond this list — <a href="/contact/">just ask</a>.</p>
+  </div>
+</section>
+
+<section class="section final-cta">
+  <div class="wrap final-cta-inner">
+    <h2>Somewhere on this list catch your eye?</h2>
+    <p class="lead">Tell me which one and roughly when, and I'll come back with real options.</p>
+    <a href="/contact/" class="btn btn-primary btn-lg">Plan My Trip</a>
+  </div>
+</section>

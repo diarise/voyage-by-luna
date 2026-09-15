@@ -1,84 +1,115 @@
 ---
 layout: base.njk
 title: "Plan Your Trip"
-description: "Tell Voyage By Luna about the trip you're picturing and get a personal follow-up - no obligation."
+description: "Tell Voyage By Luna about the trip you're picturing and get a personal follow-up from travel advisor Soukeyna Traoré-Dia."
 permalink: "/contact/"
 ---
-<section class="page-hero">
+<section class="page-hero page-hero-compact">
   <div class="wrap">
+    <p class="eyebrow">Step one</p>
     <h1>{{ contact.heading }}</h1>
     <p class="lead">{{ contact.intro }}</p>
-    <p class="contact-direct">Prefer to talk now? Call or text <a href="{{ site.phone_link }}">{{ site.phone }}</a> or email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    <div class="contact-direct">
+      <a href="{{ site.phone_link }}" class="contact-chip">
+        <span aria-hidden="true">&#9742;</span> {{ site.phone }}
+      </a>
+      <a href="mailto:{{ site.email }}" class="contact-chip">
+        <span aria-hidden="true">&#9993;</span> {{ site.email }}
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-tight">
   <div class="wrap contact-grid">
-    <form name="plan-your-trip" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="trip-form" id="tripForm">
-      <input type="hidden" name="form-name" value="plan-your-trip">
-      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <div class="form-panel">
+      <form
+        data-lead-form
+        action="{{ site.form_endpoint }}"
+        method="POST"
+        class="trip-form"
+        id="tripForm"
+        novalidate>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-      </div>
+        <p class="form-intro">The more you tell me, the more useful my first reply will be. Nothing here is binding.</p>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
         </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="trip-type">What kind of trip?</label>
+            <select id="trip-type" name="trip-type">
+              <option value="disney">Disney / theme parks</option>
+              <option value="cruises">Cruise</option>
+              <option value="resorts">All-inclusive resort</option>
+              <option value="weddings">Wedding / honeymoon</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="departureDate">Roughly when?</label>
+            <input type="date" id="departureDate" name="travel-date">
+          </div>
+          <div class="form-group">
+            <label for="travelers">How many travelers?</label>
+            <input type="number" id="travelers" name="travelers" min="1" inputmode="numeric">
+          </div>
+        </div>
+
         <div class="form-group">
-          <label for="trip-type">Type of Trip</label>
-          <select id="trip-type" name="trip-type">
-            <option value="disney">Disney Vacation</option>
-            <option value="cruises">Cruise</option>
-            <option value="resorts">All-Inclusive Resort</option>
-            <option value="weddings">Wedding / Honeymoon</option>
-            <option value="other">Something else</option>
+          <label for="destination">Where are you thinking?</label>
+          <input type="text" id="destination" name="destination" placeholder="A place, a region, or &ldquo;not sure yet&rdquo;">
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Rough budget range</label>
+          <select id="budget" name="budget">
+            <option value="">Prefer not to say</option>
+            <option>Under $2,000</option>
+            <option>$2,000 – $5,000</option>
+            <option>$5,000 – $10,000</option>
+            <option>$10,000+</option>
           </select>
+          <p class="field-help">This just helps me suggest realistic options first time around.</p>
         </div>
-      </div>
 
-      <div class="form-row">
         <div class="form-group">
-          <label for="departureDate">Approximate Travel Date</label>
-          <input type="date" id="departureDate" name="travel-date">
+          <label for="message">Anything else I should know?</label>
+          <textarea id="message" name="message" rows="4" placeholder="Occasion, must-haves, dealbreakers, who's coming…"></textarea>
         </div>
-        <div class="form-group">
-          <label for="travelers">Number of Travelers</label>
-          <input type="number" id="travelers" name="travelers" min="1">
-        </div>
-      </div>
 
-      <div class="form-group">
-        <label for="destination">Destination (or "not sure yet")</label>
-        <input type="text" id="destination" name="destination">
-      </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Send My Trip Details</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <p class="form-reassure">I reply personally. Your details are not shared or sold.</p>
+      </form>
 
-      <div class="form-group">
-        <label for="message">Anything else I should know?</label>
-        <textarea id="message" name="message" rows="4"></textarea>
+      <div class="form-success" role="status">
+        <h2>{{ contact.form_success_heading }}</h2>
+        <p>{{ contact.form_success_body }}</p>
       </div>
-
-      <button type="submit" class="btn btn-primary btn-lg">Send My Trip Details</button>
-    </form>
-    <div class="form-success">
-      <h2>{{ contact.form_success_heading }}</h2>
-      <p>{{ contact.form_success_body }}</p>
     </div>
 
     <aside class="faq-aside">
-      <h2>Common Questions</h2>
+      <h2 class="faq-title">Common questions</h2>
       <div class="faq-list">
         {% for item in contact.faq %}
-        <details class="faq-item">
+        <details class="faq-item"{% if loop.first %} open{% endif %}>
           <summary>{{ item.question }}</summary>
           <p>{{ item.answer }}</p>
         </details>

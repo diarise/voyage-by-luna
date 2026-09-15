@@ -1,9 +1,12 @@
 ---
 layout: base.njk
 title: "Cruises, Resorts & Disney Vacations"
-description: "Voyage By Luna is a personal travel advisor helping clients plan cruises, all-inclusive resorts, Disney vacations, and destination weddings."
+description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises, all-inclusive resorts, Disney vacations and destination weddings — one point of contact, start to finish."
 ---
-<section class="hero" style="--hero-image: url('{{ home.hero_image }}');">
+<section class="hero">
+  <div class="hero-media">
+    <img src="{{ home.hero_image }}" alt="" fetchpriority="high" width="1600" height="847">
+  </div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <p class="eyebrow">{{ home.hero_eyebrow }}</p>
@@ -13,7 +16,13 @@ description: "Voyage By Luna is a personal travel advisor helping clients plan c
         <a href="/contact/" class="btn btn-primary btn-lg">{{ home.hero_cta_label }}</a>
         <a href="/services/" class="btn btn-ghost-light btn-lg">{{ home.hero_secondary_cta_label }}</a>
       </div>
-      <p class="hero-trust">Affiliated with {{ site.affiliations | join(" & ") }}</p>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <div class="wrap hero-strip-inner">
+      {% for item in home.hero_strip %}
+      <span class="hero-strip-item">{{ item }}</span>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -21,12 +30,14 @@ description: "Voyage By Luna is a personal travel advisor helping clients plan c
 <section class="section why-advisor">
   <div class="wrap">
     <div class="section-head">
+      <p class="eyebrow eyebrow-dark">Why an advisor</p>
       <h2>{{ home.why_advisor_heading }}</h2>
       <p class="lead">{{ home.why_advisor_body }}</p>
     </div>
     <div class="grid-3">
       {% for point in home.why_advisor_points %}
       <div class="point-card">
+        <span class="point-num" aria-hidden="true">{{ loop.index }}</span>
         <h3>{{ point.title }}</h3>
         <p>{{ point.body }}</p>
       </div>
@@ -38,6 +49,7 @@ description: "Voyage By Luna is a personal travel advisor helping clients plan c
 <section class="section services-preview" id="services">
   <div class="wrap">
     <div class="section-head">
+      <p class="eyebrow eyebrow-dark">What I plan</p>
       <h2>{{ home.services_heading }}</h2>
       <p class="lead">{{ home.services_subheading }}</p>
     </div>
@@ -46,45 +58,95 @@ description: "Voyage By Luna is a personal travel advisor helping clients plan c
       <a class="service-card" href="/services/#{{ cat.id }}">
         <span class="service-icon icon-{{ cat.icon }}" aria-hidden="true"></span>
         <h3>{{ cat.title }}</h3>
-        <p>{{ cat.body | truncate(90) }}</p>
-        <span class="card-link">Learn more &rarr;</span>
+        <p class="service-for">{{ cat.who }}</p>
+        <span class="card-link">See how it works <span aria-hidden="true">&rarr;</span></span>
       </a>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="section destinations" id="destinations">
+<section class="section how-it-works">
   <div class="wrap">
     <div class="section-head">
-      <h2>{{ home.destinations_heading }}</h2>
-      <p class="lead">{{ home.destinations_subheading }}</p>
+      <p class="eyebrow">How it works</p>
+      <h2>{{ home.process_heading }}</h2>
+      <p class="lead">{{ home.process_body }}</p>
     </div>
-    <div class="grid-3">
-      {% for dest in collections.destinations %}
-      <div class="destination-card">
-        <img src="{{ dest.data.image }}" alt="{{ dest.data.title }}" loading="lazy">
-        <div class="destination-card-body">
-          <h3>{{ dest.data.title }}</h3>
-          <div class="destination-desc">{{ dest.templateContent | safe }}</div>
+    <ol class="process-list">
+      {% for step in home.process_steps %}
+      <li class="process-step">
+        <span class="process-num" aria-hidden="true">{{ loop.index }}</span>
+        <div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.body }}</p>
         </div>
-      </div>
+      </li>
       {% endfor %}
+    </ol>
+    <div class="process-cta">
+      <a href="/contact/" class="btn btn-primary btn-lg">{{ home.process_cta_label }}</a>
     </div>
   </div>
 </section>
 
-{% if collections.testimonials.length > 0 %}
+{% if collections.destinations.length %}
+<section class="section destinations" id="destinations">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow eyebrow-dark">Inspiration</p>
+      <h2>{{ home.destinations_heading }}</h2>
+      <p class="lead">{{ home.destinations_subheading }}</p>
+    </div>
+    <div class="destination-grid">
+      {% for dest in collections.destinations %}
+      {% if loop.index <= 6 %}
+      <a class="destination-card" href="{{ dest.data.link or '/contact/?trip=other' }}">
+        <div class="destination-media{% if not dest.data.image %} destination-media-empty{% endif %}">
+          {% if dest.data.image %}<img src="{{ dest.data.image }}" alt="{{ dest.data.title }}" loading="lazy">{% endif %}
+        </div>
+        <div class="destination-card-body">
+          {% if dest.data.kicker %}<span class="destination-kicker">{{ dest.data.kicker }}</span>{% endif %}
+          <h3>{{ dest.data.title }}</h3>
+          <div class="destination-desc">{{ dest.templateContent | safe }}</div>
+        </div>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="section-foot">
+      <a href="/destinations/" class="btn btn-outline">See all destinations</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section advisor-intro">
+  <div class="wrap advisor-grid">
+    <div class="advisor-photo">
+      <img src="{{ about.image }}" alt="" loading="lazy">
+    </div>
+    <div class="advisor-copy">
+      <p class="eyebrow eyebrow-dark">Who you'll be working with</p>
+      <h2>{{ home.advisor_heading }}</h2>
+      <p class="lead">{{ home.advisor_body }}</p>
+      <a href="/about/" class="btn btn-outline">More about Soukeyna</a>
+    </div>
+  </div>
+</section>
+
+{% if collections.testimonials.length %}
 <section class="section testimonials">
   <div class="wrap">
     <div class="section-head">
-      <h2>What Clients Say</h2>
+      <p class="eyebrow eyebrow-dark">In their words</p>
+      <h2>What clients say</h2>
     </div>
     <div class="grid-3">
       {% for t in collections.testimonials %}
       <blockquote class="testimonial-card">
-        <div class="testimonial-quote">&ldquo;{{ t.templateContent | safe }}&rdquo;</div>
-        <cite>{{ t.data.name }}{% if t.data.trip %}, {{ t.data.trip }}{% endif %}</cite>
+        <div class="testimonial-quote">{{ t.templateContent | safe }}</div>
+        <cite>{{ t.data.name }}{% if t.data.trip %} <span>— {{ t.data.trip }}</span>{% endif %}</cite>
       </blockquote>
       {% endfor %}
     </div>
@@ -96,6 +158,9 @@ description: "Voyage By Luna is a personal travel advisor helping clients plan c
   <div class="wrap final-cta-inner">
     <h2>{{ home.final_cta_heading }}</h2>
     <p class="lead">{{ home.final_cta_body }}</p>
-    <a href="/contact/" class="btn btn-primary btn-lg">{{ home.final_cta_label }}</a>
+    <div class="final-cta-actions">
+      <a href="/contact/" class="btn btn-primary btn-lg">{{ home.final_cta_label }}</a>
+      <a href="{{ site.phone_link }}" class="btn btn-ghost-light btn-lg">Or call {{ site.phone }}</a>
+    </div>
   </div>
 </section>

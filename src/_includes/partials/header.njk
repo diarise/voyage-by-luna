@@ -1,21 +1,28 @@
 <header class="site-header" id="siteHeader">
   <div class="wrap header-inner">
-    <a href="/" class="brand" aria-label="{{ site.business_name }} home">
-      <img src="/images/logo.png" alt="{{ site.business_name }} logo" width="44" height="44">
-      <span>{{ site.business_name }}</span>
+    <a href="/" class="brand" aria-label="{{ site.business_name }} — home">
+      <img src="/images/logo-mark.png" alt="" width="110" height="73" class="brand-mark" fetchpriority="high">
+      <span class="brand-text">
+        <span class="brand-name">Voyage</span>
+        <span class="brand-sub">by Luna</span>
+      </span>
     </a>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
-      <span></span><span></span><span></span>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="sr-only">Menu</span>
     </button>
 
-    <nav class="site-nav" id="siteNav">
+    <nav class="site-nav" id="siteNav" aria-label="Main">
       <ul>
         {% for item in site.nav %}
-        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
         {% endfor %}
       </ul>
-      <a href="/contact/" class="btn btn-primary btn-nav-cta">Plan Your Trip</a>
+      <div class="nav-actions">
+        <a href="{{ site.phone_link }}" class="nav-phone">{{ site.phone }}</a>
+        <a href="/contact/" class="btn btn-primary btn-nav-cta">Plan Your Trip</a>
+      </div>
     </nav>
   </div>
 </header>
