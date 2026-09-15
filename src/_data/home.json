@@ -1,0 +1,22 @@
+{
+  "hero_eyebrow": "Personal travel advisor",
+  "hero_heading": "Your vacation starts here.",
+  "hero_subheading": "Cruises, all-inclusive resorts, Disney vacations, and honeymoons \u2014 planned around you, booked with confidence.",
+  "hero_image": "/images/hero-bungalow.jpg",
+  "hero_cta_label": "Start Planning My Trip",
+  "hero_secondary_cta_label": "See What I Can Book For You",
+  "why_advisor_heading": "Why book with a travel advisor instead of a website?",
+  "why_advisor_body": "Anyone can search flights online. What you can't get from a search engine is someone in your corner \u2014 an advisor who knows the fine print, watches for price drops, handles it when a flight gets cancelled, and is reachable when you actually need help. That's the job.",
+  "why_advisor_points": [
+    { "title": "One point of contact", "body": "You tell me what you want once. I handle the flights, hotels, transfers, and details that have to line up." },
+    { "title": "No extra cost to you", "body": "Travel advisors are typically paid by the travel suppliers, not by you \u2014 so personalized planning usually costs the same as booking it yourself." },
+    { "title": "Help when plans change", "body": "Delays, cancellations, and changes happen. You have a real person to call, not a hold queue." }
+  ],
+  "services_heading": "What I Help With",
+  "services_subheading": "A few of the trip types clients come to me for most.",
+  "destinations_heading": "Trip Inspiration",
+  "destinations_subheading": "A few places worth considering for your next trip.",
+  "final_cta_heading": "Tell me about the trip you're picturing.",
+  "final_cta_body": "Share a few details and I'll follow up personally \u2014 no obligation, no pressure.",
+  "final_cta_label": "Plan My Trip"
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | {{ site.business_name }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="https://www.voyagebyluna.com{{ page.url }}">
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/images/logo.png">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }} | {{ site.business_name }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="https://www.voyagebyluna.com{{ og_image or '/images/hero-bungalow.jpg' }}">
+  <meta property="og:url" content="https://www.voyagebyluna.com{{ page.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  {% include "partials/header.njk" %}
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <a href="{{ site.calendly_link }}" target="_blank" rel="noopener" class="consultation-fab">
+    Free 20-Minute Consultation
+  </a>
+
+  <script src="/js/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "{{ site.business_name }}",
+    "url": "https://www.voyagebyluna.com",
+    "logo": "https://www.voyagebyluna.com/images/logo.png",
+    "telephone": "{{ site.phone }}",
+    "email": "{{ site.email }}",
+    "sameAs": [
+      "{{ site.social.facebook }}",
+      "{{ site.social.instagram }}",
+      "{{ site.social.twitter }}",
+      "{{ site.social.linkedin }}",
+      "{{ site.social.pinterest }}"
+    ]
+  }
+  </script>
+</body>
+</html>

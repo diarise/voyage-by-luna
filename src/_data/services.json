@@ -1,0 +1,34 @@
+{
+  "heading": "Travel Services",
+  "intro": "Every trip starts with a conversation. Here's where I can help most \u2014 tell me what you have in mind and I'll build the details around it.",
+  "categories": [
+    {
+      "id": "disney",
+      "title": "Disney Vacations",
+      "icon": "castle",
+      "body": "Park hopping, dining reservations, resort strategy, timing it around crowds and weather \u2014 Disney trips have a lot of moving parts. I help you plan it so the trip feels magical instead of stressful.",
+      "cta_label": "Plan a Disney Trip"
+    },
+    {
+      "id": "cruises",
+      "title": "Cruises",
+      "icon": "ship",
+      "body": "From family-friendly ships to adults-only lines, cruising is one of the easiest ways to see multiple destinations without repacking. I help you pick the right ship, cabin, and itinerary for how you actually like to travel.",
+      "cta_label": "Plan a Cruise"
+    },
+    {
+      "id": "resorts",
+      "title": "All-Inclusive Resorts",
+      "icon": "palm",
+      "body": "Show up and everything is handled \u2014 dining, drinks, activities, and often airport transfers. I help you find a resort that matches your vibe, whether that's quiet and romantic or full of things to do.",
+      "cta_label": "Find My Resort"
+    },
+    {
+      "id": "weddings",
+      "title": "Weddings & Honeymoons",
+      "icon": "heart",
+      "body": "Beachfront ceremony, mountaintop celebration, or an intimate destination affair \u2014 I help coordinate the wedding and the honeymoon together, so travel is one less thing you're managing on top of everything else.",
+      "cta_label": "Plan a Wedding or Honeymoon"
+    }
+  ]
+}

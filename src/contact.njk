@@ -1,0 +1,89 @@
+---
+layout: base.njk
+title: "Plan Your Trip"
+description: "Tell Voyage By Luna about the trip you're picturing and get a personal follow-up - no obligation."
+permalink: "/contact/"
+---
+<section class="page-hero">
+  <div class="wrap">
+    <h1>{{ contact.heading }}</h1>
+    <p class="lead">{{ contact.intro }}</p>
+    <p class="contact-direct">Prefer to talk now? Call or text <a href="{{ site.phone_link }}">{{ site.phone }}</a> or email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <form name="plan-your-trip" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="trip-form" id="tripForm">
+      <input type="hidden" name="form-name" value="plan-your-trip">
+      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="trip-type">Type of Trip</label>
+          <select id="trip-type" name="trip-type">
+            <option value="disney">Disney Vacation</option>
+            <option value="cruises">Cruise</option>
+            <option value="resorts">All-Inclusive Resort</option>
+            <option value="weddings">Wedding / Honeymoon</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="departureDate">Approximate Travel Date</label>
+          <input type="date" id="departureDate" name="travel-date">
+        </div>
+        <div class="form-group">
+          <label for="travelers">Number of Travelers</label>
+          <input type="number" id="travelers" name="travelers" min="1">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="destination">Destination (or "not sure yet")</label>
+        <input type="text" id="destination" name="destination">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Anything else I should know?</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">Send My Trip Details</button>
+    </form>
+    <div class="form-success">
+      <h2>{{ contact.form_success_heading }}</h2>
+      <p>{{ contact.form_success_body }}</p>
+    </div>
+
+    <aside class="faq-aside">
+      <h2>Common Questions</h2>
+      <div class="faq-list">
+        {% for item in contact.faq %}
+        <details class="faq-item">
+          <summary>{{ item.question }}</summary>
+          <p>{{ item.answer }}</p>
+        </details>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+</section>

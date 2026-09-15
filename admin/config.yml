@@ -1,0 +1,144 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded photos go, and the URL prefix used to reference them
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: simple
+
+collections:
+  # ---------------------------------------------------------------
+  # Single-page / site-wide settings — each is one editable "file"
+  # ---------------------------------------------------------------
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "site"
+        label: "Business Info & Navigation"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Business Name", name: "business_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Phone (displayed)", name: "phone", widget: "string" }
+          - { label: "Phone Link (tel:+1XXXXXXXXXX)", name: "phone_link", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "WhatsApp Link (optional)", name: "whatsapp_link", widget: "string", required: false }
+          - { label: "Calendly / Booking Link", name: "calendly_link", widget: "string" }
+          - { label: "Address / Service Note", name: "address_note", widget: "string" }
+          - { label: "Affiliations", name: "affiliations", widget: "list", field: { label: "Name", name: "item", widget: "string" } }
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Twitter / X", name: "twitter", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "Pinterest", name: "pinterest", widget: "string", required: false }
+          - { label: "Blog URL", name: "blog_url", widget: "string" }
+          - label: "Top Navigation Menu"
+            name: "nav"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "url", widget: "string" }
+
+      - name: "home"
+        label: "Homepage"
+        file: "src/_data/home.json"
+        fields:
+          - { label: "Eyebrow (small text above headline)", name: "hero_eyebrow", widget: "string" }
+          - { label: "Main Headline", name: "hero_heading", widget: "string" }
+          - { label: "Subheading", name: "hero_subheading", widget: "text" }
+          - { label: "Hero Background Photo", name: "hero_image", widget: "image" }
+          - { label: "Main Button Text", name: "hero_cta_label", widget: "string" }
+          - { label: "Secondary Button Text", name: "hero_secondary_cta_label", widget: "string" }
+          - { label: '"Why an advisor" Heading', name: "why_advisor_heading", widget: "string" }
+          - { label: '"Why an advisor" Paragraph', name: "why_advisor_body", widget: "text" }
+          - label: "Three Reasons to Use an Advisor"
+            name: "why_advisor_points"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "body", widget: "text" }
+          - { label: "Services Section Heading", name: "services_heading", widget: "string" }
+          - { label: "Services Section Subheading", name: "services_subheading", widget: "string" }
+          - { label: "Destinations Section Heading", name: "destinations_heading", widget: "string" }
+          - { label: "Destinations Section Subheading", name: "destinations_subheading", widget: "string" }
+          - { label: "Bottom Call-To-Action Heading", name: "final_cta_heading", widget: "string" }
+          - { label: "Bottom Call-To-Action Paragraph", name: "final_cta_body", widget: "text" }
+          - { label: "Bottom Button Text", name: "final_cta_label", widget: "string" }
+
+      - name: "about"
+        label: "About Page"
+        file: "src/_data/about.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Intro Sentence", name: "intro", widget: "text" }
+          - { label: "Main Paragraph", name: "body", widget: "text" }
+          - { label: "Photo", name: "image", widget: "image" }
+
+      - name: "services"
+        label: "Services Page"
+        file: "src/_data/services.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro", widget: "text" }
+          - label: "Service Categories"
+            name: "categories"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Internal ID (no spaces, e.g. cruises)", name: "id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["castle", "ship", "palm", "heart"]
+              - { label: "Description", name: "body", widget: "text" }
+              - { label: "Button Text", name: "cta_label", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "src/_data/contact.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro", widget: "text" }
+          - { label: "Form Success Heading", name: "form_success_heading", widget: "string" }
+          - { label: "Form Success Message", name: "form_success_body", widget: "text" }
+          - label: "Frequently Asked Questions"
+            name: "faq"
+            widget: "list"
+            summary: "{{question}}"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+  # ---------------------------------------------------------------
+  # Repeatable content — click "New" to add another card
+  # ---------------------------------------------------------------
+  - name: "destinations"
+    label: "Destinations"
+    folder: "src/content/destinations"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Display Order (lower numbers show first)", name: "order", widget: "number", default: 10 }
+      - { label: "Short Description", name: "body", widget: "markdown" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{name}} — {{trip}}"
+    fields:
+      - { label: "Client Name (first name + last initial is fine)", name: "name", widget: "string" }
+      - { label: "Trip (e.g. Cancun Cruise)", name: "trip", widget: "string", required: false }
+      - { label: "Display Order", name: "order", widget: "number", default: 10 }
+      - { label: "Quote", name: "body", widget: "markdown" }

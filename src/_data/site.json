@@ -1,0 +1,26 @@
+{
+  "business_name": "Voyage By Luna",
+  "tagline": "Your vacation starts here.",
+  "phone": "+1 (424) 279-0200",
+  "phone_link": "tel:+14242790200",
+  "email": "soukeyna@voyagebyluna.com",
+  "whatsapp_link": "",
+  "calendly_link": "https://calendly.com/your-link",
+  "address_note": "Remote travel advisor \u2014 serving clients by phone, video, and email",
+  "affiliations": ["Archer Travel", "Evolution Travel"],
+  "social": {
+    "facebook": "https://www.facebook.com/VoyageByLuna",
+    "instagram": "https://www.instagram.com/voyagebyluna/",
+    "twitter": "https://twitter.com/voyagebyluna",
+    "linkedin": "https://www.linkedin.com/company/voyage-by-luna/",
+    "pinterest": "https://www.pinterest.com/VoyageByLuna/"
+  },
+  "blog_url": "https://blog.voyagebyluna.com",
+  "nav": [
+    { "label": "About", "url": "/about/" },
+    { "label": "Services", "url": "/services/" },
+    { "label": "Destinations", "url": "/#destinations" },
+    { "label": "Blog", "url": "https://blog.voyagebyluna.com" },
+    { "label": "Contact", "url": "/contact/" }
+  ]
+}

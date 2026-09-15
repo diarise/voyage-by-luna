@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="/images/logo.png" alt="{{ site.business_name }} logo" width="72" height="72">
+      <p>{{ site.tagline }}</p>
+      <p class="footer-affiliations">Affiliated with {{ site.affiliations | join(" & ") }}</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <p><a href="{{ site.phone_link }}">{{ site.phone }}</a></p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p class="muted">{{ site.address_note }}</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="{{ site.blog_url }}">Blog</a></li>
+        <li><a href="/join-our-team/">Join Our Team</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Follow</h5>
+      <ul class="social-links">
+        <li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">FB</a></li>
+        <li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">IG</a></li>
+        <li><a href="{{ site.social.twitter }}" target="_blank" rel="noopener" aria-label="Twitter/X">X</a></li>
+        <li><a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a></li>
+        <li><a href="{{ site.social.pinterest }}" target="_blank" rel="noopener" aria-label="Pinterest">PIN</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p>&copy; {{ currentYear }} {{ site.business_name }}. All rights reserved.</p>
+  </div>
+</footer>

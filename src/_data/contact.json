@@ -1,0 +1,24 @@
+{
+  "heading": "Let's Plan Your Trip",
+  "intro": "Fill out a few details below and I'll personally follow up \u2014 usually within one business day. No obligation.",
+  "form_success_heading": "Thank you \u2014 got it!",
+  "form_success_body": "Your trip details are on their way to me. I'll be in touch shortly to start planning.",
+  "faq": [
+    {
+      "question": "Does it cost anything to work with a travel advisor?",
+      "answer": "In most cases, no \u2014 travel advisors are typically paid a commission by the airline, cruise line, resort, or tour operator, not by the client. You'll usually pay the same price you'd find booking direct, but with someone in your corner throughout the trip."
+    },
+    {
+      "question": "What information do you need from me to start planning?",
+      "answer": "Just the basics to start: where you're hoping to go (or what kind of trip you're picturing), roughly when, how many travelers, and your budget range. We'll fill in the rest together."
+    },
+    {
+      "question": "Can you help if something goes wrong during my trip?",
+      "answer": "Yes \u2014 that's one of the main reasons to book through an advisor. If a flight is cancelled or plans change while you're traveling, you have a real person to call instead of waiting in an airline hold queue."
+    },
+    {
+      "question": "Do you only book cruises, or other trips too?",
+      "answer": "Cruises, all-inclusive resorts, Disney vacations, and destination weddings/honeymoons are where I focus most \u2014 but reach out with whatever you're planning and I'll let you know how I can help."
+    }
+  ]
+}

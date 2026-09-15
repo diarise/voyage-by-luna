@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: "Join Our Team"
+description: "Interested in becoming a travel agent with Voyage By Luna? Learn more and apply."
+permalink: "/join-our-team/"
+---
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Join Our Team</h1>
+    <p class="lead">Passionate about travel? I'm sometimes looking for people to join the team as a travel agent. Submit your details below and I'll follow up.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <form name="join-team" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="trip-form narrow">
+      <input type="hidden" name="form-name" value="join-team">
+      <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="jt-name">Your Name</label>
+          <input type="text" id="jt-name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="jt-email">Email</label>
+          <input type="email" id="jt-email" name="email" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="jt-phone">Phone Number</label>
+        <input type="tel" id="jt-phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="jt-resume">Resume (PDF/DOC/DOCX)</label>
+        <input type="file" id="jt-resume" name="resume" accept=".pdf,.doc,.docx">
+      </div>
+
+      <div class="form-group">
+        <label for="jt-message">Tell me a bit about yourself</label>
+        <textarea id="jt-message" name="message" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">Submit Application</button>
+    </form>
+  </div>
+</section>

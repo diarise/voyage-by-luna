@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: "About"
+description: "Meet Voyage By Luna, a personal remote travel advisor helping clients plan cruises, resorts, Disney trips, and weddings."
+permalink: "/about/"
+---
+<section class="page-hero">
+  <div class="wrap">
+    <h1>{{ about.heading }}</h1>
+    <p class="lead">{{ about.intro }}</p>
+  </div>
+</section>
+
+<section class="section about-body">
+  <div class="wrap about-grid">
+    <img src="{{ about.image }}" alt="{{ site.business_name }} workspace" loading="lazy">
+    <div>
+      <p class="lead">{{ about.body }}</p>
+      <a href="/contact/" class="btn btn-primary">Start Planning Your Trip</a>
+    </div>
+  </div>
+</section>
+
+<section class="section join-team-note">
+  <div class="wrap">
+    <div class="note-card">
+      <h3>Interested in becoming a travel agent?</h3>
+      <p>I'm sometimes looking for passionate people to join the team. <a href="/join-our-team/">See details and apply &rarr;</a></p>
+    </div>
+  </div>
+</section>
