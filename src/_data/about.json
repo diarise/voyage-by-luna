@@ -3,12 +3,22 @@
   "intro": "I'm the travel advisor behind Voyage By Luna. Not a call center, not a booking portal — when you send an enquiry through this site, I'm the person who reads it and replies.",
   "body": "I plan cruises, all-inclusive resorts, Disney and theme park trips, and destination weddings and honeymoons. I'm affiliated with Archer Travel and Evolution Travel, which gives me access to the booking tools and supplier relationships used across the industry, and I hold a Korea Travel Specialist certification.",
   "body_two": "I also write the Voyage By Luna travel blog — guides to Japan, Korea, Bali, Seychelles, Bora Bora, Portugal, the Philippines and more, plus theme park trips I've taken with my own kids. It's the easiest way to get a sense of how I think about a destination before you ever contact me.",
-  "image": "/images/about-desk.jpg",
+  "image": "",
+  "image_alt": "",
   "expect_heading": "What to expect working with me",
   "expect_points": [
-    { "title": "A real reply, from me", "body": "Not an autoresponder and not a quote generator. I read what you sent and answer the actual question." },
-    { "title": "Options with the trade-offs spelled out", "body": "Cheaper isn't always better and neither is pricier. I'll tell you what you're giving up either way." },
-    { "title": "No pressure to book", "body": "Plenty of first conversations don't turn into trips, and that's genuinely fine." }
+    {
+      "title": "A real reply, from me",
+      "body": "Not an autoresponder and not a quote generator. I read what you sent and answer the actual question."
+    },
+    {
+      "title": "Options with the trade-offs spelled out",
+      "body": "Cheaper isn't always better and neither is pricier. I'll tell you what you're giving up either way."
+    },
+    {
+      "title": "No pressure to book",
+      "body": "Plenty of first conversations don't turn into trips, and that's genuinely fine."
+    }
   ],
   "specialties_heading": "Certifications & affiliations",
   "specialties": [

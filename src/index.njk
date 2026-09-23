@@ -4,8 +4,8 @@ title: "Cruises, Resorts & Disney Vacations"
 description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises, all-inclusive resorts, Disney vacations and destination weddings — one point of contact, start to finish."
 ---
 <section class="hero">
-  <div class="hero-media">
-    <img src="{{ home.hero_image }}" alt="" fetchpriority="high" width="1600" height="847">
+  <div class="hero-media{% if not home.hero_image %} hero-media-empty{% endif %}">
+    {% if home.hero_image %}<img src="{{ home.hero_image }}" alt="" fetchpriority="high" width="1600" height="847">{% endif %}
   </div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
@@ -55,8 +55,12 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
     </div>
     <div class="grid-4">
       {% for cat in services.categories %}
-      <a class="service-card" href="/services/#{{ cat.id }}">
+      <a class="service-card{% if cat.image %} service-card-has-media{% endif %}" href="/services/#{{ cat.id }}">
+        {% if cat.image %}
+        <div class="service-card-media"><img src="{{ cat.image }}" alt="" loading="lazy"></div>
+        {% else %}
         <span class="service-icon icon-{{ cat.icon }}" aria-hidden="true"></span>
+        {% endif %}
         <h3>{{ cat.title }}</h3>
         <p class="service-for">{{ cat.who }}</p>
         <span class="card-link">See how it works <span aria-hidden="true">&rarr;</span></span>
@@ -99,7 +103,7 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
       <p class="lead">{{ home.destinations_subheading }}</p>
     </div>
     <div class="destination-grid">
-      {% for dest in collections.destinations %}
+      {% for dest in collections.destinations | sort(false, false, "data.order") %}
       {% if loop.index <= 6 %}
       <a class="destination-card" href="{{ dest.data.link or '/contact/?trip=other' }}">
         <div class="destination-media{% if not dest.data.image %} destination-media-empty{% endif %}">
@@ -124,7 +128,12 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
 <section class="section advisor-intro">
   <div class="wrap advisor-grid">
     <div class="advisor-photo">
-      <img src="{{ about.image }}" alt="" loading="lazy">
+      {% if about.image %}
+      <img src="{{ about.image }}" alt="{{ about.image_alt }}" loading="lazy">
+      {% else %}
+      {# Branded stand-in until a real photo of Soukeyna is uploaded in the CMS #}
+      <div class="photo-placeholder" aria-hidden="true"><img src="/images/logo-mark.png" alt="" width="110" height="73" loading="lazy"></div>
+      {% endif %}
     </div>
     <div class="advisor-copy">
       <p class="eyebrow eyebrow-dark">Who you'll be working with</p>
@@ -143,7 +152,7 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
       <h2>What clients say</h2>
     </div>
     <div class="grid-3">
-      {% for t in collections.testimonials %}
+      {% for t in collections.testimonials | sort(false, false, "data.order") %}
       <blockquote class="testimonial-card">
         <div class="testimonial-quote">{{ t.templateContent | safe }}</div>
         <cite>{{ t.data.name }}{% if t.data.trip %} <span>— {{ t.data.trip }}</span>{% endif %}</cite>

@@ -1,11 +1,15 @@
-# NOTE: git-gateway only works on Netlify. This site is on GitHub Pages,
-# so the CMS must authenticate against GitHub directly via an OAuth client.
-# See README section "Making the CMS work on GitHub Pages".
+# Logins go through Netlify Identity + Git Gateway, so editors don't need a
+# GitHub account. This only works on the Netlify-hosted site.
+#
+# !! branch must match the branch Netlify builds for this site.
+# !! While the redesign lives on its preview it's redesign-v2.
+# !! Change it to `main` in the same commit that merges the redesign.
 backend:
-  name: github
-  repo: diarise/voyage-by-luna
-  branch: main
-  base_url: REPLACE_WITH_OAUTH_PROXY_URL
+  name: git-gateway
+  branch: redesign-v2
+
+site_url: https://redesign-v2--voyagebylunasoukeyna.netlify.app
+logo_url: /images/logo-full.png
 
 # Where uploaded photos go, and the URL prefix used to reference them
 media_folder: "images/uploads"
@@ -43,7 +47,6 @@ collections:
               - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
               - { label: "Pinterest", name: "pinterest", widget: "string", required: false }
           - { label: "Blog URL", name: "blog_url", widget: "string" }
-          - { label: "Contact form endpoint (ask Daouda before changing)", name: "form_endpoint", widget: "string" }
           - label: "Top Navigation Menu"
             name: "nav"
             widget: "list"
@@ -101,7 +104,8 @@ collections:
           - { label: "Intro Sentence", name: "intro", widget: "text" }
           - { label: "Main Paragraph", name: "body", widget: "text" }
           - { label: "Second Paragraph", name: "body_two", widget: "text" }
-          - { label: "Photo", name: "image", widget: "image" }
+          - { label: "Photo (a headshot of Soukeyna works best)", name: "image", widget: "image" }
+          - { label: "Photo description for screen readers (e.g. 'Soukeyna smiling on a beach')", name: "image_alt", widget: "string", required: false }
           - { label: '"What to expect" Heading', name: "expect_heading", widget: "string" }
           - label: "What To Expect Points"
             name: "expect_points"
@@ -133,6 +137,7 @@ collections:
                 name: "icon"
                 widget: "select"
                 options: ["castle", "ship", "palm", "heart"]
+              - { label: "Photo (optional; replaces the icon on the homepage card)", name: "image", widget: "image", required: false }
               - { label: "Who it's for (one line)", name: "who", widget: "string" }
               - { label: "Description", name: "body", widget: "text" }
               - { label: "Button Text", name: "cta_label", widget: "string" }

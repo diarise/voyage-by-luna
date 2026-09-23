@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | {{ site.business_name }}</title>
   <meta name="description" content="{{ description }}">
+  {% if noindex %}<meta name="robots" content="noindex">{% endif %}
 
   {# Canonical host must match the host the site is actually served from. #}
   <link rel="canonical" href="https://voyagebyluna.com{{ page.url }}">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/images/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <meta name="theme-color" content="#012F6D">
 
@@ -17,7 +18,7 @@
   <meta property="og:site_name" content="{{ site.business_name }}">
   <meta property="og:title" content="{{ title }} | {{ site.business_name }}">
   <meta property="og:description" content="{{ description }}">
-  <meta property="og:image" content="https://voyagebyluna.com{{ og_image or '/images/hero-bungalow.jpg' }}">
+  <meta property="og:image" content="https://voyagebyluna.com{{ og_image or home.hero_image or '/images/logo-full.png' }}">
   <meta property="og:url" content="https://voyagebyluna.com{{ page.url }}">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -27,6 +28,13 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+  {# Netlify Identity invite / password-reset emails link to the homepage with a
+     token in the URL hash. Send those straight to the CMS, which handles them. #}
+  <script>
+    if (/(invite|recovery|confirmation|email_change)_token=/.test(location.hash)) {
+      location.replace('/admin/' + location.hash);
+    }
+  </script>
   <a href="#main" class="skip-link">Skip to main content</a>
 
   {% include "partials/header.njk" %}
@@ -44,15 +52,15 @@
   {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    "name": "{{ site.business_name }}",
+    "name": {{ site.business_name | dump | safe }},
     "url": "https://voyagebyluna.com",
     "logo": "https://voyagebyluna.com/images/logo-full.png",
-    "description": "{{ description }}",
-    "telephone": "{{ site.phone }}",
-    "email": "{{ site.email }}",
+    "description": {{ description | dump | safe }},
+    "telephone": {{ site.phone | dump | safe }},
+    "email": {{ site.email | dump | safe }},
     "areaServed": "US",
-    "founder": { "@type": "Person", "name": "{{ site.advisor_name }}" },
-    "sameAs": [{% for l in site.social_list %}"{{ l }}"{{ "," if not loop.last }}{% endfor %}]
+    "founder": { "@type": "Person", "name": {{ site.advisor_name | dump | safe }} },
+    "sameAs": [{% set comma = joiner() %}{% for name, url in site.social %}{% if url %}{{ comma() }}{{ url | dump | safe }}{% endif %}{% endfor %}]
   }
   </script>
 </body>

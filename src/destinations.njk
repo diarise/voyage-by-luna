@@ -15,7 +15,7 @@ permalink: "/destinations/"
 <section class="section">
   <div class="wrap">
     <div class="destination-grid">
-      {% for dest in collections.destinations %}
+      {% for dest in collections.destinations | sort(false, false, "data.order") %}
       <a class="destination-card" href="{{ dest.data.link or '/contact/?trip=other' }}">
         <div class="destination-media{% if not dest.data.image %} destination-media-empty{% endif %}">
           {% if dest.data.image %}<img src="{{ dest.data.image }}" alt="{{ dest.data.title }}" loading="lazy">{% endif %}

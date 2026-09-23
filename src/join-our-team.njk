@@ -13,28 +13,45 @@ permalink: "/join-our-team/"
 
 <section class="section">
   <div class="wrap">
-    <form data-lead-form action="{{ site.form_endpoint }}" method="POST" enctype="multipart/form-data" class="trip-form narrow" novalidate>
-      <input type="hidden" name="_subject" value="Voyage By Luna — travel agent application">
+    <form
+      name="join-team"
+      method="POST"
+      action="/join-our-team/thanks/"
+      enctype="multipart/form-data"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      data-lead-form
+      data-fallback-phone="{{ site.phone }}"
+      data-fallback-email="{{ site.email }}"
+      class="trip-form narrow"
+      novalidate>
+      <input type="hidden" name="form-name" value="join-team">
+      <input type="hidden" name="subject" value="Travel agent application — Voyage By Luna">
+      <p class="hp-field" aria-hidden="true">
+        <label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+      </p>
+
+      <p class="form-intro"><span class="req-note"><span class="req" aria-hidden="true">*</span> required</span></p>
 
       <div class="form-row">
         <div class="form-group">
-          <label for="jt-name">Your Name</label>
-          <input type="text" id="jt-name" name="name" required>
+          <label for="jt-name">Your name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="jt-name" name="name" autocomplete="name" required>
         </div>
         <div class="form-group">
-          <label for="jt-email">Email</label>
-          <input type="email" id="jt-email" name="email" required>
+          <label for="jt-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="jt-email" name="email" autocomplete="email" required>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="jt-phone">Phone Number</label>
-        <input type="tel" id="jt-phone" name="phone" required>
+        <label for="jt-phone">Phone number <span class="req" aria-hidden="true">*</span></label>
+        <input type="tel" id="jt-phone" name="phone" autocomplete="tel" required>
       </div>
 
       <div class="form-group">
-        <label for="jt-resume">Resume (PDF/DOC/DOCX)</label>
-        <input type="file" id="jt-resume" name="resume" accept=".pdf,.doc,.docx">
+        <label for="jt-resume">Resume (PDF, DOC or DOCX, up to 8 MB)</label>
+        <input type="file" id="jt-resume" name="resume" accept=".pdf,.doc,.docx" data-max-mb="8">
       </div>
 
       <div class="form-group">
@@ -43,7 +60,7 @@ permalink: "/join-our-team/"
       </div>
 
       <button type="submit" class="btn btn-primary btn-lg">Submit Application</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="form-status" role="status" aria-live="polite"></p>
     </form>
     <div class="form-success" role="status">
       <h2>Application received</h2>

@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: "Page Not Found"
+description: "This page doesn't exist."
+permalink: "/404.html"
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{# Netlify (and GitHub Pages) serve /404.html automatically for missing URLs. #}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <p class="eyebrow">404</p>
+    <h1>This page took a wrong turn.</h1>
+    <p class="lead">The page you're looking for isn't here — it may have moved when the site was redesigned.</p>
+    <div class="contact-direct">
+      <a href="/" class="contact-chip">Home</a>
+      <a href="/destinations/" class="contact-chip">Destinations</a>
+      <a href="/contact/" class="contact-chip">Plan your trip</a>
+      <a href="{{ site.blog_url }}" class="contact-chip">Travel blog</a>
+    </div>
+  </div>
+</section>

@@ -8,7 +8,8 @@
       "icon": "castle",
       "who": "For families who want the magic without the spreadsheet.",
       "body": "Park days, dining reservations, resort strategy, and timing it around crowds and weather — Disney and Universal trips have a lot of moving parts, and most of the stress comes from having to sequence them yourself. I do that part, so the trip feels like a holiday rather than a logistics project.",
-      "cta_label": "Plan a Disney Trip"
+      "cta_label": "Plan a Disney Trip",
+      "image": ""
     },
     {
       "id": "cruises",
@@ -16,7 +17,8 @@
       "icon": "ship",
       "who": "For travelers who want to see several places and unpack once.",
       "body": "Ships vary enormously — family-friendly megaships, quiet adults-only lines, small river vessels. The cabin category and deck position matter more than most people expect, and so does the itinerary's pace. I help you match the ship to how you actually like to travel, not just to the lowest headline fare.",
-      "cta_label": "Plan a Cruise"
+      "cta_label": "Plan a Cruise",
+      "image": ""
     },
     {
       "id": "resorts",
@@ -24,7 +26,8 @@
       "icon": "palm",
       "who": "For anyone who wants to arrive and stop making decisions.",
       "body": "Show up and it's handled — dining, drinks, activities, often airport transfers. The catch is that \"all-inclusive\" means very different things at different properties. I help you find one that matches your vibe, whether that's quiet and romantic or full of things for kids to do.",
-      "cta_label": "Find My Resort"
+      "cta_label": "Find My Resort",
+      "image": ""
     },
     {
       "id": "weddings",
@@ -32,7 +35,8 @@
       "icon": "heart",
       "who": "For couples planning enough already.",
       "body": "Beachfront ceremony, intimate elopement, or a celebration with guests flying in from everywhere. I coordinate the travel side — including your guests' bookings — and plan the honeymoon alongside it, so travel is one less thing on a list that's already long.",
-      "cta_label": "Plan a Wedding or Honeymoon"
+      "cta_label": "Plan a Wedding or Honeymoon",
+      "image": ""
     }
   ]
 }

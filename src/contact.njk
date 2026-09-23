@@ -23,15 +23,27 @@ permalink: "/contact/"
 <section class="section section-tight">
   <div class="wrap contact-grid">
     <div class="form-panel">
+      {# Netlify Forms: detected at deploy time from this static markup.
+         action is a real thank-you page, so the form still works without JS. #}
       <form
-        data-lead-form
-        action="{{ site.form_endpoint }}"
+        name="plan-trip"
         method="POST"
+        action="/contact/thanks/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        data-lead-form
+        data-fallback-phone="{{ site.phone }}"
+        data-fallback-email="{{ site.email }}"
         class="trip-form"
         id="tripForm"
         novalidate>
+        <input type="hidden" name="form-name" value="plan-trip">
+        <input type="hidden" name="subject" value="New trip enquiry — Voyage By Luna">
+        <p class="hp-field" aria-hidden="true">
+          <label>Leave this empty <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
 
-        <p class="form-intro">The more you tell me, the more useful my first reply will be. Nothing here is binding.</p>
+        <p class="form-intro">The more you tell me, the more useful my first reply will be. Nothing here is binding. <span class="req-note"><span class="req" aria-hidden="true">*</span> required</span></p>
 
         <div class="form-row">
           <div class="form-group">
@@ -52,6 +64,7 @@ permalink: "/contact/"
           <div class="form-group">
             <label for="trip-type">What kind of trip?</label>
             <select id="trip-type" name="trip-type">
+              <option value="">Choose one</option>
               <option value="disney">Disney / theme parks</option>
               <option value="cruises">Cruise</option>
               <option value="resorts">All-inclusive resort</option>
@@ -63,12 +76,12 @@ permalink: "/contact/"
 
         <div class="form-row">
           <div class="form-group">
-            <label for="departureDate">Roughly when?</label>
-            <input type="date" id="departureDate" name="travel-date">
+            <label for="travel-date">Roughly when?</label>
+            <input type="text" id="travel-date" name="travel-date" placeholder="e.g. March 2027, or flexible">
           </div>
           <div class="form-group">
             <label for="travelers">How many travelers?</label>
-            <input type="number" id="travelers" name="travelers" min="1" inputmode="numeric">
+            <input type="number" id="travelers" name="travelers" min="1" max="500" inputmode="numeric" placeholder="e.g. 4">
           </div>
         </div>
 

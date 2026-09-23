@@ -37,11 +37,12 @@ netlify.toml   hosting/build configuration
 5. **Invite your wife as a user**: Identity tab → Invite user → her email.
    She'll get an email, set a password, and that's her login for `voyagebyluna.com/admin/`
    forever after — a normal login box, not a coding tool.
-6. **Turn on Netlify Forms** — nothing to do here, it's automatic once the site is
-   deployed on Netlify. The "Plan Your Trip" and "Join Our Team" forms will start
-   showing up under Site → Forms, and you can set up an email notification there
-   (Forms → Form notifications → Email notification) so you get an email the moment
-   someone submits.
+6. **Turn on Netlify Forms.** In Netlify: **Forms → Enable form detection** (newer
+   Netlify sites have this off by default), then trigger a new deploy so Netlify
+   scans the pages. Two forms should appear: **plan-trip** and **join-team**.
+   Then set up **Forms → Form notifications → Email notification** to
+   soukeyna@voyagebyluna.com so every enquiry lands in her inbox. **Test it**: submit
+   the form once yourself and confirm the email arrives before relying on it.
 
 That's it — from here forward, no code required for day-to-day changes.
 
@@ -59,8 +60,9 @@ click **New Destination**, fill in a title/photo/description, publish, and a new
 card appears on the homepage. Same for testimonials.
 
 I removed the fake "City 1 / City 2 / City 3" placeholder cards that were live on the
-old site — there's one clearly-labeled sample destination in the CMS now so you can
-see how it works; delete it once you've added real ones.
+old site. The six destinations now in the CMS (Bora Bora, Seychelles, Japan, South
+Korea, Punta Cana, Bali) are real and each links to her blog post about it. Use
+**Display Order** to control which six show on the homepage.
 
 I did **not** invent any testimonials, certifications, awards, or years-in-business —
 those sections are either left empty (testimonials won't show at all until you add
@@ -76,3 +78,47 @@ npm run start
 Opens a live-reloading preview at `http://localhost:8080`.
 
 To build the production files yourself: `npm run build` → output goes to `_site/`.
+
+## 5. Where things stand (redesign-v2)
+
+The redesign is being built on the `redesign-v2` branch and previewed at
+https://redesign-v2--voyagebylunasoukeyna.netlify.app. `main` (the live
+voyagebyluna.com, on GitHub Pages) is untouched.
+
+- **Forms** are Netlify Forms. They only work on a Netlify-hosted site — GitHub
+  Pages cannot receive form posts. If the site is ever served from somewhere that
+  can't accept the post, the form shows an error with the phone number and email
+  instead of pretending it worked.
+- **The CMS** (`/admin/`) uses Netlify Identity + Git Gateway and saves edits to the
+  branch named in `admin/config.yml` (currently `redesign-v2`).
+- **Photos**: anywhere a photo hasn't been uploaded yet shows a branded navy/gold
+  design instead. Upload real photos in the CMS (Homepage hero, About photo, each
+  Service, each Destination) and they replace the placeholder automatically.
+
+## 6. Checklist before merging redesign-v2 into main
+
+1. **Move production hosting to Netlify** (point voyagebyluna.com at the Netlify site,
+   step 3 above). Otherwise the contact form and the CMS will not work on the live
+   domain. Once live traffic is on Netlify, the GitHub Pages workflow
+   (`.github/workflows/deploy.yml`) can be disabled.
+2. In `admin/config.yml`, change `branch: redesign-v2` → `branch: main` and
+   `site_url` → `https://voyagebyluna.com`, in the same commit as the merge.
+3. In Netlify, set the production branch to `main`.
+4. Submit a real test enquiry on the live domain and confirm the email arrives.
+5. Confirm photo rights for the hero image (see open items).
+
+## 7. Open items (need real information — nothing here should be guessed)
+
+- Hero photo `images/hero-bungalow.jpg` is Sandals Resorts marketing imagery
+  (their logo is in the corner). Confirm Soukeyna is allowed to use it (e.g. via
+  Sandals' travel-agent marketing assets); if not, replace it in the CMS or clear
+  the field to show the branded background.
+- A headshot of Soukeyna for the About page and the homepage "who you'll be
+  working with" section.
+- Real photos for the 4 services and 6 destinations.
+- Any certifications beyond Korea Travel Specialist.
+- Whether a "free consultation" is a real, current offer (it is not advertised
+  anywhere on the site right now).
+- Testimonials: only real ones, with the client's permission. The section stays
+  hidden until the first one is added.
+

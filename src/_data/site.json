@@ -7,7 +7,10 @@
   "phone_link": "tel:+14242790200",
   "email": "soukeyna@voyagebyluna.com",
   "address_note": "Remote travel advisor — serving clients by phone, video, and email",
-  "affiliations": ["Archer Travel", "Evolution Travel"],
+  "affiliations": [
+    "Archer Travel",
+    "Evolution Travel"
+  ],
   "social": {
     "facebook": "https://www.facebook.com/VoyageByLuna",
     "instagram": "https://www.instagram.com/voyagebyluna/",
@@ -15,20 +18,27 @@
     "linkedin": "https://www.linkedin.com/company/voyage-by-luna/",
     "pinterest": "https://www.pinterest.com/VoyageByLuna/"
   },
-  "social_list": [
-    "https://www.facebook.com/VoyageByLuna",
-    "https://www.instagram.com/voyagebyluna/",
-    "https://twitter.com/voyagebyluna",
-    "https://www.linkedin.com/company/voyage-by-luna/",
-    "https://www.pinterest.com/VoyageByLuna/"
-  ],
   "blog_url": "https://blog.voyagebyluna.com",
-  "form_endpoint": "REPLACE_WITH_FORMSPREE_ENDPOINT",
   "nav": [
-    { "label": "About", "url": "/about/" },
-    { "label": "Services", "url": "/services/" },
-    { "label": "Destinations", "url": "/destinations/" },
-    { "label": "Blog", "url": "https://blog.voyagebyluna.com" },
-    { "label": "Contact", "url": "/contact/" }
+    {
+      "label": "About",
+      "url": "/about/"
+    },
+    {
+      "label": "Services",
+      "url": "/services/"
+    },
+    {
+      "label": "Destinations",
+      "url": "/destinations/"
+    },
+    {
+      "label": "Blog",
+      "url": "https://blog.voyagebyluna.com"
+    },
+    {
+      "label": "Contact",
+      "url": "/contact/"
+    }
   ]
 }

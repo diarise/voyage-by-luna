@@ -19,6 +19,9 @@ permalink: "/services/"
         <span class="service-icon icon-{{ cat.icon }} icon-lg" aria-hidden="true"></span>
       </div>
       <div class="service-detail-copy">
+        {% if cat.image %}
+        <div class="service-detail-media"><img src="{{ cat.image }}" alt="" loading="lazy"></div>
+        {% endif %}
         <h2>{{ cat.title }}</h2>
         <p class="service-who">{{ cat.who }}</p>
         <p class="lead">{{ cat.body }}</p>

@@ -15,7 +15,12 @@ permalink: "/about/"
 <section class="section">
   <div class="wrap about-grid">
     <div class="about-media">
-      <img src="{{ about.image }}" alt="" loading="lazy">
+      {% if about.image %}
+      <img src="{{ about.image }}" alt="{{ about.image_alt }}" loading="lazy">
+      {% else %}
+      {# Branded stand-in until a real photo of Soukeyna is uploaded in the CMS #}
+      <div class="photo-placeholder" aria-hidden="true"><img src="/images/logo-mark.png" alt="" width="110" height="73" loading="lazy"></div>
+      {% endif %}
     </div>
     <div class="about-copy">
       <p class="lead">{{ about.body }}</p>

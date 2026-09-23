@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: "Thank You"
+description: "Your trip details were received."
+permalink: "/contact/thanks/"
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{# Netlify serves this page after a successful plan-trip submission
+   (and it's where the form lands if JavaScript is off). #}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <p class="eyebrow">Received</p>
+    <h1>{{ contact.form_success_heading }}</h1>
+    <p class="lead">{{ contact.form_success_body }}</p>
+    <div class="contact-direct">
+      <a href="/" class="contact-chip">Back to home</a>
+      <a href="{{ site.blog_url }}" class="contact-chip">Read the travel blog</a>
+    </div>
+  </div>
+</section>
