@@ -60,7 +60,7 @@
 // Form submission (Netlify Forms)
 //
 // Forms are plain HTML forms marked data-netlify="true"; Netlify detects them
-// at deploy time and accepts POSTs to their action URL. This script submits
+// at deploy time and accepts AJAX POSTs to "/". This script submits
 // them in the background so the visitor stays on the page — but it only
 // shows the success message on a genuine 2xx response. Anything else (e.g.
 // the site being served from a host with no form handling, which answers
@@ -126,9 +126,17 @@
             body: new URLSearchParams(data).toString(),
           };
 
-      fetch(form.getAttribute('action') || '/', request)
+      // Netlify Forms processes AJAX posts sent to "/". The form's action is the
+      // thank-you page, which we redirect to only after Netlify confirms receipt.
+      var thanksUrl = form.getAttribute('action');
+
+      fetch('/', request)
         .then(function (res) {
           if (!res.ok) throw new Error('Bad response ' + res.status);
+          if (thanksUrl) {
+            window.location.assign(thanksUrl);
+            return;
+          }
           form.hidden = true;
           if (successEl) {
             successEl.style.display = 'block';
