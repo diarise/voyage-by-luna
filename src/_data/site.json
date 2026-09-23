@@ -1,24 +1,4 @@
 {
-  "business_name": "Voyage By Luna",
-  "advisor_name": "Soukeyna Traoré-Dia",
-  "advisor_role": "Travel Advisor",
-  "tagline": "Your vacation starts here.",
-  "phone": "+1 (424) 279-0200",
-  "phone_link": "tel:+14242790200",
-  "email": "soukeyna@voyagebyluna.com",
-  "address_note": "Remote travel advisor — serving clients by phone, video, and email",
-  "affiliations": [
-    "Archer Travel",
-    "Evolution Travel"
-  ],
-  "social": {
-    "facebook": "https://www.facebook.com/VoyageByLuna",
-    "instagram": "https://www.instagram.com/voyagebyluna/",
-    "twitter": "https://twitter.com/voyagebyluna",
-    "linkedin": "https://www.linkedin.com/company/voyage-by-luna/",
-    "pinterest": "https://www.pinterest.com/VoyageByLuna/"
-  },
-  "blog_url": "https://blog.voyagebyluna.com",
   "nav": [
     {
       "label": "About",
@@ -40,5 +20,25 @@
       "label": "Contact",
       "url": "/contact/"
     }
-  ]
+  ],
+  "affiliations": [
+    "Archer Travel",
+    "Evolution Travel"
+  ],
+  "advisor_name": "Soukeyna Traoré-Dia",
+  "business_name": "Voyage By Luna",
+  "phone_link": "tel:+14242790200",
+  "social": {
+    "facebook": "https://www.facebook.com/VoyageByLuna",
+    "instagram": "https://www.instagram.com/voyagebyluna/",
+    "twitter": "https://twitter.com/voyagebyluna",
+    "linkedin": "https://www.linkedin.com/company/voyage-by-luna/",
+    "pinterest": "https://www.pinterest.com/VoyageByLuna/"
+  },
+  "phone": "+1 (424) 279-0200",
+  "tagline": "Your vacation starts here!",
+  "blog_url": "https://blog.voyagebyluna.com",
+  "advisor_role": "Travel Advisor",
+  "email": "soukeyna@voyagebyluna.com",
+  "address_note": "Remote travel advisor — serving clients by phone, video, and email"
 }
