@@ -1,0 +1,16 @@
+{# Journal story card. Expects `post`; optional `cardSize` ("lead" | "wide" | default). #}
+{%- set psec = blog.sections | findBySlug(post.data.section) -%}
+<article class="story-card{% if cardSize %} story-card--{{ cardSize }}{% endif %}"
+  data-section="{{ post.data.section }}" data-destinations="{{ (post.data.destinations or []) | join(' ') }}">
+  <a class="story-link" href="{{ post.url }}">
+    <div class="story-media{% if post.data.image_style == 'graphic' %} story-media--graphic{% endif %}">
+      <img src="{{ post.data.image }}" alt="" data-sizes="{{ '(min-width: 1000px) 760px, 100vw' if cardSize == 'lead' else '(min-width: 1000px) 380px, (min-width: 600px) 50vw, 100vw' }}">
+    </div>
+    <div class="story-body">
+      {% if psec %}<span class="story-kicker">{{ psec.name }}</span>{% endif %}
+      <h3 class="story-title">{{ post.data.title }}</h3>
+      {% if cardSize == 'lead' or cardSize == 'wide' %}<p class="story-dek">{{ post.data.excerpt }}</p>{% endif %}
+      <span class="story-meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | blogDate }}</time> · {{ post.templateContent | readingTime }} min read</span>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,29 @@
+{
+  "title": "The Journal",
+  "intro": "Field notes from a travel advisor — destination guides, itineraries, theme park know-how and the stories behind the places I plan.",
+  "author_photo": "/images/blog/soukeyna-traore-dia.jpg",
+  "author_bio": "Soukeyna is the travel advisor behind Voyage By Luna. She plans cruises, all-inclusive resorts, Disney and theme park trips, and destination weddings and honeymoons, and she holds a Korea Travel Specialist certification.",
+  "newsletter_url": "https://voyagebyluna.systeme.io/1af7f0e8",
+  "shop_url": "https://www.amazon.com/shop/voyagebyluna",
+  "sections": [
+    { "slug": "destination-guides", "name": "Destination Guides", "blurb": "Itineraries and practical guides to places worth the journey." },
+    { "slug": "culture-heritage", "name": "Culture & Heritage", "blurb": "History, tradition and the stories that give a place its meaning." },
+    { "slug": "theme-parks-family", "name": "Theme Parks & Family", "blurb": "Disney, Universal and family resorts — planned so everyone enjoys the trip." },
+    { "slug": "beaches-romance", "name": "Beaches & Romance", "blurb": "Islands, honeymoons and destination weddings." },
+    { "slug": "travel-advice", "name": "Travel Advice", "blurb": "Planning know-how from a working travel advisor." },
+    { "slug": "careers-in-travel", "name": "Careers in Travel", "blurb": "For anyone thinking about becoming a travel agent.", "secondary": true }
+  ],
+  "destinations": [
+    { "slug": "japan", "name": "Japan", "region": "Asia" },
+    { "slug": "south-korea", "name": "South Korea", "region": "Asia" },
+    { "slug": "philippines", "name": "Philippines", "region": "Asia" },
+    { "slug": "bali", "name": "Bali", "region": "Indonesia" },
+    { "slug": "bora-bora", "name": "Bora Bora", "region": "French Polynesia" },
+    { "slug": "seychelles", "name": "Seychelles", "region": "Indian Ocean" },
+    { "slug": "punta-cana", "name": "Punta Cana", "region": "Dominican Republic" },
+    { "slug": "portugal", "name": "Portugal", "region": "Europe" },
+    { "slug": "ghana", "name": "Ghana", "region": "West Africa" },
+    { "slug": "california", "name": "California", "region": "USA" },
+    { "slug": "florida", "name": "Florida", "region": "USA" }
+  ]
+}

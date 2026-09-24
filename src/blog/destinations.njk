@@ -1,0 +1,34 @@
+---
+layout: base.njk
+title: "Destinations in the Journal"
+description: "Browse Voyage By Luna Journal stories by destination — Japan, South Korea, the Philippines, Bali, Bora Bora, Seychelles and more."
+permalink: "/blog/destinations/"
+---
+<section class="journal-masthead journal-masthead--compact">
+  <div class="wrap">
+    <nav class="breadcrumb breadcrumb-light" aria-label="Breadcrumb"><ol><li><a href="/blog/">Journal</a></li></ol></nav>
+    <h1>Destinations</h1>
+    <p class="lead">Every place the Journal has covered so far.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <ul class="dest-grid">
+      {% for d in blog.destinations %}
+      {% set dposts = collections.posts | inDestination(d.slug) %}
+      {% if dposts.length %}
+      <li>
+        <a class="dest-tile dest-tile--large" href="/blog/destinations/{{ d.slug }}/">
+          <img src="{{ dposts[0].data.image }}" alt="" data-sizes="(min-width: 900px) 360px, 50vw">
+          <span class="dest-tile-text">
+            <span class="dest-tile-region">{{ d.region }}</span>
+            <span class="dest-tile-name">{{ d.name }}</span>
+            <span class="dest-tile-count">{{ dposts.length }} {{ "story" if dposts.length == 1 else "stories" }}</span>
+          </span>
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+{# Article metadata for Journal posts: Open Graph article fields + BlogPosting and
+   BreadcrumbList structured data. Only real data from the post and site settings. #}
+{%- set sec = blog.sections | findBySlug(section) -%}
+<meta property="article:published_time" content="{{ page.date | isoDate }}">
+{% if updated %}<meta property="article:modified_time" content="{{ updated | isoDate }}">{% endif %}
+<meta property="article:author" content="{{ site.advisor_name }}">
+{% if sec %}<meta property="article:section" content="{{ sec.name }}">{% endif %}
+{% if image_alt %}<meta property="og:image:alt" content="{{ image_alt }}">{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "image": ["https://voyagebyluna.com{{ image }}"],
+  "datePublished": "{{ page.date | isoDate }}",
+  "dateModified": "{{ (updated or page.date) | isoDate }}",
+  "author": {
+    "@type": "Person",
+    "name": {{ site.advisor_name | dump | safe }},
+    "jobTitle": {{ site.advisor_role | dump | safe }},
+    "url": "https://voyagebyluna.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.business_name | dump | safe }},
+    "logo": { "@type": "ImageObject", "url": "https://voyagebyluna.com/images/logo-full.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://voyagebyluna.com{{ page.url }}" }{% if keywords and keywords.length %},
+  "keywords": {{ keywords | join(", ") | dump | safe }}{% endif %}{% if sec %},
+  "articleSection": {{ sec.name | dump | safe }}{% endif %}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Journal", "item": "https://voyagebyluna.com/blog/" }{% if sec %},
+    { "@type": "ListItem", "position": 2, "name": {{ sec.name | dump | safe }}, "item": "https://voyagebyluna.com/blog/{{ sec.slug }}/" }{% endif %},
+    { "@type": "ListItem", "position": {{ 3 if sec else 2 }}, "name": {{ title | dump | safe }} }
+  ]
+}
+</script>

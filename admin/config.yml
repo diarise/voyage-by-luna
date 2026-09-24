@@ -1,6 +1,4 @@
-# Decap Turbo + GitHub
-# This CMS is connected to the redesign-v2 branch while the new site
-# is being tested on Netlify.
+# Decap Turbo + GitHub. Edits are saved to the `main` branch (production).
 backend:
   name: turbo-github
   turbo_site_id: 3ef0c896-049e-4100-b50a-181f68e6e8cf
@@ -16,6 +14,84 @@ public_folder: "/images/uploads"
 publish_mode: simple
 
 collections:
+  # ---------------------------------------------------------------
+  # Journal (blog) — one entry per article, shown at /blog/
+  # ---------------------------------------------------------------
+  - name: "journal"
+    label: "Journal (Blog Posts)"
+    label_singular: "Journal Post"
+    description: "Articles for voyagebyluna.com/blog/. Tick Draft to save a post without publishing it."
+    folder: "src/blog/posts"
+    extension: "md"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date | date('MMM D, YYYY')}}{{draft | ternary(' (draft)', '')}}"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - { label: "Drafts", field: "draft", pattern: true }
+      - { label: "Featured", field: "featured", pattern: true }
+    media_folder: "/images/blog"
+    public_folder: "/images/blog"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - { label: "Draft (not shown on the site)", name: "draft", widget: "boolean", default: true }
+      - label: "Section"
+        name: "section"
+        widget: "select"
+        options:
+          - { label: "Destination Guides", value: "destination-guides" }
+          - { label: "Culture & Heritage", value: "culture-heritage" }
+          - { label: "Theme Parks & Family", value: "theme-parks-family" }
+          - { label: "Beaches & Romance", value: "beaches-romance" }
+          - { label: "Travel Advice", value: "travel-advice" }
+          - { label: "Careers in Travel", value: "careers-in-travel" }
+      - label: "Destinations in this post"
+        name: "destinations"
+        widget: "select"
+        multiple: true
+        required: false
+        hint: "Adds the post to that destination's page. Ask Daouda to add a new destination to the list."
+        options:
+          - { label: "Japan", value: "japan" }
+          - { label: "South Korea", value: "south-korea" }
+          - { label: "Philippines", value: "philippines" }
+          - { label: "Bali", value: "bali" }
+          - { label: "Bora Bora", value: "bora-bora" }
+          - { label: "Seychelles", value: "seychelles" }
+          - { label: "Punta Cana", value: "punta-cana" }
+          - { label: "Portugal", value: "portugal" }
+          - { label: "Ghana", value: "ghana" }
+          - { label: "California", value: "california" }
+          - { label: "Florida", value: "florida" }
+      - { label: "Short summary (shown under the title and on cards)", name: "excerpt", widget: "text" }
+      - { label: "Main photo", name: "image", widget: "image" }
+      - { label: "Main photo description (for screen readers and Google)", name: "image_alt", widget: "string", hint: "Describe what's in the photo, e.g. 'Overwater bungalows in Bora Bora at sunset'." }
+      - label: "Main photo type"
+        name: "image_style"
+        widget: "select"
+        default: "photo"
+        options:
+          - { label: "Photo (fills the width)", value: "photo" }
+          - { label: "Graphic with text (shown whole, never cropped)", value: "graphic" }
+      - { label: "Photo caption (optional)", name: "image_caption", widget: "string", required: false }
+      - { label: "Photo credit (optional, e.g. 'Photo: Pexels')", name: "image_credit", widget: "string", required: false }
+      - label: "Article"
+        name: "body"
+        widget: "markdown"
+        hint: "To add a YouTube video, paste its link on a line by itself."
+      - { label: "YouTube video at the end (optional)", name: "video", widget: "string", required: false }
+      - { label: "Feature this post at the top of the Journal", name: "featured", widget: "boolean", default: false }
+      - { label: "Contains affiliate links (shows a disclosure note)", name: "affiliate", widget: "boolean", default: false }
+      - { label: "'Plan My Trip' link details (optional, e.g. destination=Japan)", name: "plan_query", widget: "string", required: false }
+      - { label: "Updated date (optional — only if you revise the post)", name: "updated", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", required: false }
+      - { label: "SEO title (optional — defaults to the title)", name: "seo_title", widget: "string", required: false }
+      - { label: "SEO description (optional — defaults to the summary)", name: "seo_description", widget: "text", required: false }
+      - { label: "Keywords", name: "keywords", widget: "list", required: false }
+      # Set by the migration from the old blog; powers the permanent redirects. Never edit.
+      - { label: "Old blog address", name: "legacy_url", widget: "hidden", required: false }
+
   # ---------------------------------------------------------------
   # Single-page / site-wide settings — each is one editable "file"
   # ---------------------------------------------------------------

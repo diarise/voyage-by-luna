@@ -1,0 +1,25 @@
+---
+permalink: "/_redirects"
+eleventyExcludeFromCollections: true
+---
+# Netlify redirects — generated at build time from src/redirects.njk.
+#
+# The old Jekyll blog lived at blog.voyagebyluna.com. Its URLs are indexed by
+# Google, linked from Pinterest and old posts, and subscribed to as a feed, so every
+# one of them is redirected PERMANENTLY. Do not remove these rules.
+#
+# Netlify reads this file first, then the [[redirects]] in netlify.toml.
+# The 26 old POST URLs live in netlify.toml, because they contain spaces and
+# accented characters, which only match when written un-encoded (tested).
+
+# ---- blog.voyagebyluna.com (active once that domain points at this Netlify site)
+# Keep the Google Search Console verification file answering on the old host.
+https://blog.voyagebyluna.com/google83dbb073897b0fa1.html  /google83dbb073897b0fa1.html  200!
+https://blog.voyagebyluna.com/  https://voyagebyluna.com/blog/  301!
+
+# ---- Old blog pages other than posts (work on either host)
+{%- for r in legacyRedirects.paths %}
+{{ r[0] }}  {{ r[1] if r[1].startsWith("http") else "https://voyagebyluna.com" + r[1] }}  301
+{%- endfor %}
+/categories/*  https://voyagebyluna.com/blog/  301
+/tags/*  https://voyagebyluna.com/blog/  301

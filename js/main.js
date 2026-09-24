@@ -56,6 +56,14 @@
   if (option) select.value = trip;
 })();
 
+// Pre-fill "Where are you thinking?" from ?destination= (links from Journal stories)
+(function () {
+  var input = document.getElementById('destination');
+  if (!input || input.value) return;
+  var dest = new URLSearchParams(window.location.search).get('destination');
+  if (dest) input.value = dest.slice(0, 80);
+})();
+
 // ---------------------------------------------------------------
 // Form submission (Netlify Forms)
 //
@@ -153,5 +161,93 @@
             ' so your message reaches me.');
         });
     });
+  });
+})();
+
+// ---------------------------------------------------------------
+// Journal: filter stories by section (all stories show without JS)
+// ---------------------------------------------------------------
+(function () {
+  var bar = document.querySelector('[data-filter-bar]');
+  var grid = document.querySelector('[data-filter-grid]');
+  if (!bar || !grid) return;
+  var count = document.querySelector('[data-filter-count]');
+  var cards = grid.querySelectorAll('[data-section]');
+  bar.hidden = false;
+  bar.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-filter]');
+    if (!btn) return;
+    var f = btn.getAttribute('data-filter');
+    bar.querySelectorAll('[data-filter]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+    });
+    var shown = 0;
+    cards.forEach(function (c) {
+      var match = f === 'all' || c.getAttribute('data-section') === f;
+      c.hidden = !match;
+      if (match) shown++;
+    });
+    if (count) count.textContent = shown + (shown === 1 ? ' story' : ' stories');
+  });
+})();
+
+// ---------------------------------------------------------------
+// Journal: share buttons (native share sheet where available, copy link)
+// ---------------------------------------------------------------
+(function () {
+  document.querySelectorAll('[data-share]').forEach(function (box) {
+    var url = box.getAttribute('data-url');
+    var title = box.getAttribute('data-title');
+    var status = box.querySelector('.share-status');
+    var native = box.querySelector('[data-share-native]');
+    var copy = box.querySelector('[data-share-copy]');
+    if (native && navigator.share) {
+      native.hidden = false;
+      native.addEventListener('click', function () {
+        navigator.share({ title: title, url: url }).catch(function () {});
+      });
+    }
+    if (copy) {
+      copy.addEventListener('click', function () {
+        var done = function () { if (status) status.textContent = 'Link copied'; };
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); });
+        } else {
+          window.prompt('Copy this link:', url);
+        }
+      });
+    }
+  });
+})();
+
+// ---------------------------------------------------------------
+// Journal: YouTube videos load only when clicked (faster pages, no
+// YouTube cookies until the visitor chooses to watch)
+// ---------------------------------------------------------------
+(function () {
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('.video-facade');
+    if (!link) return;
+    var fig = link.closest('[data-youtube]');
+    if (!fig) return;
+    e.preventDefault();
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + fig.getAttribute('data-youtube') + '?autoplay=1';
+    iframe.title = link.getAttribute('aria-label') || 'YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    fig.replaceChild(iframe, link);
+  });
+})();
+
+// ---------------------------------------------------------------
+// Disney page: the Disney Travel Center embed reports its height
+// ---------------------------------------------------------------
+(function () {
+  var frame = document.getElementById('disney-iframe');
+  if (!frame) return;
+  window.addEventListener('message', function (e) {
+    if (!/^https:\/\/([\w-]+\.)*disneytravelcenter\.com$/.test(e.origin)) return;
+    if (e.data && e.data.frameHeight) frame.style.height = (e.data.frameHeight + 30) + 'px';
   });
 })();

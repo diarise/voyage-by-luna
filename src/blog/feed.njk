@@ -1,0 +1,25 @@
+---
+permalink: "/blog/feed.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://voyagebyluna.com/blog/">
+  <title>Voyage By Luna — The Journal</title>
+  <subtitle>{{ blog.intro }}</subtitle>
+  <link href="https://voyagebyluna.com/blog/feed.xml" rel="self"/>
+  <link href="https://voyagebyluna.com/blog/"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>https://voyagebyluna.com/blog/</id>
+  <author><name>{{ site.advisor_name }}</name></author>
+  {%- for post in collections.posts %}
+  {%- set absUrl = "https://voyagebyluna.com" + post.url %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absUrl }}</id>
+    <summary>{{ post.data.excerpt }}</summary>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

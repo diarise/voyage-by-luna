@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | {{ site.business_name }}</title>
+  <title>{{ seo_title or title }} | {{ site.business_name }}</title>
   <meta name="description" content="{{ description }}">
   {% if noindex %}<meta name="robots" content="noindex">{% endif %}
 
@@ -14,13 +14,16 @@
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <meta name="theme-color" content="#012F6D">
 
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ og_type or 'website' }}">
   <meta property="og:site_name" content="{{ site.business_name }}">
-  <meta property="og:title" content="{{ title }} | {{ site.business_name }}">
+  <meta property="og:title" content="{{ seo_title or title }} | {{ site.business_name }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:image" content="https://voyagebyluna.com{{ og_image or home.hero_image or '/images/logo-full.png' }}">
   <meta property="og:url" content="https://voyagebyluna.com{{ page.url }}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@voyagebyluna">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.business_name }} Journal" href="/blog/feed.xml">
+  {% if og_type == "article" %}{% include "partials/article-meta.njk" %}{% endif %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

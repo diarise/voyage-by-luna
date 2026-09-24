@@ -1,0 +1,149 @@
+---
+layout: base.njk
+title: "The Journal"
+seo_title: "Travel Journal: Destination Guides & Trip Ideas"
+description: "Destination guides, itineraries, theme park tips and travel stories from Soukeyna Traoré-Dia, the travel advisor behind Voyage By Luna."
+permalink: "/blog/"
+---
+{%- set posts = collections.posts -%}
+{%- set featuredList = posts | featuredOnly -%}
+{%- set lead = featuredList[0] if featuredList.length else posts[0] -%}
+{%- set rest = posts | except(lead.url) -%}
+
+<section class="journal-masthead">
+  <div class="wrap">
+    <p class="eyebrow">Voyage By Luna</p>
+    <h1>{{ blog.title }}</h1>
+    <p class="lead">{{ blog.intro }}</p>
+    <nav class="section-chips" aria-label="Journal sections">
+      {% for s in blog.sections %}<a class="chip chip-light" href="/blog/{{ s.slug }}/">{{ s.name }}</a>{% endfor %}
+    </nav>
+  </div>
+</section>
+
+<section class="section journal-top">
+  <h2 class="sr-only">Latest stories</h2>
+  <div class="wrap journal-top-grid">
+    {% set post = lead %}{% set cardSize = "lead" %}{% include "partials/post-card.njk" %}
+    <div class="journal-top-side">
+      {% for post in rest | head(2) %}{% set cardSize = "wide" %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---- Where to next: destinations that have stories ---- #}
+<section class="section where-next">
+  <div class="wrap">
+    <div class="journal-section-head">
+      <div>
+        <p class="eyebrow eyebrow-dark">Where to next</p>
+        <h2>Explore by destination</h2>
+      </div>
+      <a href="/blog/destinations/" class="text-link">All destinations <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <ul class="dest-rail">
+      {% for d in blog.destinations %}
+      {% set dposts = posts | inDestination(d.slug) %}
+      {% if dposts.length %}
+      <li>
+        <a class="dest-tile" href="/blog/destinations/{{ d.slug }}/">
+          <img src="{{ dposts[0].data.image }}" alt="" data-sizes="240px">
+          <span class="dest-tile-text">
+            <span class="dest-tile-name">{{ d.name }}</span>
+            <span class="dest-tile-count">{{ dposts.length }} {{ "story" if dposts.length == 1 else "stories" }}</span>
+          </span>
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ---- Section rows ---- #}
+{% for slug in ["theme-parks-family", "culture-heritage", "beaches-romance"] %}
+{% set s = blog.sections | findBySlug(slug) %}
+{% set sposts = posts | inSection(slug) %}
+{% if sposts.length %}
+<section class="section journal-row{% if loop.index is even %} journal-row--tint{% endif %}">
+  <div class="wrap">
+    <div class="journal-section-head">
+      <div>
+        <h2>{{ s.name }}</h2>
+        <p class="muted">{{ s.blurb }}</p>
+      </div>
+      <a href="/blog/{{ s.slug }}/" class="text-link">See all {{ sposts.length }} <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="story-grid">
+      {% for post in sposts | head(3) %}{% set cardSize = "" %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endfor %}
+
+{# ---- Planning band: advice + the advisor ---- #}
+{% set advice = posts | inSection("travel-advice") %}
+<section class="section planning-band">
+  <div class="wrap planning-grid">
+    <div class="planning-advisor">
+      <img src="{{ blog.author_photo }}" alt="{{ site.advisor_name }}" width="96" height="96" data-sizes="96px">
+      <p class="eyebrow">Written by a working travel advisor</p>
+      <h2>Reading is the fun part. Planning is my job.</h2>
+      <p>{{ blog.author_bio }}</p>
+      <div class="planning-actions">
+        <a href="/contact/" class="btn btn-primary">Plan My Trip</a>
+        <a href="/about/" class="btn btn-ghost-light">About Soukeyna</a>
+      </div>
+    </div>
+    <div class="planning-reads">
+      <p class="planning-reads-title">Travel advice</p>
+      <ul class="compact-list">
+        {% for post in advice %}
+        <li><a href="{{ post.url }}"><span class="compact-title">{{ post.data.title }}</span><span class="compact-meta">{{ post.templateContent | readingTime }} min read</span></a></li>
+        {% endfor %}
+      </ul>
+      <a href="/blog/travel-advice/" class="text-link text-link-light">More travel advice <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+{# ---- Every story, filterable by section (works without JS: all stories show) ---- #}
+<section class="section all-stories" id="all-stories">
+  <div class="wrap">
+    <div class="journal-section-head">
+      <div>
+        <h2>All stories</h2>
+        <p class="muted" data-filter-count>{{ posts.length }} stories</p>
+      </div>
+    </div>
+    <div class="filter-bar" data-filter-bar hidden>
+      <button type="button" class="chip" aria-pressed="true" data-filter="all">All</button>
+      {% for s in blog.sections %}<button type="button" class="chip" aria-pressed="false" data-filter="{{ s.slug }}">{{ s.name }}</button>{% endfor %}
+    </div>
+    <div class="story-grid" data-filter-grid>
+      {% for post in posts %}{% set cardSize = "" %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section journal-extras">
+  <div class="wrap extras-grid">
+    <div class="extra-card">
+      <h2>New stories by email</h2>
+      <p>Occasional travel ideas and new guides. Unsubscribe any time.</p>
+      <a href="{{ blog.newsletter_url }}" class="btn btn-outline" target="_blank" rel="noopener">Subscribe</a>
+    </div>
+    <div class="extra-card">
+      <h2>Thinking of becoming a travel agent?</h2>
+      <p>{{ (posts | inSection("careers-in-travel")).length }} guides on working in travel from home, in the US, the UK and France.</p>
+      <a href="/blog/careers-in-travel/" class="btn btn-outline">Careers in Travel</a>
+    </div>
+    <div class="extra-card">
+      <h2>Packing for a trip?</h2>
+      <p>Travel gear I've picked out, on my Amazon storefront.</p>
+      <a href="{{ blog.shop_url }}" class="btn btn-outline" target="_blank" rel="sponsored noopener">Travel essentials</a>
+      <p class="fine-print">Affiliate link — Voyage By Luna may earn a commission.</p>
+    </div>
+  </div>
+</section>

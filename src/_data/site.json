@@ -18,7 +18,7 @@
     "linkedin": "https://www.linkedin.com/company/voyage-by-luna/",
     "pinterest": "https://www.pinterest.com/VoyageByLuna/"
   },
-  "blog_url": "https://blog.voyagebyluna.com",
+  "blog_url": "/blog/",
   "nav": [
     {
       "label": "About",
@@ -34,7 +34,7 @@
     },
     {
       "label": "Blog",
-      "url": "https://blog.voyagebyluna.com"
+      "url": "/blog/"
     },
     {
       "label": "Contact",

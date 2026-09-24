@@ -12,9 +12,11 @@ a free tool called **Decap CMS**. No monthly software cost.
 src/           the actual pages (Eleventy templates)
 src/_data/     editable text, organized by page (site.json, home.json, about.json, services.json, contact.json)
 src/content/   editable repeatable items: destinations/ and testimonials/
+src/blog/      the Journal (blog) at /blog/ — posts/ holds one Markdown file per article
 css/           one stylesheet, no framework
 js/            one small script file (menu, forms)
-images/        photos and the logo. images/uploads/ is where CMS-uploaded photos land
+images/        photos and the logo. images/uploads/ is where CMS-uploaded photos land;
+               images/blog/ holds Journal photos
 admin/         the content editor (Decap CMS) — this is the page your wife logs into
 .eleventy.js   build configuration — you shouldn't need to touch this
 netlify.toml   hosting/build configuration
@@ -50,8 +52,8 @@ That's it — from here forward, no code required for day-to-day changes.
 
 1. Go to `voyagebyluna.com/admin/`.
 2. Log in with the email/password from the invite.
-3. She'll see a simple list: **Site Settings, Homepage, About Page, Services Page,
-   Contact Page, Destinations, Testimonials.**
+3. She'll see a simple list: **Journal (Blog Posts), Site Settings, Homepage, About
+   Page, Services Page, Contact Page, Destinations, Testimonials.**
 4. Click one, change the text or photo in a normal form, click **Publish**.
 5. The live site updates in about a minute (Netlify rebuilds it automatically).
 
@@ -61,7 +63,7 @@ card appears on the homepage. Same for testimonials.
 
 I removed the fake "City 1 / City 2 / City 3" placeholder cards that were live on the
 old site. The six destinations now in the CMS (Bora Bora, Seychelles, Japan, South
-Korea, Punta Cana, Bali) are real and each links to her blog post about it. Use
+Korea, Punta Cana, Bali) are real and each links to her Journal story about it. Use
 **Display Order** to control which six show on the homepage.
 
 I did **not** invent any testimonials, certifications, awards, or years-in-business —
@@ -117,8 +119,53 @@ voyagebyluna.com, on GitHub Pages) is untouched.
   working with" section.
 - Real photos for the 4 services and 6 destinations.
 - Any certifications beyond Korea Travel Specialist.
-- Whether a "free consultation" is a real, current offer (it is not advertised
-  anywhere on the site right now).
+- Whether a "free consultation" is a real, current offer. It is not advertised on
+  the main pages, but Soukeyna's own Journal articles (written by her, kept word
+  for word) invite readers to a "free consultation call" — confirm that's current.
 - Testimonials: only real ones, with the client's permission. The section stays
   hidden until the first one is added.
+
+## 8. The Journal (blog) — voyagebyluna.com/blog/
+
+The old blog (blog.voyagebyluna.com, a separate Jekyll site in github.com/diarise/blog)
+has been rebuilt inside this site. All 26 articles were migrated **word for word** —
+a script compared every post's text, images and videos against the original.
+
+**Writing a post (Soukeyna):** CMS → **Journal (Blog Posts)** → **New Journal Post**.
+New posts start as **Draft**; untick Draft and Publish when it's ready. Pick a
+**Section**, tick any **Destinations**, add a main photo *and* a short description of
+it. If the main image is a graphic with text on it (a Canva design), set
+**Main photo type** to "Graphic" so it's shown whole instead of cropped. To add a
+YouTube video, paste its link on a line by itself. Tick **Contains affiliate links**
+if the post links to Exoticca, Viator or Amazon — that adds the disclosure note.
+
+**How it's organised:** six sections (Destination Guides, Culture & Heritage, Theme
+Parks & Family, Beaches & Romance, Travel Advice, Careers in Travel) and destination
+pages (`/blog/destinations/japan/` etc.), defined in `src/_data/blog.json`. To add a
+destination: add it there **and** to the Destinations list in `admin/config.yml`.
+
+**Photos** are resized and converted to WebP automatically at build time, so a
+40 MB camera photo becomes a ~150 KB download. Upload the best-quality photo you have.
+
+**Old links keep working.** Every old blog URL has a permanent (301) redirect:
+- the 26 post URLs are in `netlify.toml` — written with real spaces on purpose
+  (Netlify decodes the address before matching, so `%20` in a rule never matches);
+- old category/tag pages, `/feed.xml`, `/shop.html` and `/disney/` are in
+  `src/redirects.njk` + `src/_data/legacyRedirects.json`;
+- each post keeps its old address in its `legacy_url` field. **Never delete these.**
+
+**Launching blog.voyagebyluna.com on Netlify (after the preview is approved):**
+1. Merge `blog-redesign` into `main` and let Netlify deploy it.
+2. On the preview/production site, spot-check a few old paths on the main domain, e.g.
+   `voyagebyluna.com/french%20polynesia/best%20beaches/luxury%20travel/2025/10/24/best-beaches-series-bora-bora-a-paradise-on-earth.html`
+   should land on `/blog/best-beaches-series-bora-bora-a-paradise-on-earth/`.
+3. Netlify → Domain management → **Add domain alias** `blog.voyagebyluna.com`.
+4. At the DNS provider, point `blog` (CNAME) at the Netlify site instead of
+   `diarise.github.io`. Wait for Netlify to issue HTTPS for it.
+5. In the old `diarise/blog` repo: turn off GitHub Pages (Settings → Pages) and remove
+   its `CNAME` file, so GitHub stops claiming the domain. Keep the repo — it's the
+   archive of the original blog (suggested tag: `legacy-blog-2026-09`).
+6. Check `https://blog.voyagebyluna.com/` → `/blog/`, three old post URLs, one old
+   category page, and `/feed.xml`. In Google Search Console, submit
+   `https://voyagebyluna.com/sitemap.xml`.
 

@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: "Plan Your Disney Vacation"
+description: "Plan a Disney vacation with Voyage By Luna — browse Disney resorts and packages, then let a travel advisor handle the details."
+permalink: "/disney/"
+---
+{# Soukeyna's Disney Travel Center booking tool (moved here from the old blog's /disney/ page).
+   The embed resizes itself by posting its height to this page; js/main.js listens for that. #}
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <p class="eyebrow">Disney & theme parks</p>
+    <h1>Plan your Disney vacation</h1>
+    <p class="lead">Browse resorts, tickets and packages below. When you're ready — or if you'd rather I build the trip for you — send me your details and I'll take it from there.</p>
+    <div class="contact-direct">
+      <a href="/contact/?trip=disney" class="contact-chip">Plan a Disney trip with me</a>
+      <a href="/blog/theme-parks-family/" class="contact-chip">Read the theme park guides</a>
+    </div>
+  </div>
+</section>
+<section class="section section-tight">
+  <div class="wrap">
+    <iframe id="disney-iframe" class="disney-embed"
+      src="https://www.disneytravelcenter.com/ecc98b0fa6/"
+      title="Disney vacation planner"
+      loading="lazy"></iframe>
+  </div>
+</section>

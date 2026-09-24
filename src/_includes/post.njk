@@ -1,0 +1,122 @@
+---
+layout: base.njk
+---
+{%- set sec = blog.sections | findBySlug(section) -%}
+{%- set dest = blog.destinations | findBySlug((destinations or [])[0]) -%}
+{%- set toc = content | toc -%}
+{%- set shareUrl = "https://voyagebyluna.com" + page.url -%}
+<article class="article" data-reading>
+  <header class="article-head">
+    <div class="wrap article-head-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/blog/">Journal</a></li>
+          {% if sec %}<li><a href="/blog/{{ sec.slug }}/">{{ sec.name }}</a></li>{% endif %}
+        </ol>
+      </nav>
+      <h1 class="article-title">{{ title }}</h1>
+      {% if excerpt %}<p class="article-dek">{{ excerpt }}</p>{% endif %}
+      <div class="byline">
+        <img class="byline-avatar" src="{{ blog.author_photo }}" alt="" width="48" height="48" data-sizes="48px">
+        <div class="byline-text">
+          <span class="byline-name">By <a href="/about/">{{ site.advisor_name }}</a></span>
+          <span class="byline-meta">
+            <time datetime="{{ page.date | isoDate }}">{{ page.date | blogDate }}</time>
+            <span aria-hidden="true">·</span> {{ content | readingTime }} min read
+            {% if updated %}<span aria-hidden="true">·</span> Updated <time datetime="{{ updated | isoDate }}">{{ updated | blogDate }}</time>{% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <figure class="wrap article-hero{% if image_style == 'graphic' %} article-hero--graphic{% endif %}">
+    <img src="{{ image }}" alt="{{ image_alt }}" data-hero data-sizes="(min-width: 1200px) 1116px, 100vw">
+    {% if image_caption or image_credit %}
+    <figcaption>{{ image_caption }}{% if image_credit %} <span class="credit">{{ image_credit }}</span>{% endif %}</figcaption>
+    {% endif %}
+  </figure>
+
+  <div class="wrap article-layout">
+    <div class="article-main">
+      {% if affiliate %}
+      <p class="affiliate-note">This article contains affiliate links. If you book or buy through one, Voyage By Luna may earn a commission at no extra cost to you.</p>
+      {% endif %}
+
+      {% if toc.length >= 4 %}
+      <nav class="article-toc" aria-label="In this article">
+        <p class="article-toc-title">In this article</p>
+        <ol>{% for h in toc %}<li><a href="#{{ h.id }}">{{ h.text | safe }}</a></li>{% endfor %}</ol>
+      </nav>
+      {% endif %}
+
+      <div class="prose">
+        {{ content | safe }}
+        {% if video %}{{ video | youtubeEmbed(title) | safe }}{% endif %}
+      </div>
+
+      {% if destinations and destinations.length %}
+      <p class="article-places">
+        <span>Places in this story:</span>
+        {% for d in destinations %}{% set dd = blog.destinations | findBySlug(d) %}{% if dd %}<a class="chip" href="/blog/destinations/{{ dd.slug }}/">{{ dd.name }}</a>{% endif %}{% endfor %}
+      </p>
+      {% endif %}
+
+      <div class="share" data-share data-url="{{ shareUrl }}" data-title="{{ title }}">
+        <span class="share-label">Share this story</span>
+        <button type="button" class="share-btn" data-share-native hidden>Share…</button>
+        <button type="button" class="share-btn" data-share-copy>Copy link</button>
+        <a class="share-btn" href="https://www.pinterest.com/pin/create/button/?url={{ shareUrl | urlencode }}&amp;media={{ ('https://voyagebyluna.com' + image) | urlencode }}&amp;description={{ title | urlencode }}" target="_blank" rel="noopener">Pinterest</a>
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl | urlencode }}" target="_blank" rel="noopener">Facebook</a>
+        <a class="share-btn" href="https://wa.me/?text={{ (title + ' ' + shareUrl) | urlencode }}" target="_blank" rel="noopener">WhatsApp</a>
+        <span class="share-status" role="status" aria-live="polite"></span>
+      </div>
+
+      <aside class="author-card" aria-label="About the author">
+        <img src="{{ blog.author_photo }}" alt="{{ site.advisor_name }}" width="88" height="88" data-sizes="88px">
+        <div>
+          <p class="author-card-name">{{ site.advisor_name }}</p>
+          <p>{{ blog.author_bio }}</p>
+          <a href="/about/" class="text-link">More about Soukeyna <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  {% if section == "careers-in-travel" %}
+  <section class="article-cta article-cta--quiet">
+    <div class="wrap article-cta-inner">
+      <div>
+        <h2>Curious about becoming a travel agent?</h2>
+        <p>Find out how joining the Voyage By Luna team works.</p>
+      </div>
+      <a href="/join-our-team/" class="btn btn-outline-light">Join Our Team</a>
+    </div>
+  </section>
+  {% else %}
+  <section class="article-cta">
+    <div class="wrap article-cta-inner">
+      <div>
+        <h2>Planning a trip{% if dest %} to {{ dest.name }}{% endif %}?</h2>
+        <p>Tell me what you're picturing and I'll come back with options that fit — no obligation.</p>
+      </div>
+      <a href="/contact/{% if plan_query %}?{{ plan_query }}{% endif %}" class="btn btn-primary btn-lg">Plan My Trip</a>
+    </div>
+  </section>
+  {% endif %}
+
+  {% set rel = collections.posts | related({ page: page, section: section, destinations: destinations, keywords: keywords }) %}
+  {% if rel.length %}
+  <section class="section related">
+    <div class="wrap">
+      <div class="related-head">
+        <h2>Keep reading</h2>
+        <a href="/blog/" class="text-link">All stories <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="story-grid">
+        {% for post in rel %}{% include "partials/post-card.njk" %}{% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</article>

@@ -13,3 +13,147 @@
   from = "/index.html"
   to = "/"
   status = 301
+
+# ---------------------------------------------------------------------------
+# Old blog post URLs (blog.voyagebyluna.com, Jekyll) -> the Journal. PERMANENT.
+# Written un-encoded on purpose: Netlify decodes the request path before matching,
+# so "%20" in a rule never matches but a real space does. Generated once from each
+# post's legacy_url during the migration; these old URLs never change.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/indonesia/bali/travel/guide/asia/2025/10/05/2026-bali-travel-guide-culture-beaches-hidden-gems.html"
+  to = "https://voyagebyluna.com/blog/2026-bali-travel-guide-culture-beaches-hidden-gems/"
+  status = 301
+
+[[redirects]]
+  from = "/travel/japan/tokyo/kyoto/2025/10/09/a-journey-through-japan-where-tradition-meets-tomorrow.html"
+  to = "https://voyagebyluna.com/blog/a-journey-through-japan-where-tradition-meets-tomorrow/"
+  status = 301
+
+[[redirects]]
+  from = "/french polynesia/best beaches/luxury travel/2025/10/24/best-beaches-series-bora-bora-a-paradise-on-earth.html"
+  to = "https://voyagebyluna.com/blog/best-beaches-series-bora-bora-a-paradise-on-earth/"
+  status = 301
+
+[[redirects]]
+  from = "/seychelles/beaches/luxury travel/2025/11/02/best-beaches-seychelles-where-beach-dreams-come-true.html"
+  to = "https://voyagebyluna.com/blog/best-beaches-seychelles-where-beach-dreams-come-true/"
+  status = 301
+
+[[redirects]]
+  from = "/ghana/history/heritage/africa/2025/10/04/cape-coast-castle-walking-through-the-shadows-of-history.html"
+  to = "https://voyagebyluna.com/blog/cape-coast-castle-walking-through-the-shadows-of-history/"
+  status = 301
+
+[[redirects]]
+  from = "/theme parks/family travel/usa/2025/10/25/disney-magic-awaits-your-ultimate-guide-to-disneyland-and-disney-world.html"
+  to = "https://voyagebyluna.com/blog/disney-magic-awaits-your-ultimate-guide-to-disneyland-and-disney-world/"
+  status = 301
+
+[[redirects]]
+  from = "/theme park/family travel/travel tips/2025/10/28/disney-vacation-planning-packing-tips-for-a-magical-trip.html"
+  to = "https://voyagebyluna.com/blog/disney-vacation-planning-packing-tips-for-a-magical-trip/"
+  status = 301
+
+[[redirects]]
+  from = "/japan/kyoto/travel guide/2025/10/23/exploring-kyoto-japan-during-cherry-blossom-season.html"
+  to = "https://voyagebyluna.com/blog/exploring-kyoto-japan-during-cherry-blossom-season/"
+  status = 301
+
+[[redirects]]
+  from = "/dominican republic travel/family vacations/all-inclusive resorts/2025/10/20/get-slimed-in-paradise-your-ultimate-guide-to-nickelodeon-hotels-resorts-punta-cana.html"
+  to = "https://voyagebyluna.com/blog/get-slimed-in-paradise-your-ultimate-guide-to-nickelodeon-hotels-resorts-punta-cana/"
+  status = 301
+
+[[redirects]]
+  from = "/business/travel industry/work from home/2025/10/14/how-to-become-a-travel-agent-and-join-a-host-agency-your-path-to-freedom-travel-and-purpose.html"
+  to = "https://voyagebyluna.com/blog/how-to-become-a-travel-agent-and-join-a-host-agency-your-path-to-freedom-travel-and-purpose/"
+  status = 301
+
+[[redirects]]
+  from = "/france/work from home/travail á domicile/2025/11/01/how-to-become-a-travel-agent-from-home-in-france.html"
+  to = "https://voyagebyluna.com/blog/how-to-become-a-travel-agent-from-home-in-france/"
+  status = 301
+
+[[redirects]]
+  from = "/business/travel industry/work from home/2025/10/12/how-to-become-a-travel-agent-from-home-in-the-uk-step-by-step-guide.html"
+  to = "https://voyagebyluna.com/blog/how-to-become-a-travel-agent-from-home-in-the-uk-step-by-step-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/business/business opportunity/travel agent/work from home/2025/10/08/how-to-become-a-travel-agent-from-home-step-by-step-guide.html"
+  to = "https://voyagebyluna.com/blog/how-to-become-a-travel-agent-from-home-step-by-step-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/business/travel industry/work from home/2025/10/10/how-to-work-as-a-travel-agent-in-the-us.html"
+  to = "https://voyagebyluna.com/blog/how-to-work-as-a-travel-agent-in-the-us/"
+  status = 301
+
+[[redirects]]
+  from = "/japan/kyoto/culture/2025/09/29/kyoto-at-dusk-a-tea-ceremony-in-a-timeless-teahouse.html"
+  to = "https://voyagebyluna.com/blog/kyoto-at-dusk-a-tea-ceremony-in-a-timeless-teahouse/"
+  status = 301
+
+[[redirects]]
+  from = "/philippines/asia/travel/2025/10/10/philippines-360-the-ultimate-15-day-itinerary-for-beaches-culture-adventure.html"
+  to = "https://voyagebyluna.com/blog/philippines-360-the-ultimate-15-day-itinerary-for-beaches-culture-adventure/"
+  status = 301
+
+[[redirects]]
+  from = "/portugal/history/culture/travel/2025/10/03/portugal-a-journey-through-history-coastlines-and-culture.html"
+  to = "https://voyagebyluna.com/blog/portugal-a-journey-through-history-coastlines-and-culture/"
+  status = 301
+
+[[redirects]]
+  from = "/travel/destination weddings/romance travel/2025/10/14/the-biggest-destination-wedding-trends-for-2025-and-beyond.html"
+  to = "https://voyagebyluna.com/blog/the-biggest-destination-wedding-trends-for-2025-and-beyond/"
+  status = 301
+
+[[redirects]]
+  from = "/travel/personal growth/guide/2025/10/12/the-importance-of-traveling-often-a-comprehensive-guide.html"
+  to = "https://voyagebyluna.com/blog/the-importance-of-traveling-often-a-comprehensive-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/travel/guide/philippines/adventure/asia/2025/10/04/the-ultimate-2026-philippines-travel-guide.html"
+  to = "https://voyagebyluna.com/blog/the-ultimate-2026-philippines-travel-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/family/travel/theme parks/rides/2025/10/06/the-ultimate-guide-to-universal-studios-hollywood-rides-shows-food-insider-tips.html"
+  to = "https://voyagebyluna.com/blog/the-ultimate-guide-to-universal-studios-hollywood-rides-shows-food-insider-tips/"
+  status = 301
+
+[[redirects]]
+  from = "/travel/vacation/guide/itinerary/2025/10/04/tradition-modernity-11-day-semi-guided-japan-itinerary.html"
+  to = "https://voyagebyluna.com/blog/tradition-modernity-11-day-semi-guided-japan-itinerary/"
+  status = 301
+
+[[redirects]]
+  from = "/theme parks/florida/family travel/2025/10/21/universal-epic-universe-everything-to-know-about-orlando-s-newest-theme-park.html"
+  to = "https://voyagebyluna.com/blog/universal-epic-universe-everything-to-know-about-orlando-s-newest-theme-park/"
+  status = 301
+
+[[redirects]]
+  from = "/asia/south korea/travel/2025/11/15/why-korea-should-be-your-next-bucket-list-destination.html"
+  to = "https://voyagebyluna.com/blog/why-korea-should-be-your-next-bucket-list-destination/"
+  status = 301
+
+[[redirects]]
+  from = "/travel planning/travel tips/travel advisor service]/2025/11/04/why-using-a-travel-agent-makes-your-next-trip-better.html"
+  to = "https://voyagebyluna.com/blog/why-using-a-travel-agent-makes-your-next-trip-better/"
+  status = 301
+
+[[redirects]]
+  from = "/entrepreneurship/work from home/travel stories/2025/10/27/why-working-for-yourself-is-the-best-investment-you-ll-ever-make.html"
+  to = "https://voyagebyluna.com/blog/why-working-for-yourself-is-the-best-investment-you-ll-ever-make/"
+  status = 301
+
+# Anything else on the old blog host goes to the same path on the main domain.
+# force = true so the old host never serves duplicate copies of site pages.
+[[redirects]]
+  from = "https://blog.voyagebyluna.com/*"
+  to = "https://voyagebyluna.com/:splat"
+  status = 301
+  force = true

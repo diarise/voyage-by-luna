@@ -1,0 +1,48 @@
+---
+layout: base.njk
+pagination:
+  data: blog.sections
+  size: 1
+  alias: s
+permalink: "/blog/{{ s.slug }}/"
+eleventyComputed:
+  title: "{{ s.name }}"
+  description: "{{ s.blurb }} Stories from the Voyage By Luna Journal."
+---
+{%- set sposts = collections.posts | inSection(s.slug) -%}
+<section class="journal-masthead journal-masthead--compact">
+  <div class="wrap">
+    <nav class="breadcrumb breadcrumb-light" aria-label="Breadcrumb"><ol><li><a href="/blog/">Journal</a></li></ol></nav>
+    <h1>{{ s.name }}</h1>
+    <p class="lead">{{ s.blurb }}</p>
+    <nav class="section-chips" aria-label="Journal sections">
+      {% for x in blog.sections %}<a class="chip chip-light" href="/blog/{{ x.slug }}/"{% if x.slug == s.slug %} aria-current="page"{% endif %}>{{ x.name }}</a>{% endfor %}
+    </nav>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <p class="muted listing-count">{{ sposts.length }} {{ "story" if sposts.length == 1 else "stories" }}</p>
+    <h2 class="sr-only">Stories</h2>
+    <div class="story-grid">
+      {% for post in sposts %}{% set cardSize = "" %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% if s.slug == "careers-in-travel" %}
+<section class="section final-cta">
+  <div class="wrap final-cta-inner">
+    <h2>Interested in joining the team?</h2>
+    <p class="lead">See how working with Voyage By Luna works and send your details.</p>
+    <a href="/join-our-team/" class="btn btn-primary btn-lg">Join Our Team</a>
+  </div>
+</section>
+{% else %}
+<section class="section final-cta">
+  <div class="wrap final-cta-inner">
+    <h2>Found somewhere you'd like to go?</h2>
+    <p class="lead">Tell me what you're picturing and I'll come back with real options.</p>
+    <a href="/contact/" class="btn btn-primary btn-lg">Plan My Trip</a>
+  </div>
+</section>
+{% endif %}

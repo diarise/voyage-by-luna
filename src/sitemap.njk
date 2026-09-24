@@ -4,8 +4,17 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- set pages = ["/", "/about/", "/services/", "/destinations/", "/contact/", "/join-our-team/"] -%}
+{%- set pages = ["/", "/about/", "/services/", "/destinations/", "/contact/", "/disney/", "/join-our-team/", "/blog/", "/blog/destinations/"] -%}
 {%- for p in pages %}
   <url><loc>https://voyagebyluna.com{{ p }}</loc></url>
+{%- endfor %}
+{%- for s in blog.sections %}{% if (collections.posts | inSection(s.slug)).length %}
+  <url><loc>https://voyagebyluna.com/blog/{{ s.slug }}/</loc></url>
+{%- endif %}{% endfor %}
+{%- for d in blog.destinations %}{% if (collections.posts | inDestination(d.slug)).length %}
+  <url><loc>https://voyagebyluna.com/blog/destinations/{{ d.slug }}/</loc></url>
+{%- endif %}{% endfor %}
+{%- for post in collections.posts %}
+  <url><loc>https://voyagebyluna.com{{ post.url }}</loc><lastmod>{{ (post.data.updated or post.date) | isoDate }}</lastmod></url>
 {%- endfor %}
 </urlset>

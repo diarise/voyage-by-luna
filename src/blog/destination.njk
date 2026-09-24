@@ -1,0 +1,35 @@
+---
+layout: base.njk
+pagination:
+  data: blog.destinations
+  size: 1
+  alias: d
+permalink: "/blog/destinations/{{ d.slug }}/"
+eleventyComputed:
+  title: "{{ d.name }} Travel Guides & Stories"
+  description: "Guides, itineraries and travel stories about {{ d.name }} from the Voyage By Luna Journal."
+---
+{%- set dposts = collections.posts | inDestination(d.slug) -%}
+<section class="journal-masthead journal-masthead--compact">
+  <div class="wrap">
+    <nav class="breadcrumb breadcrumb-light" aria-label="Breadcrumb"><ol><li><a href="/blog/">Journal</a></li><li><a href="/blog/destinations/">Destinations</a></li></ol></nav>
+    <p class="eyebrow">{{ d.region }}</p>
+    <h1>{{ d.name }}</h1>
+    <p class="lead">{{ dposts.length }} {{ "story" if dposts.length == 1 else "stories" }} from the Journal.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <h2 class="sr-only">Stories</h2>
+    <div class="story-grid">
+      {% for post in dposts %}{% set cardSize = "" %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section final-cta">
+  <div class="wrap final-cta-inner">
+    <h2>Planning a trip to {{ d.name }}?</h2>
+    <p class="lead">Tell me roughly when and who's coming, and I'll come back with options that fit.</p>
+    <a href="/contact/?destination={{ d.name | urlencode }}" class="btn btn-primary btn-lg">Plan My Trip</a>
+  </div>
+</section>
