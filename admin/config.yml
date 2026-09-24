@@ -4,9 +4,9 @@
 backend:
   name: turbo-github
   turbo_site_id: 3ef0c896-049e-4100-b50a-181f68e6e8cf
-  branch: redesign-v2
+  branch: main
 
-site_url: https://redesign-v2--voyagebylunasoukeyna.netlify.app
+site_url: https://voyagebyluna.com
 logo_url: /images/logo-full.png
 
 # Where uploaded photos go, and the URL prefix used to reference them
