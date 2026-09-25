@@ -163,6 +163,46 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
 </section>
 {% endif %}
 
+{# ---- Book it yourself: every enabled partner from src/_data/affiliatePartners.json, by category ---- #}
+<section class="section partners-home" id="travel-partners" aria-labelledby="partners-title">
+  <div class="wrap">
+    <div class="partners-home-head">
+      <div class="partners-home-intro">
+        <p class="eyebrow eyebrow-dark">{{ home.partners_eyebrow }}</p>
+        <h2 id="partners-title">{{ home.partners_heading }}</h2>
+        <p class="lead">{{ home.partners_body }}</p>
+      </div>
+      <div class="partners-home-advisor">
+        <p class="partners-home-advisor-title">{{ home.partners_advisor_heading }}</p>
+        <p>{{ home.partners_advisor_body }}</p>
+        <a href="/contact/" class="btn btn-primary">{{ home.partners_advisor_label }}</a>
+      </div>
+    </div>
+    <div class="partner-cats">
+      {% for c in affiliatePartners.categories %}
+      {% set catPartners = affiliatePartners.partners | partnersInCategory(c.id) %}
+      {% if catPartners.length %}
+      <div class="partner-cat">
+        <h3 class="partner-cat-title">{{ c.name }}</h3>
+        <ul class="partner-list">
+          {% for p in catPartners %}
+          <li>
+            <a class="partner-link" href="{{ p.url }}" target="_blank" rel="sponsored nofollow noopener">
+              <span class="partner-name">{{ p.name }}</span>
+              <span class="partner-books">{{ p.books }}</span>
+              <span class="partner-go">Explore <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <p class="affiliate-note partners-disclosure">{{ home.partners_disclosure }}</p>
+  </div>
+</section>
+
 <section class="section final-cta">
   <div class="wrap final-cta-inner">
     <h2>{{ home.final_cta_heading }}</h2>

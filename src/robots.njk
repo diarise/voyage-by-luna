@@ -1,0 +1,15 @@
+---
+permalink: "/robots.txt"
+eleventyExcludeFromCollections: true
+---
+{% if launchGate.active -%}
+# Pre-launch: only the Coming Soon page is public (see src/_data/launch.json).
+User-agent: *
+Disallow: /admin/
+Allow: /
+{%- else -%}
+User-agent: *
+Allow: /
+
+Sitemap: https://voyagebyluna.com/sitemap.xml
+{%- endif %}

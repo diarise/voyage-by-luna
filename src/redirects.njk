@@ -11,7 +11,23 @@ eleventyExcludeFromCollections: true
 # Netlify reads this file first, then the [[redirects]] in netlify.toml.
 # The 26 old POST URLs live in netlify.toml, because they contain spaces and
 # accented characters, which only match when written un-encoded (tested).
-
+{% if launchGate.active %}
+# ---- PRE-LAUNCH GATE ---------------------------------------------------------
+# Generated only while src/_data/launch.json "mode" is not "live". Everything
+# below this block is the normal site's rules and is untouched by the gate.
+# Keep the CMS, its media, and crawler files reachable:
+/admin/*  /admin/:splat  200!
+/images/*  /images/:splat  200!
+/robots.txt  /robots.txt  200!
+/sitemap.xml  /sitemap.xml  200!
+/google83dbb073897b0fa1.html  /google83dbb073897b0fa1.html  200!
+# The homepage address shows the Coming Soon page:
+/  /coming-soon/  200!
+# Every other address temporarily (302) goes to the homepage. (Absolute on purpose:
+# Netlify ignores "/* / 302!" as a possible loop — tested with the Netlify CLI.)
+/*  https://voyagebyluna.com/  302!
+# ---- END PRE-LAUNCH GATE -----------------------------------------------------
+{%- endif %}
 # ---- blog.voyagebyluna.com (active once that domain points at this Netlify site)
 # Keep the Google Search Console verification file answering on the old host.
 https://blog.voyagebyluna.com/google83dbb073897b0fa1.html  /google83dbb073897b0fa1.html  200!

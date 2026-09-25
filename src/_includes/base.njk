@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ seo_title or title }} | {{ site.business_name }}</title>
   <meta name="description" content="{{ description }}">
-  {% if noindex %}<meta name="robots" content="noindex">{% endif %}
+  {% if noindex or launchGate.previewBypass %}<meta name="robots" content="noindex">{% endif %}
 
   {# Canonical host must match the host the site is actually served from. #}
   <link rel="canonical" href="https://voyagebyluna.com{{ page.url }}">

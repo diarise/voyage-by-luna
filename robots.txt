@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://voyagebyluna.com/sitemap.xml

@@ -179,6 +179,13 @@ collections:
           - { label: '"Who you will work with" Paragraph', name: "advisor_body", widget: "text" }
           - { label: "Destinations Section Heading", name: "destinations_heading", widget: "string" }
           - { label: "Destinations Section Subheading", name: "destinations_subheading", widget: "string" }
+          - { label: "Book-It-Yourself Section: Small Label", name: "partners_eyebrow", widget: "string" }
+          - { label: "Book-It-Yourself Section: Heading", name: "partners_heading", widget: "string" }
+          - { label: "Book-It-Yourself Section: Intro", name: "partners_body", widget: "text" }
+          - { label: "Book-It-Yourself Section: Advisor Box Heading", name: "partners_advisor_heading", widget: "string" }
+          - { label: "Book-It-Yourself Section: Advisor Box Text", name: "partners_advisor_body", widget: "string" }
+          - { label: "Book-It-Yourself Section: Advisor Button Text", name: "partners_advisor_label", widget: "string" }
+          - { label: "Book-It-Yourself Section: Affiliate Disclosure", name: "partners_disclosure", widget: "text", hint: "Keep this — affiliate links must be disclosed." }
           - { label: "Bottom Call-To-Action Heading", name: "final_cta_heading", widget: "string" }
           - { label: "Bottom Call-To-Action Paragraph", name: "final_cta_body", widget: "text" }
           - { label: "Bottom Button Text", name: "final_cta_label", widget: "string" }

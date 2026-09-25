@@ -1,0 +1,4 @@
+{
+  "_help": "LAUNCH SWITCH. \"coming-soon\" = the public sees only the Coming Soon page (the CMS at /admin/ keeps working). \"live\" = the full website is public. Any other value is treated as coming-soon. Change the value, commit, and let Netlify deploy.",
+  "mode": "coming-soon"
+}
