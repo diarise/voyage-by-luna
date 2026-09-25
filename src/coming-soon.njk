@@ -38,7 +38,6 @@ eleventyExcludeFromCollections: true
       background-attachment: fixed;
     }
     main { max-width: 620px; }
-    .logo { width: min(240px, 60vw); height: auto; margin: 0 auto 36px; display: block; }
     .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .74rem; font-weight: 600; color: var(--gold); margin: 0 0 14px; }
     h1 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(2.1rem, 6vw, 3.4rem); line-height: 1.1; letter-spacing: -.015em; margin: 0 0 18px; }
     p { margin: 0 0 14px; color: rgba(255,255,255,.86); font-size: clamp(1.02rem, 2.2vw, 1.14rem); }
@@ -63,13 +62,12 @@ eleventyExcludeFromCollections: true
     }
   </script>
   <main>
-    <img class="logo" src="/images/logo-full.png" alt="{{ site.business_name }}" width="260" height="182">
     <p class="eyebrow">A new look is on its way</p>
     <h1>Our new website is coming soon.</h1>
     <p>We're putting the finishing touches on a better way to plan your next journey.</p>
     <hr class="rule">
     <p class="contact">Planning a trip in the meantime? Email <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-    <footer>&copy; {{ currentYear }} {{ site.business_name }}</footer>
+    <footer>&copy; 2022&ndash;{{ currentYear }} {{ site.business_name }}</footer>
   </main>
 </body>
 </html>
