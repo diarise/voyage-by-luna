@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "From intimate elopements to luxury villa buyouts, discover the latest destination wedding trends shaping 2025 and beyond."
 featured: false
 affiliate: false
+partners: [sandals, beaches]
 plan_query: "trip=weddings"
 keywords: ["Destination Weddings", "Travel Trends", "Wedding Planning", "Romance Travel"]
 legacy_url: /travel/destination%20weddings/romance%20travel/2025/10/14/the-biggest-destination-wedding-trends-for-2025-and-beyond.html

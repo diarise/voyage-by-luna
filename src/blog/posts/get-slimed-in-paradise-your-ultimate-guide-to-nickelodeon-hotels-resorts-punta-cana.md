@@ -9,6 +9,7 @@ image_style: graphic
 excerpt: "Dreaming of a Punta Cana family vacation that mixes five-star luxury with non-stop cartoon fun? Nickelodeon Hotels & Resorts Punta Cana is your destination! Discover the incredible Gourmet Inclusive® Experience, meet your favorite Nick characters, splash down at Aqua Nick, and find all the essential travel tips—from the best time to visit to Dominican Republic visa requirements."
 featured: false
 affiliate: false
+partners: [beaches, viator]
 plan_query: "trip=resorts&destination=Punta%20Cana"
 keywords: ["Punta Cana Resorts", "Nickelodeon Travel", "Family Fun", "All-Inclusive Luxury", "Dominican Republic"]
 legacy_url: /dominican%20republic%20travel/family%20vacations/all-inclusive%20resorts/2025/10/20/get-slimed-in-paradise-your-ultimate-guide-to-nickelodeon-hotels-resorts-punta-cana.html

@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "From Manila’s vibrant streets to the turquoise waters of Boracay, this 15-day Philippines itinerary blends adventure, history, and pure island magic. Discover hidden gems, breathtaking beaches, and local culture in one unforgettable journey."
 featured: false
 affiliate: true
+partners: [exoticca, viator]
 plan_query: "destination=Philippines"
 keywords: ["Philippines Itinerary", "Travel", "Island Hopping Adventure", "Guide"]
 legacy_url: /philippines/asia/travel/2025/10/10/philippines-360-the-ultimate-15-day-itinerary-for-beaches-culture-adventure.html

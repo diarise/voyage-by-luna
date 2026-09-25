@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "From K-pop to palaces, from kimchi to coastal cruises — Korea blends ancient tradition and modern energy like nowhere else. As a newly certified Korea Travel Specialist, I’m sharing everything you need to know before your trip."
 featured: true
 affiliate: false
+partners: [viator]
 plan_query: "destination=South%20Korea"
 keywords: ["Korea Travel Guide", "Cultural Travel", "Asia Destinations", "Food & Culture"]
 legacy_url: /asia/south%20korea/travel/2025/11/15/why-korea-should-be-your-next-bucket-list-destination.html

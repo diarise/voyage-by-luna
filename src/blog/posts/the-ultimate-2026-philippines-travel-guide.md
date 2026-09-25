@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "With over 7,000 islands, turquoise waters, and warm hospitality, the Philippines is quickly becoming one of the most exciting destinations for 2026. From island hopping to cultural discoveries, here's everything you need to know to plan the perfect trip."
 featured: false
 affiliate: true
+partners: [exoticca, viator]
 plan_query: "destination=Philippines"
 keywords: ["Philippines", "Travel", "Island Hopping", "Adventure"]
 legacy_url: /travel/guide/philippines/adventure/asia/2025/10/04/the-ultimate-2026-philippines-travel-guide.html

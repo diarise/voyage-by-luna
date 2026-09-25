@@ -5,6 +5,7 @@ layout: base.njk
 {%- set dest = blog.destinations | findBySlug((destinations or [])[0]) -%}
 {%- set toc = content | toc -%}
 {%- set shareUrl = "https://voyagebyluna.com" + page.url -%}
+{%- set bookPartners = partners | partnersFor(affiliatePartners.partners) -%}
 <article class="article" data-reading>
   <header class="article-head">
     <div class="wrap article-head-inner">
@@ -39,7 +40,7 @@ layout: base.njk
 
   <div class="wrap article-layout">
     <div class="article-main">
-      {% if affiliate %}
+      {% if affiliate or bookPartners.length %}
       <p class="affiliate-note">This article contains affiliate links. If you book or buy through one, Voyage By Luna may earn a commission at no extra cost to you.</p>
       {% endif %}
 
@@ -54,6 +55,27 @@ layout: base.njk
         {{ content | safe }}
         {% if video %}{{ video | youtubeEmbed(title) | safe }}{% endif %}
       </div>
+
+      {% if bookPartners.length %}
+      <aside class="self-book" aria-labelledby="self-book-title">
+        <h2 id="self-book-title">Prefer to book it yourself?</h2>
+        <p class="self-book-intro">Explore these travel options directly through our trusted travel partners.</p>
+        <ul class="partner-list">
+          {% for p in bookPartners %}
+          <li>
+            <a class="partner-link" href="{{ p.url }}" target="_blank" rel="sponsored nofollow noopener">
+              <span class="partner-name">{{ p.name }}</span>
+              <span class="partner-books">{{ p.books }}</span>
+              <span class="partner-go" aria-hidden="true">&#8599;</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% if section != "careers-in-travel" %}
+        <p class="self-book-alt"><strong>Need help planning your trip?</strong> <a href="/contact/{% if plan_query %}?{{ plan_query }}{% endif %}">Let Soukeyna plan it for you.</a></p>
+        {% endif %}
+      </aside>
+      {% endif %}
 
       {% if destinations and destinations.length %}
       <p class="article-places">
@@ -88,9 +110,8 @@ layout: base.njk
     <div class="wrap article-cta-inner">
       <div>
         <h2>Curious about becoming a travel agent?</h2>
-        <p>Find out how joining the Voyage By Luna team works.</p>
       </div>
-      <a href="/join-our-team/" class="btn btn-outline-light">Join Our Team</a>
+      <a href="https://tidycal.com/voyagebyluna" class="btn btn-outline-light" target="_blank" rel="noopener">Join Our Team</a>
     </div>
   </section>
   {% else %}

@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "Wander through Japan's bustling streets and serene temples, tasting, smelling, and feeling the contrasts of a country that balances ancient traditions with futuristic energy. A traveler's reflection on moments that linger long after the trip ends."
 featured: false
 affiliate: true
+partners: [exoticca, culture-holidays, viator]
 plan_query: "destination=Japan"
 keywords: ["Adventure", "Travel", "Vacation", "Japan"]
 legacy_url: /travel/japan/tokyo/kyoto/2025/10/09/a-journey-through-japan-where-tradition-meets-tomorrow.html

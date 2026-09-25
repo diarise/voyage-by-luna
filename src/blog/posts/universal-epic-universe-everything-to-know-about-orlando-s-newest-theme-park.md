@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "Get ready for a new era of theme park magic. Universal Orlando Resort’s highly anticipated fourth park — Epic Universe, now open, bringing five new worlds of imagination, adventure, and innovation."
 featured: false
 affiliate: false
+partners: [viator]
 plan_query: "trip=disney"
 keywords: ["Universal Epic Universe", "Universal Orlando", "Family Vacations", "Theme Parks"]
 legacy_url: /theme%20parks/florida/family%20travel/2025/10/21/universal-epic-universe-everything-to-know-about-orlando-s-newest-theme-park.html

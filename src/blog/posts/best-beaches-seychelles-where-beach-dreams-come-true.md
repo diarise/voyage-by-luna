@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "From powder-white sands to turquoise lagoons, discover why Seychelles is one of the most beautiful and romantic beach destinations in the world."
 featured: false
 affiliate: false
+partners: [viator]
 plan_query: "destination=Seychelles"
 keywords: ["Seychelles", "Travel", "Best Beaches", "Island Vacations"]
 legacy_url: /seychelles/beaches/luxury%20travel/2025/11/02/best-beaches-seychelles-where-beach-dreams-come-true.html

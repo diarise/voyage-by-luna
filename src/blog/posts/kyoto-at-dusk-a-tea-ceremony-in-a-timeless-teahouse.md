@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "In the hushed heart of Kyoto, I slipped into a centuries-old teahouse and experienced the grace of a traditional tea ceremony. It wasn't just about tea — it was about stillness, presence, and stepping into another rhythm of life."
 featured: false
 affiliate: false
+partners: [viator]
 plan_query: "destination=Japan"
 keywords: ["Tea Ceremony", "Traditional Japan", "Kyoto Travel", "Cultural Experiences"]
 legacy_url: /japan/kyoto/culture/2025/09/29/kyoto-at-dusk-a-tea-ceremony-in-a-timeless-teahouse.html

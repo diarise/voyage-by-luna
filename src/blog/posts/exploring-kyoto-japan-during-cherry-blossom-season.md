@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "Experience the magic of Kyoto in full bloom. Discover the best spots, traditions, and travel tips for exploring Japan’s cherry blossom season."
 featured: false
 affiliate: false
+partners: [viator]
 plan_query: "destination=Japan"
 keywords: ["Kyoto Travel", "Cherry Blossom Season", "Cultural Travel"]
 legacy_url: /japan/kyoto/travel%20guide/2025/10/23/exploring-kyoto-japan-during-cherry-blossom-season.html

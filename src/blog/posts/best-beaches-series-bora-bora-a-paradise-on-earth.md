@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "Crystal lagoons, coral gardens, and overwater bungalows — discover why Bora Bora is known as the Pearl of the Pacific and one of the world’s most beautiful islands."
 featured: false
 affiliate: false
+partners: [viator]
 plan_query: "destination=Bora%20Bora"
 keywords: ["Bora Bora", "Luxury Beaches", "Island Vacations"]
 legacy_url: /french%20polynesia/best%20beaches/luxury%20travel/2025/10/24/best-beaches-series-bora-bora-a-paradise-on-earth.html

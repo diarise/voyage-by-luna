@@ -84,6 +84,20 @@ collections:
       - { label: "YouTube video at the end (optional)", name: "video", widget: "string", required: false }
       - { label: "Feature this post at the top of the Journal", name: "featured", widget: "boolean", default: false }
       - { label: "Contains affiliate links (shows a disclosure note)", name: "affiliate", widget: "boolean", default: false }
+      - label: "Book-it-yourself partners (optional)"
+        name: "partners"
+        widget: "select"
+        multiple: true
+        required: false
+        hint: "Shows a 'Prefer to book it yourself?' box with these partners' links (plus the disclosure note). Only pick partners that fit the article. Leave empty for none."
+        options:
+          - { label: "Viator — excursions, tours, shore excursions, transfers", value: "viator" }
+          - { label: "Virgin Voyages — cruise", value: "virgin-voyages" }
+          - { label: "Viking Ocean Cruises — cruise", value: "viking-ocean" }
+          - { label: "Sandals Resorts — weddings, honeymoons, couples getaways", value: "sandals" }
+          - { label: "Beaches Resorts — weddings, honeymoons, family getaways", value: "beaches" }
+          - { label: "Culture Holidays — package vacations (hotel and tours)", value: "culture-holidays" }
+          - { label: "Exoticca — flights, hotels, tours", value: "exoticca" }
       - { label: "'Plan My Trip' link details (optional, e.g. destination=Japan)", name: "plan_query", widget: "string", required: false }
       - { label: "Updated date (optional — only if you revise the post)", name: "updated", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", required: false }
       - { label: "SEO title (optional — defaults to the title)", name: "seo_title", widget: "string", required: false }
@@ -109,7 +123,6 @@ collections:
           - { label: "Phone (displayed)", name: "phone", widget: "string" }
           - { label: "Phone Link (tel:+1XXXXXXXXXX)", name: "phone_link", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
-          - { label: "Address / Service Note", name: "address_note", widget: "string" }
           - { label: "Affiliations", name: "affiliations", widget: "list", field: { label: "Name", name: "item", widget: "string" } }
           - label: "Social Links"
             name: "social"

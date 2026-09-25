@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "Portugal is one of Europe's most inviting destinations, offering golden beaches, historic cities, and charming villages. From Lisbon's cobbled streets to the cliffs of the Algarve, it's a country full of color, flavor, and warm welcomes."
 featured: false
 affiliate: true
+partners: [exoticca, culture-holidays, viator]
 plan_query: "destination=Portugal"
 keywords: ["Travel", "Vacation", "Portugal", "Lisbon", "Porto"]
 legacy_url: /portugal/history/culture/travel/2025/10/03/portugal-a-journey-through-history-coastlines-and-culture.html

@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "Walking through the heavy stone walls of Cape Coast Castle is not just a visit to a landmark — it is a confrontation with history, memory, and resilience."
 featured: false
 affiliate: false
+partners: [viator]
 plan_query: "destination=Ghana"
 keywords: ["Cape Coast", "Slave Trade", "Heritage Travel", "Ghana Tourism"]
 legacy_url: /ghana/history/heritage/africa/2025/10/04/cape-coast-castle-walking-through-the-shadows-of-history.html

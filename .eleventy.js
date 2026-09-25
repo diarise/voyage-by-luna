@@ -85,6 +85,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("findBySlug", (list, slug) => (list || []).find((x) => x.slug === slug));
   eleventyConfig.addFilter("head", (arr, n) => (arr || []).slice(0, n));
   eleventyConfig.addFilter("featuredOnly", (posts) => (posts || []).filter((p) => p.data.featured));
+  // Book-it-yourself partners chosen on a post (ids from src/_data/affiliatePartners.json), in the
+  // post's order; partners that are switched off or have no URL are skipped.
+  eleventyConfig.addFilter("partnersFor", (ids, all) =>
+    (ids || []).map((id) => (all || []).find((p) => p.id === id)).filter((p) => p && p.enabled && p.url));
   eleventyConfig.addFilter("except", (posts, url) => (posts || []).filter((p) => p.url !== url));
   // Related: shared destination beats shared section beats shared keyword; newest breaks ties.
   eleventyConfig.addFilter("related", (posts, current, n = 3) => {

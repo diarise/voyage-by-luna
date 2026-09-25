@@ -9,6 +9,7 @@ image_style: photo
 excerpt: "Bali has a way of capturing hearts. Known as the 'Island of the Gods,' it's a place where vibrant traditions blend seamlessly with breathtaking landscapes. Lush rice terraces stretch into the horizon, temple bells echo in the distance, and waves roll gently along golden beaches. Whether you're drawn by culture, nature, wellness, or adventure, Bali remains one of the top destinations to visit in 2026."
 featured: false
 affiliate: true
+partners: [exoticca, culture-holidays, viator]
 plan_query: "destination=Bali"
 keywords: ["Bali Travel", "Island Adventure", "Bali Guide", "Asia"]
 legacy_url: /indonesia/bali/travel/guide/asia/2025/10/05/2026-bali-travel-guide-culture-beaches-hidden-gems.html
