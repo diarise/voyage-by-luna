@@ -1,0 +1,28 @@
+{#- Private preview entry (address = the secret key; see src/_data/privatePreview.js).
+    Sets the preview cookie, then opens the full site. Add #exit to the address to end it. -#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Preview</title>
+</head>
+<body>
+  <p id="msg">Opening the site preview…</p>
+  <script>
+    (function () {
+      var name = {{ privatePreview.cookie | dump | safe }};
+      var secure = location.protocol === 'https:' ? '; Secure' : '';
+      if (location.hash === '#exit') {
+        document.cookie = name + '=; Path=/; Max-Age=0; SameSite=Lax' + secure;
+        document.getElementById('msg').textContent = 'Preview ended. The public Coming Soon page is back for this browser.';
+        return;
+      }
+      document.cookie = name + '=1; Path=/; Max-Age=2592000; SameSite=Lax' + secure; // 30 days
+      location.replace('/');
+    })();
+  </script>
+</body>
+</html>

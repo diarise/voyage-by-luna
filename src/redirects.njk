@@ -11,7 +11,12 @@ eleventyExcludeFromCollections: true
 # Netlify reads this file first, then the [[redirects]] in netlify.toml.
 # The 26 old POST URLs live in netlify.toml, because they contain spaces and
 # accented characters, which only match when written un-encoded (tested).
-{% if launchGate.active %}
+{% if launchGate.active %}{% if privatePreview.enabled %}
+# ---- PRIVATE PREVIEW (key from the Netlify env var VBL_PREVIEW_KEY; see
+# src/_data/privatePreview.js). Browsers holding the preview cookie skip the gate.
+{{ privatePreview.path }}  {{ privatePreview.path }}  200!
+/*  /:splat  200!  Cookie={{ privatePreview.cookie }}
+{% endif %}
 # ---- PRE-LAUNCH GATE ---------------------------------------------------------
 # Generated only while src/_data/launch.json "mode" is not "live". Everything
 # below this block is the normal site's rules and is untouched by the gate.
