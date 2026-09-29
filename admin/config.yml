@@ -141,6 +141,13 @@ collections:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Link", name: "url", widget: "string" }
 
+      - name: "profile"
+        label: "Soukeyna's Profile Photo"
+        file: "src/_data/profile.json"
+        fields:
+          - { label: "Photo of Soukeyna", name: "photo", widget: "image", hint: "One photo used in three places: the homepage 'Who you'll be working with' section, the About page, and as the author photo on every Journal article. A clear, well-lit photo at least 1200 pixels wide looks best." }
+          - { label: "Photo description (for screen readers and Google)", name: "photo_alt", widget: "string", hint: "e.g. 'Soukeyna Traoré-Dia, the travel advisor behind Voyage By Luna'" }
+
       - name: "home"
         label: "Homepage"
         file: "src/_data/home.json"
@@ -148,7 +155,7 @@ collections:
           - { label: "Eyebrow (small text above headline)", name: "hero_eyebrow", widget: "string" }
           - { label: "Main Headline", name: "hero_heading", widget: "string" }
           - { label: "Subheading", name: "hero_subheading", widget: "text" }
-          - { label: "Hero Background Photo", name: "hero_image", widget: "image" }
+          - { label: "Hero Background Photo", name: "hero_image", widget: "image", hint: "The large photo at the top of the homepage. Landscape, at least 1600 pixels wide." }
           - { label: "Main Button Text", name: "hero_cta_label", widget: "string" }
           - { label: "Secondary Button Text", name: "hero_secondary_cta_label", widget: "string" }
           - { label: '"Why an advisor" Heading', name: "why_advisor_heading", widget: "string" }
@@ -198,8 +205,6 @@ collections:
           - { label: "Intro Sentence", name: "intro", widget: "text" }
           - { label: "Main Paragraph", name: "body", widget: "text" }
           - { label: "Second Paragraph", name: "body_two", widget: "text" }
-          - { label: "Photo (a headshot of Soukeyna works best)", name: "image", widget: "image" }
-          - { label: "Photo description for screen readers (e.g. 'Soukeyna smiling on a beach')", name: "image_alt", widget: "string", required: false }
           - { label: '"What to expect" Heading', name: "expect_heading", widget: "string" }
           - label: "What To Expect Points"
             name: "expect_points"
@@ -231,7 +236,7 @@ collections:
                 name: "icon"
                 widget: "select"
                 options: ["castle", "ship", "palm", "heart"]
-              - { label: "Photo (optional; replaces the icon on the homepage card)", name: "image", widget: "image", required: false }
+              - { label: "Service Photo (optional)", name: "image", widget: "image", required: false, hint: "Shown on the homepage service card (instead of the icon) and on the Services page." }
               - { label: "Who it's for (one line)", name: "who", widget: "string" }
               - { label: "Description", name: "body", widget: "text" }
               - { label: "Button Text", name: "cta_label", widget: "string" }
@@ -264,7 +269,8 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Region / Kicker (e.g. French Polynesia)", name: "kicker", widget: "string", required: false }
-      - { label: "Photo (leave empty to show the branded pattern)", name: "image", widget: "image", required: false }
+      - { label: "Destination Photo", name: "image", widget: "image", required: false, hint: "Shown on the destination card on the homepage and the Destinations page. Landscape works best." }
+      - { label: "Destination Photo description (for screen readers and Google)", name: "image_alt", widget: "string", required: false, hint: "Describe what's in the photo, e.g. 'Overwater bungalows in Bora Bora'." }
       - { label: "Link (a blog post URL, or leave blank to link to the contact form)", name: "link", widget: "string", required: false }
       - { label: "Display Order (lower numbers show first)", name: "order", widget: "number", default: 10 }
       - { label: "Short Description", name: "body", widget: "markdown" }

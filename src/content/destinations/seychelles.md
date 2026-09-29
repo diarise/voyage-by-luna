@@ -1,7 +1,8 @@
 ---
 title: "Seychelles"
 kicker: "Indian Ocean"
-image: ""
+image: "/images/blog/2.jpg"
+image_alt: "Aerial view of the Seychelles islands and turquoise bays"
 link: "/blog/best-beaches-seychelles-where-beach-dreams-come-true/"
 order: 2
 ---

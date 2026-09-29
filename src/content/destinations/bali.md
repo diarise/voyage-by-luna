@@ -1,7 +1,8 @@
 ---
 title: "Bali"
 kicker: "Indonesia"
-image: ""
+image: "/images/blog/bali.png"
+image_alt: "Pura Ulun Danu Bratan temple on the lake in Bali"
 link: "/blog/2026-bali-travel-guide-culture-beaches-hidden-gems/"
 order: 6
 ---

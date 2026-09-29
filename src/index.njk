@@ -107,7 +107,7 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
       {% if loop.index <= 6 %}
       <a class="destination-card" href="{{ dest.data.link or '/contact/?trip=other' }}">
         <div class="destination-media{% if not dest.data.image %} destination-media-empty{% endif %}">
-          {% if dest.data.image %}<img src="{{ dest.data.image }}" alt="{{ dest.data.title }}" loading="lazy">{% endif %}
+          {% if dest.data.image %}<img src="{{ dest.data.image }}" alt="{{ dest.data.image_alt or dest.data.title }}" loading="lazy" data-sizes="(min-width: 950px) 370px, (min-width: 600px) 50vw, 100vw">{% endif %}
         </div>
         <div class="destination-card-body">
           {% if dest.data.kicker %}<span class="destination-kicker">{{ dest.data.kicker }}</span>{% endif %}
@@ -128,8 +128,8 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
 <section class="section advisor-intro">
   <div class="wrap advisor-grid">
     <div class="advisor-photo">
-      {% if about.image %}
-      <img src="{{ about.image }}" alt="{{ about.image_alt }}" loading="lazy">
+      {% if profile.photo %}
+      <img src="{{ profile.photo }}" alt="{{ profile.photo_alt }}" loading="lazy">
       {% else %}
       {# Branded stand-in until a real photo of Soukeyna is uploaded in the CMS #}
       <div class="photo-placeholder" aria-hidden="true"><img src="/images/logo-mark.png" alt="" width="110" height="73" loading="lazy"></div>

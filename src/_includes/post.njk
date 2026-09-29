@@ -18,7 +18,7 @@ layout: base.njk
       <h1 class="article-title">{{ title }}</h1>
       {% if excerpt %}<p class="article-dek">{{ excerpt }}</p>{% endif %}
       <div class="byline">
-        <img class="byline-avatar" src="{{ blog.author_photo }}" alt="" width="48" height="48" data-sizes="48px">
+        <img class="byline-avatar" src="{{ profile.photo }}" alt="" width="48" height="48" data-sizes="48px">
         <div class="byline-text">
           <span class="byline-name">By <a href="/about/">{{ site.advisor_name }}</a></span>
           <span class="byline-meta">
@@ -95,7 +95,7 @@ layout: base.njk
       </div>
 
       <aside class="author-card" aria-label="About the author">
-        <img src="{{ blog.author_photo }}" alt="{{ site.advisor_name }}" width="88" height="88" data-sizes="88px">
+        <img src="{{ profile.photo }}" alt="{{ site.advisor_name }}" width="88" height="88" data-sizes="88px">
         <div>
           <p class="author-card-name">{{ site.advisor_name }}</p>
           <p>{{ blog.author_bio }}</p>

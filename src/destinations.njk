@@ -18,7 +18,7 @@ permalink: "/destinations/"
       {% for dest in collections.destinations | sort(false, false, "data.order") %}
       <a class="destination-card" href="{{ dest.data.link or '/contact/?trip=other' }}">
         <div class="destination-media{% if not dest.data.image %} destination-media-empty{% endif %}">
-          {% if dest.data.image %}<img src="{{ dest.data.image }}" alt="{{ dest.data.title }}" loading="lazy">{% endif %}
+          {% if dest.data.image %}<img src="{{ dest.data.image }}" alt="{{ dest.data.image_alt or dest.data.title }}" loading="lazy" data-sizes="(min-width: 950px) 370px, (min-width: 600px) 50vw, 100vw">{% endif %}
         </div>
         <div class="destination-card-body">
           {% if dest.data.kicker %}<span class="destination-kicker">{{ dest.data.kicker }}</span>{% endif %}

@@ -1,7 +1,8 @@
 ---
 title: "Bora Bora"
 kicker: "French Polynesia"
-image: ""
+image: "/images/blog/bora-bora.jpg"
+image_alt: "Palm-lined beach and turquoise lagoon beneath Mount Otemanu, Bora Bora"
 link: "/blog/best-beaches-series-bora-bora-a-paradise-on-earth/"
 order: 1
 ---
