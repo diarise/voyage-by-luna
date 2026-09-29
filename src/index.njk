@@ -53,8 +53,10 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
       <h2>{{ home.services_heading }}</h2>
       <p class="lead">{{ home.services_subheading }}</p>
     </div>
-    <div class="grid-4">
-      {% for cat in services.categories %}
+    {#- Homepage card order (by service id). The Services page keeps the order in
+        src/_data/services.json. Any service not listed here is still shown, at the end. -#}
+    {%- set homeServiceOrder = ["cruises", "resorts", "disney", "activities"] -%}
+    {%- macro serviceCard(cat) %}
       <a class="service-card{% if cat.image %} service-card-has-media{% endif %}" href="/services/#{{ cat.id }}">
         {% if cat.image %}
         <div class="service-card-media"><img src="{{ cat.image }}" alt="" loading="lazy"></div>
@@ -65,7 +67,10 @@ description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises
         <p class="service-for">{{ cat.who }}</p>
         <span class="card-link">See how it works <span aria-hidden="true">&rarr;</span></span>
       </a>
-      {% endfor %}
+    {%- endmacro %}
+    <div class="grid-4">
+      {%- for id in homeServiceOrder %}{% for cat in services.categories %}{% if cat.id == id %}{{ serviceCard(cat) }}{% endif %}{% endfor %}{% endfor %}
+      {%- for cat in services.categories %}{% if cat.id not in homeServiceOrder %}{{ serviceCard(cat) }}{% endif %}{% endfor %}
     </div>
   </div>
 </section>
