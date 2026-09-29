@@ -10,8 +10,7 @@ excerpt: "From intimate elopements to luxury villa buyouts, discover the latest 
 featured: false
 affiliate: false
 partners: [sandals, beaches]
-plan_query: "trip=weddings"
-keywords: ["Destination Weddings", "Travel Trends", "Wedding Planning", "Romance Travel"]
+keywords: ["Destination Weddings", "Travel Trends", "Romance Travel"]
 legacy_url: /travel/destination%20weddings/romance%20travel/2025/10/14/the-biggest-destination-wedding-trends-for-2025-and-beyond.html
 draft: false
 ---
@@ -55,10 +54,3 @@ Picture 30 guests in Tuscany, 40 in the Maldives, or 25 in Mykonos. These weddin
 Destination weddings let couples celebrate love in unforgettable ways — surrounded by breathtaking scenery, meaningful experiences, and the people who matter most.
 
 They offer the best of both worlds: a dream vacation and a once-in-a-lifetime celebration. Whether intimate or extravagant, destination weddings are evolving to reflect what matters most — connection, adventure, and authenticity.
-
-## Plan Your Destination Wedding
-If you’re dreaming of getting married abroad but aren’t sure where to begin, I can help. As a certified travel advisor, I specialize in destination weddings, honeymoons, and group travel.
-
-Together, we’ll find the perfect destination, resort, or private venue to match your vision and budget — and handle all the travel details for you and your guests.
-
-Visit **[voyagebyluna.com](https://voyagebyluna.com/)** to learn more and get started.

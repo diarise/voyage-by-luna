@@ -300,6 +300,7 @@ h3 { font-size: 1.15rem; font-family: var(--font-body); font-weight: 700; letter
 .icon-ship::after { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'><path d='M4 19l1.5-6h13L20 19a9 9 0 01-16 0z'/><path d='M7 13V4h10v9'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'><path d='M4 19l1.5-6h13L20 19a9 9 0 01-16 0z'/><path d='M7 13V4h10v9'/></svg>"); }
 .icon-palm::after { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'><path d='M12 22V10'/><path d='M12 10c-4-2-7 0-9-3 4-1 6 1 9 3z'/><path d='M12 10c4-2 7 0 9-3-4-1-6 1-9 3z'/><path d='M12 10c-1-4 0-6-2-8 3 0 5 3 5 6'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'><path d='M12 22V10'/><path d='M12 10c-4-2-7 0-9-3 4-1 6 1 9 3z'/><path d='M12 10c4-2 7 0 9-3-4-1-6 1-9 3z'/><path d='M12 10c-1-4 0-6-2-8 3 0 5 3 5 6'/></svg>"); }
 .icon-heart::after { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M12 21s-7-4.4-9.5-8.6C.6 8.6 2.4 5 6 5c2 0 3.4 1 4 2 .6-1 2-2 4-2 3.6 0 5.4 3.6 3.5 7.4C19 16.6 12 21 12 21z'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M12 21s-7-4.4-9.5-8.6C.6 8.6 2.4 5 6 5c2 0 3.4 1 4 2 .6-1 2-2 4-2 3.6 0 5.4 3.6 3.5 7.4C19 16.6 12 21 12 21z'/></svg>"); }
+.icon-compass::after { -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M15.5 8.5l-2 5-5 2 2-5z' fill='black'/></svg>"); mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M15.5 8.5l-2 5-5 2 2-5z' fill='black'/></svg>"); }
 
 /* ---------------- How it works ---------------- */
 .how-it-works { background: var(--navy); color: #fff; }
@@ -424,6 +425,9 @@ h3 { font-size: 1.15rem; font-family: var(--font-body); font-weight: 700; letter
 @media (max-width: 700px) { .service-detail { grid-template-columns: 1fr; gap: 18px; } }
 .service-detail-media { margin-bottom: 22px; }
 .service-detail-media img { width: 100%; max-height: 360px; object-fit: cover; border-radius: var(--r-lg); box-shadow: var(--shadow); }
+.service-selfserve { margin: 16px 0 0; font-size: .95rem; color: var(--muted); }
+.service-selfserve a { color: var(--blue); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.service-selfserve-note { margin: 4px 0 0; font-size: .8rem; color: var(--muted); }
 .service-who { font-weight: 650; color: var(--blue); margin-bottom: .6em; }
 
 /* ---------------- About ---------------- */

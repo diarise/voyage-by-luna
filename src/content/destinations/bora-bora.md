@@ -6,4 +6,4 @@ image_alt: "Palm-lined beach and turquoise lagoon beneath Mount Otemanu, Bora Bo
 link: "/blog/best-beaches-series-bora-bora-a-paradise-on-earth/"
 order: 1
 ---
-Overwater bungalows, coral gardens and a lagoon that genuinely looks the way it does in photos. A classic honeymoon choice for good reason.
+Overwater bungalows, coral gardens and a lagoon that genuinely looks the way it does in photos. Made for lagoon excursions, snorkeling and slow days on the water.

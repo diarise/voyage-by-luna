@@ -91,11 +91,11 @@ collections:
         required: false
         hint: "Shows a 'Prefer to book it yourself?' box with these partners' links (plus the disclosure note). Only pick partners that fit the article. Leave empty for none."
         options:
-          - { label: "Viator — excursions, tours, shore excursions, transfers", value: "viator" }
+          - { label: "Viator — tours, activities, excursions, shore excursions, attractions, transfers", value: "viator" }
           - { label: "Virgin Voyages — cruise", value: "virgin-voyages" }
           - { label: "Viking Ocean Cruises — cruise", value: "viking-ocean" }
-          - { label: "Sandals Resorts — weddings, honeymoons, couples getaways", value: "sandals" }
-          - { label: "Beaches Resorts — weddings, honeymoons, family getaways", value: "beaches" }
+          - { label: "Sandals Resorts — couples getaways, golf retreats", value: "sandals" }
+          - { label: "Beaches Resorts — couples and family getaways", value: "beaches" }
           - { label: "Culture Holidays — package vacations (hotel and tours)", value: "culture-holidays" }
           - { label: "Exoticca — flights, hotels, tours", value: "exoticca" }
       - { label: "'Plan My Trip' link details (optional, e.g. destination=Japan)", name: "plan_query", widget: "string", required: false }
@@ -235,8 +235,15 @@ collections:
               - label: "Icon"
                 name: "icon"
                 widget: "select"
-                options: ["castle", "ship", "palm", "heart"]
+                options: ["castle", "ship", "palm", "compass", "heart"]
               - { label: "Service Photo (optional)", name: "image", widget: "image", required: false, hint: "Shown on the homepage service card (instead of the icon) and on the Services page." }
+              - label: "Book-it-yourself link (optional)"
+                name: "self_serve"
+                widget: "select"
+                required: false
+                hint: "Adds a small 'Prefer to browse on your own?' affiliate link under this service's button on the Services page."
+                options:
+                  - { label: "Viator — tours, activities, excursions, attractions", value: "viator" }
               - { label: "Who it's for (one line)", name: "who", widget: "string" }
               - { label: "Description", name: "body", widget: "text" }
               - { label: "Button Text", name: "cta_label", widget: "string" }

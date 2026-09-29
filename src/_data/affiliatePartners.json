@@ -1,12 +1,12 @@
 {
-  "_source": "Affiliate Links (VBL).xlsx — only the suppliers highlighted green. Names, URLs and 'What can you book?' copied from the sheet; only surrounding spaces were trimmed. To add a partner: add it here (with a category) AND to the 'Book-it-yourself partners' list in admin/config.yml. Partners with enabled: false are never shown.",
+  "_source": "Affiliate Links (VBL).xlsx — only the suppliers highlighted green. Names, URLs and 'What can you book?' copied from the sheet; only surrounding spaces were trimmed. To add a partner: add it here (with a category) AND to the 'Book-it-yourself partners' list in admin/config.yml. Partners with enabled: false are never shown. Public descriptions for Viator, Sandals and Beaches were reworded at the owner's request (Voyage By Luna does not offer wedding or honeymoon planning); their URLs are unchanged.",
   "partners": [
     {
       "id": "viator",
       "name": "Viator",
       "sheet_name": "Viator Travel Agents",
       "url": "https://www.viator.com/?pid=P00006875&uid=U00232218&mcid=58086&currency=USD",
-      "books": "Excursions, Tours, Shore Excursions, Transfers",
+      "books": "Tours, activities, excursions, shore excursions, attractions and transfers",
       "enabled": true,
       "category": "tours"
     },
@@ -44,7 +44,7 @@
       "name": "Sandals Resorts",
       "sheet_name": "Sandals Travel Agent (Co-brand website)",
       "url": "https://www.sandals.com/?referral=110957&agentid=SOTR6104",
-      "books": "Weddings, Honeymoons, Gulf Retreats, Couples Getaways",
+      "books": "Couples getaways and golf retreats",
       "enabled": true,
       "category": "resorts"
     },
@@ -53,7 +53,7 @@
       "name": "Beaches Resorts",
       "sheet_name": "Beaches (Co-brand website)",
       "url": "https://www.beaches.com/?referral=110957&agentid=SOTR6104",
-      "books": "Weddings, Honeymoons, Couples Getaways, Family Getaways",
+      "books": "Couples and family getaways",
       "enabled": true,
       "category": "resorts"
     },
@@ -93,7 +93,7 @@
     },
     {
       "id": "tours",
-      "name": "Tours & Excursions"
+      "name": "Tours & Activities"
     },
     {
       "id": "resorts",

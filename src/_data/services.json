@@ -30,12 +30,13 @@
       "image": ""
     },
     {
-      "id": "weddings",
-      "title": "Weddings & Honeymoons",
-      "icon": "heart",
-      "who": "For couples planning enough already.",
-      "body": "Beachfront ceremony, intimate elopement, or a celebration with guests flying in from everywhere. I coordinate the travel side — including your guests' bookings — and plan the honeymoon alongside it, so travel is one less thing on a list that's already long.",
-      "cta_label": "Plan a Wedding or Honeymoon",
+      "id": "activities",
+      "title": "Activities & Experiences",
+      "icon": "compass",
+      "who": "For travelers who want to come home with stories, not just photos.",
+      "body": "From guided tours and cultural experiences to shore excursions, food adventures, outdoor activities and must-see attractions, I help you find experiences that fit your trip — not just fill your itinerary. I'll match them to your destination, your pace and who's traveling with you, and fit them around everything else that's booked.",
+      "cta_label": "Plan My Experiences",
+      "self_serve": "viator",
       "image": ""
     }
   ]

@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Travel Services"
-description: "Disney vacations, cruises, all-inclusive resorts, and destination weddings & honeymoons - planned by a personal travel advisor."
+description: "Disney vacations, cruises, all-inclusive resorts, and the activities and experiences that make a trip - planned by a personal travel advisor."
 permalink: "/services/"
 ---
 <section class="page-hero">
@@ -26,6 +26,11 @@ permalink: "/services/"
         <p class="service-who">{{ cat.who }}</p>
         <p class="lead">{{ cat.body }}</p>
         <a href="/contact/?trip={{ cat.id }}" class="btn btn-primary">{{ cat.cta_label }}</a>
+        {%- set selfServe = ([cat.self_serve] | partnersFor(affiliatePartners.partners)) if cat.self_serve else [] %}
+        {% if selfServe.length %}
+        <p class="service-selfserve">Prefer to browse on your own? <a href="{{ selfServe[0].url }}" target="_blank" rel="sponsored nofollow noopener">Explore tours and activities on {{ selfServe[0].name }}<span class="sr-only"> (opens in a new tab)</span></a></p>
+        <p class="service-selfserve-note">Affiliate link — Voyage By Luna may earn a commission at no extra cost to you.</p>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
