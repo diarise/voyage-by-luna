@@ -542,6 +542,7 @@ h3 { font-size: 1.15rem; font-family: var(--font-body); font-weight: 700; letter
   transition: background .16s ease, transform .16s ease;
 }
 .social-links a:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+.social-links .social-icon { width: 18px; height: 18px; display: block; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 20px 0; font-size: .84rem; color: rgba(255,255,255,.5); }
 .footer-bottom p { margin: 0; }
 
