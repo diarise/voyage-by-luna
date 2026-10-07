@@ -535,6 +535,11 @@ h3 { font-size: 1.15rem; font-family: var(--font-body); font-weight: 700; letter
 .site-footer .muted { color: rgba(255,255,255,.62); }
 .site-footer p { margin-bottom: .6em; font-size: .94rem; }
 .footer-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; font-size: .94rem; }
+.footer-join { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; max-width: 260px; }
+.footer-join-title { color: rgba(255,255,255,.8); }
+.footer-join-text { font-size: .82rem; line-height: 1.5; color: rgba(255,255,255,.6); }
+.site-footer .footer-join-link { color: var(--gold); font-size: .86rem; font-weight: 600; }
+.site-footer .footer-join-link:hover { color: #fff; }
 .social-links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 9px; }
 .social-links a {
   display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
