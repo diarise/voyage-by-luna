@@ -7,6 +7,8 @@ image: /images/blog/create-an-image-of-a-lady-sitting-on-a-desk-working-as-a-tra
 image_alt: "A smiling woman at her desk working as a home-based travel agent"
 image_style: photo
 excerpt: "Want to build a travel business from home in the US? This guide walks you through each step, from understanding the industry to partnering with a trusted host agency and launching your business the right way."
+seo_title: "How to Become a Travel Agent from Home in the US"
+seo_description: "A step-by-step guide to building a home-based travel business in the US, from understanding the industry to partnering with a host agency."
 video: https://www.youtube.com/watch?v=8za8jbHt8yo
 featured: false
 affiliate: false

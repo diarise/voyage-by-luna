@@ -8,27 +8,37 @@
     {
       "slug": "destination-guides",
       "name": "Destination Guides",
-      "blurb": "Itineraries and practical guides to places worth the journey."
+      "blurb": "Itineraries and practical guides to places worth the journey.",
+      "service_url": "/services/#activities",
+      "service_label": "tours, excursions and experiences"
     },
     {
       "slug": "culture-heritage",
       "name": "Culture & Heritage",
-      "blurb": "History, tradition and the stories that give a place its meaning."
+      "blurb": "History, tradition and the stories that give a place its meaning.",
+      "service_url": "/services/#activities",
+      "service_label": "cultural tours and experiences"
     },
     {
       "slug": "theme-parks-family",
       "name": "Theme Parks & Family",
-      "blurb": "Disney, Universal and family resorts — planned so everyone enjoys the trip."
+      "blurb": "Disney, Universal and family resorts — planned so everyone enjoys the trip.",
+      "service_url": "/services/#disney",
+      "service_label": "Disney and theme park trips"
     },
     {
       "slug": "beaches-romance",
       "name": "Beaches & Romance",
-      "blurb": "Islands, beaches and sun-soaked escapes."
+      "blurb": "Islands, beaches and sun-soaked escapes.",
+      "service_url": "/services/#resorts",
+      "service_label": "all-inclusive resort vacations"
     },
     {
       "slug": "travel-advice",
       "name": "Travel Advice",
-      "blurb": "Planning know-how from a working travel advisor."
+      "blurb": "Planning know-how from a working travel advisor.",
+      "service_url": "/services/",
+      "service_label": "every kind of trip"
     },
     {
       "slug": "careers-in-travel",

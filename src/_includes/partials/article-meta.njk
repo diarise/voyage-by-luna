@@ -17,12 +17,13 @@
   "dateModified": "{{ (updated or page.date) | isoDate }}",
   "author": {
     "@type": "Person",
+    "@id": "https://voyagebyluna.com/#soukeyna",
     "name": {{ site.advisor_name | dump | safe }},
-    "jobTitle": {{ site.advisor_role | dump | safe }},
     "url": "https://voyagebyluna.com/about/"
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://voyagebyluna.com/#organization",
     "name": {{ site.business_name | dump | safe }},
     "logo": { "@type": "ImageObject", "url": "https://voyagebyluna.com/images/logo-full.png" }
   },

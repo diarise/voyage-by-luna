@@ -7,6 +7,7 @@ image: /images/blog/2.jpg
 image_alt: "Aerial view of the Seychelles islands and turquoise bays"
 image_style: photo
 excerpt: "From powder-white sands to turquoise lagoons, discover why Seychelles is one of the most beautiful and romantic beach destinations in the world."
+seo_title: "Best Beaches in Seychelles: Where Beach Dreams Come True"
 featured: false
 affiliate: false
 partners: [viator]

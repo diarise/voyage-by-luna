@@ -7,6 +7,8 @@ image: /images/blog/black-white-minimalist-how-to-become-a-digital-nomad-banner-
 image_alt: "Seoul skyline and N Seoul Tower at dusk, with a South Korean flag"
 image_style: photo
 excerpt: "From K-pop to palaces, from kimchi to coastal cruises — Korea blends ancient tradition and modern energy like nowhere else. As a newly certified Korea Travel Specialist, I’m sharing everything you need to know before your trip."
+seo_title: "Korea Travel Guide from a Certified Korea Travel Specialist"
+seo_description: "Best time to visit, food, culture, UNESCO sites and getting around — a Korea travel guide written by a certified Korea Travel Specialist."
 featured: true
 affiliate: false
 partners: [viator]

@@ -7,6 +7,8 @@ image: /images/blog/nickelodeon.jpg
 image_alt: "The Nickelodeon Hotels & Resorts Punta Cana sign"
 image_style: graphic
 excerpt: "Dreaming of a Punta Cana family vacation that mixes five-star luxury with non-stop cartoon fun? Nickelodeon Hotels & Resorts Punta Cana is your destination! Discover the incredible Gourmet Inclusive® Experience, meet your favorite Nick characters, splash down at Aqua Nick, and find all the essential travel tips—from the best time to visit to Dominican Republic visa requirements."
+seo_title: "Nickelodeon Hotels & Resorts Punta Cana: Family Guide"
+seo_description: "What to know about Nickelodeon Hotels & Resorts Punta Cana: Gourmet Inclusive dining, the Aqua Nick water park, character experiences, suites and travel tips."
 featured: false
 affiliate: false
 partners: [beaches, viator]

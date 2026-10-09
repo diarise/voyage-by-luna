@@ -1,11 +1,12 @@
 ---
 layout: base.njk
 title: "Cruises, Resorts & Disney Vacations"
-description: "Soukeyna Traoré-Dia is a personal travel advisor planning cruises, all-inclusive resorts, Disney vacations and memorable activities and experiences — one point of contact, start to finish."
+seo_title: "Travel Advisor for Cruises, All-Inclusive Resorts & Disney"
+description: "Personal travel advisor Soukeyna Traoré-Dia plans cruises, all-inclusive resorts, Disney trips and memorable experiences — one point of contact, start to finish."
 ---
 <section class="hero">
   <div class="hero-media{% if not home.hero_image %} hero-media-empty{% endif %}">
-    {% if home.hero_image %}<img src="{{ home.hero_image }}" alt="" fetchpriority="high" width="1600" height="847">{% endif %}
+    {% if home.hero_image %}<img src="{{ home.hero_image }}" alt="" data-hero data-sizes="100vw" width="1600" height="847">{% endif %}
   </div>
   <div class="wrap hero-inner">
     <div class="hero-copy">

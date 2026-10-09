@@ -7,6 +7,7 @@ image: /images/blog/p.png
 image_alt: "Porto's riverside and the Dom Luís I Bridge at sunset"
 image_style: photo
 excerpt: "Portugal is one of Europe's most inviting destinations, offering golden beaches, historic cities, and charming villages. From Lisbon's cobbled streets to the cliffs of the Algarve, it's a country full of color, flavor, and warm welcomes."
+seo_description: "Lisbon's cobbled streets, Porto's riverside, the Algarve's cliffs, Madeira and the Azores — why Portugal is one of Europe's most inviting destinations."
 featured: false
 affiliate: true
 partners: [exoticca, culture-holidays, viator]

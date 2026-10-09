@@ -7,6 +7,7 @@ image: /images/blog/osaka.jpg
 image_alt: "Osaka Castle surrounded by cherry blossoms"
 image_style: photo
 excerpt: "Experience the magic of Kyoto in full bloom. Discover the best spots, traditions, and travel tips for exploring Japan’s cherry blossom season."
+seo_title: "Kyoto Cherry Blossom Season: Best Spots, Timing & Tips"
 featured: false
 affiliate: false
 partners: [viator]

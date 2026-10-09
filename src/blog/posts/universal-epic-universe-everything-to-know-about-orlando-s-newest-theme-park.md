@@ -7,6 +7,8 @@ image: /images/blog/uor-globe-33a4053-1.jpg
 image_alt: "The Universal globe fountain at Universal Orlando"
 image_style: photo
 excerpt: "Get ready for a new era of theme park magic. Universal Orlando Resort’s highly anticipated fourth park — Epic Universe, now open, bringing five new worlds of imagination, adventure, and innovation."
+seo_title: "Universal Epic Universe: What to Know Before You Visit"
+seo_description: "Universal Orlando's fourth theme park, Epic Universe: its five worlds, tickets and vacation packages, on-site hotels and why it's worth the trip."
 featured: false
 affiliate: false
 partners: [viator]

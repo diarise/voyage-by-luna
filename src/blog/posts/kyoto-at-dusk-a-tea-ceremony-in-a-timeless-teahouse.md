@@ -7,6 +7,7 @@ image: /images/blog/pexels-dsd-143941-1822605.jpg
 image_alt: "A woman in a white kimono with a paper umbrella walking through orange torii gates in Kyoto"
 image_style: photo
 excerpt: "In the hushed heart of Kyoto, I slipped into a centuries-old teahouse and experienced the grace of a traditional tea ceremony. It wasn't just about tea — it was about stillness, presence, and stepping into another rhythm of life."
+seo_description: "In the heart of Kyoto, a centuries-old teahouse and a traditional tea ceremony — a story about stillness, presence and slowing down in Japan."
 featured: false
 affiliate: false
 partners: [viator]

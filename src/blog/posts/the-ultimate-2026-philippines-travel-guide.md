@@ -7,6 +7,7 @@ image: /images/blog/pexels-anuar-gresati-1265240-2416888.jpg
 image_alt: "Turquoise lagoon between limestone cliffs in the Philippines"
 image_style: photo
 excerpt: "With over 7,000 islands, turquoise waters, and warm hospitality, the Philippines is quickly becoming one of the most exciting destinations for 2026. From island hopping to cultural discoveries, here's everything you need to know to plan the perfect trip."
+seo_description: "Over 7,000 islands, turquoise water and warm hospitality: a 2026 Philippines travel guide to island hopping, culture and the experiences not to miss."
 featured: false
 affiliate: true
 partners: [exoticca, viator]

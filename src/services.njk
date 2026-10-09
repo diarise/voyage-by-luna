@@ -1,7 +1,8 @@
 ---
 layout: base.njk
 title: "Travel Services"
-description: "Disney vacations, cruises, all-inclusive resorts, and the activities and experiences that make a trip - planned by a personal travel advisor."
+seo_title: "Cruise, All-Inclusive & Disney Vacation Planning Services"
+description: "How Soukeyna plans cruises, all-inclusive resorts, Disney and theme park trips, and activities and experiences, as your personal travel advisor."
 permalink: "/services/"
 ---
 <section class="page-hero">
@@ -25,6 +26,14 @@ permalink: "/services/"
         <h2>{{ cat.title }}</h2>
         <p class="service-who">{{ cat.who }}</p>
         <p class="lead">{{ cat.body }}</p>
+        {%- set journalLinks = {
+          "disney": [["/blog/theme-parks-family/", "Theme park guides"], ["/disney/", "Disney vacation planner"]],
+          "resorts": [["/blog/beaches-romance/", "Beach and island guides"], ["/blog/get-slimed-in-paradise-your-ultimate-guide-to-nickelodeon-hotels-resorts-punta-cana/", "Nickelodeon Punta Cana family guide"]],
+          "activities": [["/blog/destination-guides/", "Destination guides and itineraries"], ["/blog/culture-heritage/", "Culture and heritage stories"]]
+        } %}
+        {% if journalLinks[cat.id] %}
+        <p class="service-reads">From the Journal: {% for l in journalLinks[cat.id] %}<a href="{{ l[0] }}">{{ l[1] }}</a>{{ " · " if not loop.last }}{% endfor %}</p>
+        {% endif %}
         <a href="/contact/?trip={{ cat.id }}" class="btn btn-primary">{{ cat.cta_label }}</a>
         {%- set selfServe = ([cat.self_serve] | partnersFor(affiliatePartners.partners)) if cat.self_serve else [] %}
         {% if selfServe.length %}

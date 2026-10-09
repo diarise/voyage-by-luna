@@ -6,8 +6,10 @@ pagination:
   alias: d
 permalink: "/blog/destinations/{{ d.slug }}/"
 eleventyComputed:
-  title: "{{ d.name }} Travel Guides & Stories"
-  description: "Guides, itineraries and travel stories about {{ d.name }} from the Voyage By Luna Journal."
+  title: "{{ d.name | safe }} Travel Guides & Stories"
+  description: "Guides, itineraries and travel stories about {{ d.name | safe }} from the Voyage By Luna Journal."
+  # Hubs with a single story are thin pages: keep them out of search (links still followed)
+  noindex: "{{ 'true' if (blogStats.destCount[d.slug] or 0) < blogStats.minStoriesToIndex else '' }}"
 ---
 {%- set dposts = collections.posts | inDestination(d.slug) -%}
 <section class="journal-masthead journal-masthead--compact">

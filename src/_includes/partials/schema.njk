@@ -1,0 +1,57 @@
+{#- Site-wide structured data, one consistent set of linked entities on every page.
+    Only facts that are visible on the site: no address, hours, ratings or service
+    area (the business is a remote travel advisor). Journal posts add BlogPosting +
+    BreadcrumbList in partials/article-meta.njk, which point back to these @ids. -#}
+{%- set siteUrl = "https://voyagebyluna.com" -%}
+{%- set pageUrl = siteUrl + page.url -%}
+{%- set isProfile = page.url == "/about/" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TravelAgency",
+      "@id": "{{ siteUrl }}/#organization",
+      "name": {{ site.business_name | dump | safe }},
+      "url": "{{ siteUrl }}/",
+      "logo": { "@type": "ImageObject", "url": "{{ siteUrl }}/images/logo-full.png" },
+      "image": "{{ siteUrl }}/images/logo-full.png",
+      "description": {{ (site.advisor_name + " is the personal travel advisor behind " + site.business_name + ", planning cruises, all-inclusive resort vacations, Disney and theme park trips, and activities and experiences.") | dump | safe }},
+      "telephone": {{ site.phone | dump | safe }},
+      "email": {{ site.email | dump | safe }},
+      "founder": { "@id": "{{ siteUrl }}/#soukeyna" },
+      "sameAs": [{% set comma = joiner() %}{% for name, url in site.social %}{% if url %}{{ comma() }}{{ url | dump | safe }}{% endif %}{% endfor %}]
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ siteUrl }}/#soukeyna",
+      "name": {{ site.advisor_name | dump | safe }},
+      "jobTitle": {{ site.advisor_role | dump | safe }},
+      "url": "{{ siteUrl }}/about/",
+      {%- if profile.photo %}
+      "image": "{{ siteUrl }}{{ profile.photo }}",
+      {%- endif %}
+      "worksFor": { "@id": "{{ siteUrl }}/#organization" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ siteUrl }}/#website",
+      "url": "{{ siteUrl }}/",
+      "name": {{ site.business_name | dump | safe }},
+      "inLanguage": "en",
+      "publisher": { "@id": "{{ siteUrl }}/#organization" }
+    },
+    {
+      "@type": "{{ 'ProfilePage' if isProfile else 'WebPage' }}",
+      "@id": "{{ pageUrl }}#webpage",
+      "url": "{{ pageUrl }}",
+      "name": {{ ((seo_title or title) + " | " + site.business_name) | dump | safe }},
+      "description": {{ description | dump | safe }},
+      "inLanguage": "en",
+      "isPartOf": { "@id": "{{ siteUrl }}/#website" }{% if isProfile %},
+      "mainEntity": { "@id": "{{ siteUrl }}/#soukeyna" }{% elif page.url == "/" %},
+      "about": { "@id": "{{ siteUrl }}/#organization" }{% endif %}
+    }
+  ]
+}
+</script>

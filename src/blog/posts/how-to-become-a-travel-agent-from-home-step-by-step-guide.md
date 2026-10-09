@@ -7,6 +7,8 @@ image: /images/blog/create-a-very-aesthetic-image-of-a-black-woman-with-full-cur
 image_alt: "A woman with curly hair working on a laptop at a kitchen counter"
 image_style: photo
 excerpt: "The travel industry is one of the most resilient and dynamic sectors globally. Even as global trends shift, people continue to explore, plan, and dream about their next getaway. For many, the idea of turning a love of travel into a career feels out of reach, but the truth is that the path is more accessible than ever. Whether you want a flexible side income or a full-time business, becoming a travel advisor can open the door to new experiences and financial opportunities. Here’s what you need to know about starting your journey in this thriving field."
+seo_title: "Why Become a Travel Agent from Home? Perks & Host Agencies"
+seo_description: "Why more people are turning a love of travel into a home-based career: the perks, earning potential, the role of a host agency and how to take the next step."
 featured: false
 affiliate: false
 keywords: ["Become a Travel Agent", "Travel Industry", "Work From Home"]

@@ -425,6 +425,14 @@ h3 { font-size: 1.15rem; font-family: var(--font-body); font-weight: 700; letter
 @media (max-width: 700px) { .service-detail { grid-template-columns: 1fr; gap: 18px; } }
 .service-detail-media { margin-bottom: 22px; }
 .service-detail-media img { width: 100%; max-height: 360px; object-fit: cover; border-radius: var(--r-lg); box-shadow: var(--shadow); }
+.service-reads { font-size: .92rem; color: var(--muted); margin: -4px 0 18px; }
+.service-reads a, .article-cta-link { text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.service-reads a { color: var(--blue); }
+.article-cta-link { color: var(--gold); }
+.article-cta--quiet .article-cta-link { color: var(--blue); }
+.disney-guides-title { font-size: 1.35rem; }
+.disney-guides { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.disney-guides a { color: var(--blue); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .service-selfserve { margin: 16px 0 0; font-size: .95rem; color: var(--muted); }
 .service-selfserve a { color: var(--blue); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .service-selfserve-note { margin: 4px 0 0; font-size: .8rem; color: var(--muted); }

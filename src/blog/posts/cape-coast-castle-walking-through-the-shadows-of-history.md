@@ -7,6 +7,7 @@ image: /images/blog/pexels-tumsia-daniel-163887504-16136199.jpg
 image_alt: "Cape Coast Castle's whitewashed walls on Ghana's coast, in black and white"
 image_style: photo
 excerpt: "Walking through the heavy stone walls of Cape Coast Castle is not just a visit to a landmark — it is a confrontation with history, memory, and resilience."
+seo_title: "Cape Coast Castle, Ghana: Walking Through the Shadows of History"
 featured: false
 affiliate: false
 partners: [viator]

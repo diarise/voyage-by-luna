@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: "Plan Your Disney Vacation"
+seo_title: "Disney Vacation Planning with a Travel Advisor"
 description: "Plan a Disney vacation with Voyage By Luna — browse Disney resorts and packages, then let a travel advisor handle the details."
 permalink: "/disney/"
 ---
@@ -17,6 +18,17 @@ permalink: "/disney/"
     </div>
   </div>
 </section>
+{%- set parkGuides = collections.posts | inSection("theme-parks-family") -%}
+{% if parkGuides.length %}
+<section class="section section-tight">
+  <div class="wrap">
+    <h2 class="disney-guides-title">Theme park guides from the Journal</h2>
+    <ul class="disney-guides">
+      {% for post in parkGuides %}<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
 <section class="section section-tight">
   <div class="wrap">
     <iframe id="disney-iframe" class="disney-embed"

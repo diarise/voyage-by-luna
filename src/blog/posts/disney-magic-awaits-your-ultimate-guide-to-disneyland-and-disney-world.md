@@ -7,6 +7,7 @@ image: /images/blog/disney-2692578-1280.jpg
 image_alt: "The Partners statue of Walt Disney and Mickey Mouse in front of Cinderella Castle"
 image_style: photo
 excerpt: "From classic rides to unforgettable parades, discover everything you need to know before visiting Disneyland in California and Walt Disney World in Florida."
+seo_title: "Disneyland vs. Disney World: Your Ultimate Disney Guide"
 featured: false
 affiliate: false
 plan_query: "trip=disney"

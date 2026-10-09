@@ -7,6 +7,7 @@ image: /images/blog/kanto-tokyo-and-mt-fuji.jpg
 image_alt: "Tokyo skyline with Tokyo Skytree and Mount Fuji behind it"
 image_style: photo
 excerpt: "Wander through Japan's bustling streets and serene temples, tasting, smelling, and feeling the contrasts of a country that balances ancient traditions with futuristic energy. A traveler's reflection on moments that linger long after the trip ends."
+seo_description: "Tokyo's energy, Kyoto's temples, Nara's deer and Osaka's street food — reflections on the moments that make a trip to Japan unforgettable."
 featured: false
 affiliate: true
 partners: [exoticca, culture-holidays, viator]

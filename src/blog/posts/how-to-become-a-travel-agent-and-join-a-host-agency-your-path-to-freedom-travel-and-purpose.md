@@ -7,6 +7,8 @@ image: /images/blog/how-to-become-a-travel-agent-from-home-step-by-step-guide-12
 image_alt: "Graphic reading How to Become a Travel Agent from Home, with a woman at a laptop"
 image_style: graphic
 excerpt: "Have you ever dreamed of turning your love for travel into a real business — one that lets you work from anywhere, create your own schedule, and help others see the world?"
+seo_title: "How to Become a Travel Agent with a Host Agency"
+seo_description: "What a host agency is, why new travel agents join one instead of going solo, and a step-by-step look at getting started from home."
 featured: false
 affiliate: false
 keywords: ["Become a Travel Agent USA", "Travel Business", "Work From Home Travel"]

@@ -7,6 +7,8 @@ image: /images/blog/big-lagoon.jpg
 image_alt: "A boat in the Big Lagoon among limestone cliffs in El Nido, Palawan"
 image_style: photo
 excerpt: "From Manila’s vibrant streets to the turquoise waters of Boracay, this 15-day Philippines itinerary blends adventure, history, and pure island magic. Discover hidden gems, breathtaking beaches, and local culture in one unforgettable journey."
+seo_title: "15-Day Philippines Itinerary: Manila, Palawan, Cebu & Boracay"
+seo_description: "A day-by-day 15-day Philippines itinerary from Manila to Palawan, Cebu, Bohol and Boracay, blending beaches, history and island adventure."
 featured: false
 affiliate: true
 partners: [exoticca, viator]

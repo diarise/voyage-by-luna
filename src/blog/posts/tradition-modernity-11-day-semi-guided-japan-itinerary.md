@@ -7,6 +7,8 @@ image: /images/blog/japan.jpg
 image_alt: "Osaka Castle framed by pink cherry blossoms"
 image_style: photo
 excerpt: "If you've ever dreamed of visiting Japan, this 11-day semi-guided itinerary is the perfect way to experience Tokyo, Kyoto, and Osaka—three of the country's most iconic destinations. From futuristic skylines to ancient temples, this journey blends culture, cuisine, and adventure into one unforgettable trip."
+seo_title: "11-Day Japan Itinerary: Tokyo, Kyoto & Osaka (Semi-Guided)"
+seo_description: "A day-by-day, 11-day semi-guided Japan itinerary through Tokyo, Kyoto and Osaka, with an optional Mount Fuji and Hakone day trip."
 featured: false
 affiliate: true
 partners: [exoticca, culture-holidays, viator]

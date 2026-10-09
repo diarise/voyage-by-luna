@@ -6,8 +6,8 @@ pagination:
   alias: s
 permalink: "/blog/{{ s.slug }}/"
 eleventyComputed:
-  title: "{{ s.name }}"
-  description: "{{ s.blurb }} Stories from the Voyage By Luna Journal."
+  title: "{{ s.name | safe }}"
+  description: "{{ s.blurb | safe }} Stories from the Voyage By Luna Journal."
 ---
 {%- set sposts = collections.posts | inSection(s.slug) -%}
 <section class="journal-masthead journal-masthead--compact">

@@ -7,6 +7,8 @@ image: /images/blog/uk-tavel-agency.jpg
 image_alt: "Collage of London landmarks with the words Travel Agency in UK"
 image_style: graphic
 excerpt: "Thinking about starting a travel business from home in the UK? This step-by-step guide explains how to get started, what you need to know about the industry, and how to partner with a trusted host agency to build a profitable travel career."
+seo_title: "How to Become a Travel Agent from Home in the UK"
+seo_description: "A step-by-step guide to starting a home-based travel business in the UK, from understanding the industry to partnering with a host agency."
 featured: false
 affiliate: false
 keywords: ["Become a Travel Agent UK", "Travel Business", "Work From Home Travel"]

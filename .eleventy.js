@@ -30,7 +30,7 @@ async function pictureFor(src, attrs) {
   const file = path.join(__dirname, decodeURI(src));
   const isHero = /\bdata-hero\b/.test(attrs);
   const meta = await Image(file, {
-    widths: isHero ? [640, 1024, 1600] : [480, 800, 1200],
+    widths: isHero ? [640, 960, 1280, 1600] : [480, 800, 1200],
     formats: ["webp", "auto"],
     outputDir: path.join(__dirname, "_site/img/"),
     urlPath: "/img/",
@@ -147,7 +147,8 @@ module.exports = function(eleventyConfig) {
     // Responsive images (blog + CMS uploads, anywhere on the site)
     const jobs = [];
     html.replace(/<img\s([^>]*?)src="([^"]+)"([^>]*)>/g, (m, a, src, b) => {
-      if (IMG_SRC.test(src) && !/\.svg$/i.test(src)) jobs.push({ m, src, attrs: a + b });
+      // CMS/blog photos, plus any other site photo explicitly marked as a hero (e.g. the homepage)
+      if ((IMG_SRC.test(src) || (/^\/images\//.test(src) && /\bdata-hero\b/.test(a + b))) && !/\.svg$/i.test(src)) jobs.push({ m, src, attrs: a + b });
       return m;
     });
     for (const j of jobs) {

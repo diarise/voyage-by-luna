@@ -7,6 +7,7 @@ image: /images/blog/bali.png
 image_alt: "Pura Ulun Danu Bratan temple on the lake in Bali"
 image_style: photo
 excerpt: "Bali has a way of capturing hearts. Known as the 'Island of the Gods,' it's a place where vibrant traditions blend seamlessly with breathtaking landscapes. Lush rice terraces stretch into the horizon, temple bells echo in the distance, and waves roll gently along golden beaches. Whether you're drawn by culture, nature, wellness, or adventure, Bali remains one of the top destinations to visit in 2026."
+seo_description: "A 2026 Bali travel guide: the top experiences, temples, beaches and practical tips for planning a smooth trip to the Island of the Gods."
 featured: false
 affiliate: true
 partners: [exoticca, culture-holidays, viator]

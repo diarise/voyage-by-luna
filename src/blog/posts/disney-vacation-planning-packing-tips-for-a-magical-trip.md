@@ -7,6 +7,7 @@ image: /images/blog/colorful-illustrated-time-to-travel-facebook-post-1.jpg
 image_alt: "Sleeping Beauty Castle at Disneyland lit up at dusk"
 image_style: photo
 excerpt: "Planning a Disney vacation? Learn how to organize, pack, and prepare for a stress-free trip from booking your park days early to mastering smart packing strategies."
+seo_title: "Disney Packing List & Vacation Planning Tips"
 featured: false
 affiliate: false
 plan_query: "trip=disney"

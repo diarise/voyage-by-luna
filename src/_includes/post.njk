@@ -119,7 +119,7 @@ layout: base.njk
     <div class="wrap article-cta-inner">
       <div>
         <h2>Planning a trip{% if dest %} to {{ dest.name }}{% endif %}?</h2>
-        <p>Tell me what you're picturing and I'll come back with options that fit — no obligation.</p>
+        <p>Tell me what you're picturing and I'll come back with options that fit — no obligation.{% if sec and sec.service_url %} <a class="article-cta-link" href="{{ sec.service_url }}">See how I plan {{ sec.service_label }}</a>.{% endif %}</p>
       </div>
       <a href="/contact/{% if plan_query %}?{{ plan_query }}{% endif %}" class="btn btn-primary btn-lg">Plan My Trip</a>
     </div>

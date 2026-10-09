@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
 {%- for s in blog.sections %}{% if (collections.posts | inSection(s.slug)).length %}
   <url><loc>https://voyagebyluna.com/blog/{{ s.slug }}/</loc></url>
 {%- endif %}{% endfor %}
-{%- for d in blog.destinations %}{% if (collections.posts | inDestination(d.slug)).length %}
+{%- for d in blog.destinations %}{% if (collections.posts | inDestination(d.slug)).length >= blogStats.minStoriesToIndex %}
   <url><loc>https://voyagebyluna.com/blog/destinations/{{ d.slug }}/</loc></url>
 {%- endif %}{% endfor %}
 {%- for post in collections.posts %}
