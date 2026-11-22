@@ -251,10 +251,30 @@
   to = "https://voyagebyluna.com/blog/why-working-for-yourself-is-the-best-investment-you-ll-ever-make/"
   status = 301
 
-# Anything else on the old blog host goes to the same path on the main domain.
-# force = true so the old host never serves duplicate copies of site pages.
+# Old blog homepage -> new Journal homepage
+[[redirects]]
+  from = "https://blog.voyagebyluna.com/"
+  to = "https://voyagebyluna.com/blog/"
+  status = 301
+  force = true
+
+# Any unmatched old blog URL -> new Journal homepage
 [[redirects]]
   from = "https://blog.voyagebyluna.com/*"
-  to = "https://voyagebyluna.com/:splat"
+  to = "https://voyagebyluna.com/blog/"
+  status = 301
+  force = true
+
+# Old blog homepage over HTTP
+[[redirects]]
+  from = "http://blog.voyagebyluna.com/"
+  to = "https://voyagebyluna.com/blog/"
+  status = 301
+  force = true
+
+# Any unmatched old blog URL over HTTP
+[[redirects]]
+  from = "http://blog.voyagebyluna.com/*"
+  to = "https://voyagebyluna.com/blog/"
   status = 301
   force = true
